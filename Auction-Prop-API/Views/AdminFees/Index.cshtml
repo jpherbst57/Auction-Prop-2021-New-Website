@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Auction_Prop_API.Models.DataBaseModels.AdminFee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AuctionRegistration.BuyerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProofOfPaymentPath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfPayment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuctionRegistration.BuyerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuctionRegistration.RegisteredBuyer.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuctionRegistration.PropertyID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProofOfPaymentPath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfPayment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PaymentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PaymentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PaymentID })
+        </td>
+    </tr>
+}
+
+</table>

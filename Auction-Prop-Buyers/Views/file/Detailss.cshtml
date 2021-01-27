@@ -1,0 +1,475 @@
+﻿@model Auction_Prop_Buyers.Models.DisplayMadels.Property
+@using Auction_Prop_Buyers.Models.DisplayMadels
+
+@{
+    ViewBag.Title = "Detailss";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+        <script src="https://kit.fontawesome.com/ef4e2c1ac6.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="~/Content/bootstrap.css" type="text/css">
+        <link rel="stylesheet" href="~/Content2/bootstrap-select.min.css" type="text/css">
+        <link rel="stylesheet" href="~/Content2/jquery.slider.min.css" type="text/css">
+        <link rel="stylesheet" href="~/Content/StyleSheet1.css" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <title>Auction-Prop.com | Home</title>
+
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <style>
+
+            .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+                display: block;
+                height: 550px;
+                min-width: 100%;
+                width: 100%;
+                max-width: 100%;
+                line-height: 1;
+            }
+        </style>
+    </head>
+
+
+<body class="page-sub-page page-listing page-grid page-search-results" id="page-top">
+
+
+
+
+    <!-- Page Content -->
+    <div id="page-content">
+        <!-- Breadcrumb -->
+        <!-- end Breadcrumb -->
+        <div class="container-fluid">
+            <div id="myCarousel" class="carousel slide" style=" min-height:500px">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="" contenteditable="false"></li>
+                    <li data-target="#myCarousel" data-slide-to="1" class="active" contenteditable="false"></li>
+                    <li data-target="#myCarousel" data-slide-to="2" class="" contenteditable="false"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                    @{
+                        ICollection<PropertyPhoto> Photos = Model.PropertyPhotos;
+                        int i = 0;
+                        foreach (PropertyPhoto p in Photos)
+                        {
+                            if (i == 0)
+                            {
+                                <div class="item active">
+                                    <img src=@p.PropertyPhotoPath alt="" class="">
+                                    <div class="carousel-caption">
+                                        <p class="">
+
+                                            @Html.Partial("~/Views/Buyers/_Index.cshtml", Model)
+                                        </p>
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="item">
+                                    <img src=@p.PropertyPhotoPath alt="" class="">
+                                    <div class="carousel-caption">
+                                        <p class="">
+                                            @Html.Partial("~/Views/Buyers/_Index.cshtml", Model)
+                                        </p>
+                                    </div>
+                                </div>
+                            }
+                            i++;
+
+                        }
+
+                    }
+
+
+                </div>
+
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+
+
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="row">
+                <!-- Property Detail Content -->
+                <div>
+
+
+
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12" >
+                            <section id="quick-summary" class="clearfix">
+                                <header><h2>Quick Summary</h2></header>
+                                <dl>
+                                    <dt>Location:</dt>
+                                    <dd> @Html.DisplayFor(model => model.City),  @Html.DisplayFor(model => model.Province)</dd>
+
+                                    @if (Model.Type == "Auction")
+                                    {
+                                        try
+                                        {
+                                            <dt>Auction Date:</dt>
+                                            <dd>@Model.Auction.StartTime</dd>
+                                            <dt>Property Value.</dt>
+                                            <dd>@Model.PrpertyValue</dd>
+
+                                        }
+                                        catch
+                                        {
+                                            <dd>This Property is not yet scheduled for a auction.</dd>
+
+                                            <dt>Property Value.</dt>
+                                            <dd>@Model.PrpertyValue</dd>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <dt>Property Value.</dt>
+                                        <dd>@Model.PrpertyValue</dd>
+                                    }
+
+                                    <dt>Property Type:</dt>
+                                    <dd>@Model.Type</dd>
+                                    <dt>Status:</dt>
+                                    <dd>@Model.Status</dd>
+                                    <dt>Building Area:</dt>
+                                    <dd>@Model.BuildingArea m<sup>2</sup></dd>
+                                    <dt>Terrace Area:</dt>
+                                    <dd>@Model.TerraceArea m<sup>2</sup></dd>
+                                    <dt>Beds:</dt>
+                                    <dd>@Model.BedRooms</dd>
+                                    <dt>Baths:</dt>
+                                    <dd>@Model.BathRooms</dd>
+                                    <dt>Garages:</dt>
+                                    <dd>@Model.Garages</dd>
+                                </dl>
+                            </section><!-- /#quick-summary -->
+                        </div><!-- /.col-md-4 -->
+                        <div class="col-md-8 col-sm-12">
+                            <section id="description">
+                                <header><h2>Property Description</h2></header>
+                                <p>
+                                    @Model.Description
+                                </p>
+
+                            </section><!-- /#description -->
+                            <section id="property-features">
+                                <header><h2>Property Extras</h2></header>
+                                <ul class="list-unstyled property-features-list">
+                                    @if (Model.FireplacePit)
+                                    {
+                                        <li>Fireplace</li>
+
+                                    }
+                                    @if (Model.A_C)
+                                    {
+                                        <li>A/C</li>
+
+                                    }
+                                    @if (Model.PetsAllowed)
+                                    {
+                                        <li>Pets Allowed</li>
+
+                                    }
+                                    @if (Model.Garden)
+                                    {
+                                        <li>Garden</li>
+
+                                    }
+                                    @if (Model.CableTV)
+                                    {
+                                        <li>Cable TV</li>
+
+                                    }
+                                    @if (Model.Terrace)
+                                    {
+                                        <li>Terrace</li>
+
+                                    }
+                                    @if (Model.wi_fi)
+                                    {
+                                        <li>Wi-Fi</li>
+
+                                    }
+                                    @if (Model.Fibre)
+                                    {
+                                        <li>fibre</li>
+
+                                    }
+                                    @if (Model.Pool)
+                                    {
+                                        <li>Pool</li>
+
+                                    }
+                                    @if (Model.Balcony)
+                                    {
+                                        <li>Balcny</li>
+
+                                    }
+                                    @if (Model.Parquet)
+                                    {
+                                        <li>Parquet</li>
+
+                                    }
+                                    @if (Model.Beach)
+                                    {
+                                        <li>Beach</li>
+
+                                    }
+                                    @if (Model.Gerage)
+                                    {
+                                        <li>Gerage</li>
+
+                                    }
+                                    @if (Model.RoofTarrace)
+                                    {
+                                        <li>Roof Tarrace</li>
+
+                                    }
+                                    @if (Model.Sauna)
+                                    {
+                                        <li>Sauna</li>
+
+                                    }
+                                    @if (Model.OutdoorKitchen)
+                                    {
+                                        <li>Outdoor kitchen</li>
+
+                                    }
+                                    @if (Model.SunRoom)
+                                    {
+                                        <li>Sun room</li>
+
+                                    }
+                                    @if (Model.ConcreteFlooring)
+                                    {
+                                        <li>Concrete floring</li>
+
+                                    }
+                                    @if (Model.WoodFloring)
+                                    {
+                                        <li>Wood floring</li>
+
+                                    }
+                                    @if (Model.TennisCourts)
+                                    {
+                                        <li>Tennis Courts</li>
+
+                                    }
+
+                                </ul>
+                            </section><!-- /#property-features -->
+                            <section id="floor-plans">
+                                <div class="floor-plans">
+                                    <header><h2>Floor Plans</h2></header>
+                                    <a href="@Model.PlansPath" class="image-popup"><img alt="" src="@Model.PlansPath"></a>
+                                </div>
+                            </section>
+                            <section id="video-presentation">
+                                <header><h2>Video Presentation</h2></header>
+
+                                @{
+                                    if (Model.PromoVideos.Count < 0)
+                                    {
+                                        ICollection<PromoVideo> Videos = Model.PromoVideos;
+
+                                        foreach (PromoVideo video in Videos)
+                                        {
+                                            <div class="video">
+                                                <iframe src=@video.VideoPath width="500" height="281"></iframe>
+                                            </div>
+
+                                        }
+                                    }
+
+                                }
+
+
+
+
+
+
+
+
+                            </section><!-- /#video-presentation -->
+                        </div><!-- /.col-md-8 -->
+                        <div class="col-md-12 col-sm-12">
+                            <section id="contact-agent">
+                                <header><h2>Contact Agent</h2></header>
+                                <div class="row">
+                                    <section class="agent-form">
+                                        <div class="col-md-7 col-sm-12">
+                                            <aside class="agent-info clearfix">
+
+                                                <div class="agent-contact-info">
+
+                                                    <h3>@Model.Seller.FirtstName  @Model.Seller.LastName</h3>
+                                                    @if (Model.Seller.PrivateSeller != null)
+                                                    {
+                                                        <p>
+                                                            This is a Private Seller.
+                                                        </p>
+
+
+
+                                                        <dl>
+                                                            <dt>Phone:</dt>
+                                                            <dd>@Model.Seller.PrivateSeller.PhoneNumber</dd>
+                                                            <dt>Email:</dt>
+                                                            <dd><a href="mailto:#">@Model.Seller.PrivateSeller.email</a></dd>
+
+                                                        </dl>
+                                                        <hr>
+                                                        <a href="agent-detail.html" class="link-arrow">Full Profile</a>
+                                                    }
+                                                    else if (Model.Seller.Retaileler != null)
+                                                    {
+                                                        <h3>@Model.Seller.FirtstName  @Model.Seller.LastName</h3>
+
+                                                        <p>
+                                                            @Model.Seller.Retaileler.CompanyDescription
+                                                        </p>
+
+
+
+                                                        <dl>
+                                                            <dt>Phone:</dt>
+                                                            <dd>@Model.Seller.Retaileler.CompanyContactNumber</dd>
+                                                            <dt>Email:</dt>
+                                                            <dd><a href="mailto:#">@Model.Seller.Retaileler.CompanyEmail</a></dd>
+
+                                                        </dl>
+                                                        <hr>
+                                                        <a href="agent-detail.html" class="link-arrow">Full Profile</a>
+                                                    }
+
+                                                </div>
+
+
+
+
+                                            </aside><!-- /.agent-info -->
+                                        </div><!-- /.col-md-7 -->
+                                        <div class="col-md-5 col-sm-12">
+                                            <div class="agent-form">
+                                                <form role="form" id="form-contact-agent" method="post" class="clearfix">
+                                                    <div class="form-group">
+                                                        <label for="form-contact-agent-name">Your Name<em>*</em></label>
+                                                        <input type="text" class="form-control" id="form-contact-agent-name" name="form-contact-agent-name" required>
+                                                    </div><!-- /.form-group -->
+                                                    <div class="form-group">
+                                                        <label for="form-contact-agent-email">Your Email<em>*</em></label>
+                                                        <input type="email" class="form-control" id="form-contact-agent-email" name="form-contact-agent-email" required>
+                                                    </div><!-- /.form-group -->
+                                                    <div class="form-group">
+                                                        <label for="form-contact-agent-message">Your Message<em>*</em></label>
+                                                        <textarea class="form-control" id="form-contact-agent-message" rows="2" name="form-contact-agent-message" required></textarea>
+                                                    </div><!-- /.form-group -->
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn pull-right btn-default" id="form-contact-agent-submit">Send a Message</button>
+                                                    </div><!-- /.form-group -->
+                                                    <div id="form-contact-agent-status"></div>
+                                                </form><!-- /#form-contact -->
+                                            </div><!-- /.agent-form -->
+                                        </div><!-- /.col-md-5 -->
+                                    </section><!-- /.agent-form -->
+                                </div><!-- /.row -->
+                            </section><!-- /#contact-agent -->
+                        </div><!-- /.col-md-12 -->
+                    </div><!-- /.row -->
+                </div><!-- /.col-md-9 -->
+
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <section id="sidebar">
+                    <aside id="edit-search">
+                        @Html.Partial("~/Views/Buyers/_Index.cshtml", Model)
+                    </aside>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="~/Scripts2/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="~/Scripts2/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts2/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts2/smoothscroll.js"></script>
+    <script type="text/javascript" src="~/Scripts2/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/Scripts2/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="~/Scripts2/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="~/Scripts2/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="~/Scripts2/icheck.min.js"></script>
+    <script type="text/javascript" src="~/Scripts2/jquery.vanillabox-0.1.5.min.js"></script>
+    <script type="text/javascript" src="~/Scripts2/retina-1.1.0.min.js"></script>
+    <script type="text/javascript" src="~/Scripts2/jshashtable-2.1_src.js"></script>
+    <script type="text/javascript" src="~/Scripts2/jquery.numberformatter-1.2.3.js"></script>
+    <script type="text/javascript" src="~/Scripts2/tmpl.js"></script>
+    <script type="text/javascript" src="~/Scripts2/jquery.dependClass-0.1.js"></script>
+    <script type="text/javascript" src="~/Scripts2/draggable-0.1.js"></script>
+    <script type="text/javascript" src="~/Scripts2/jquery.slider.js"></script>
+    <script type="text/javascript" src="~/Scripts2/custom.js"></script>
+
+    <div id="overlay"></div>
+
+
+
+</body>
+
+
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PropertyID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+
+
+
+
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+
+<script>
+    $('#myCarousel').carousel();
+    var winWidth = $(window).innerWidth();
+    $(window).resize(function () {
+
+        if ($(window).innerWidth() < winWidth) {
+            $('.carousel-inner>.item>img').css({
+                'min-width': winWidth, 'width': winWidth
+            });
+        }
+        else {
+            winWidth = $(window).innerWidth();
+            $('.carousel-inner>.item>img').css({
+                'min-width': '', 'width': ''
+            });
+        }
+    });
+
+</script>

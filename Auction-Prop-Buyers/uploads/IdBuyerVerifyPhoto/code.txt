@@ -1,0 +1,26 @@
+The type or namespace name 'InterestViewModels' does not exist in the namespace 'SocialNetwork.Web.Models' (are you missing an assembly reference?)
+-
+@using SocialNetwork.Web.Models.AccountViewModels
+@using SocialNetwork.Web.Models.ManageViewModels
+@using SocialNetwork.Web.Models.PostsViewModels
+@using SocialNetwork.Web.Models.Comment
+@using SocialNetwork.Web.Models.Messanger
+@using SocialNetwork.Web.Models.Events
+@using SocialNetwork.Web.Models.InterestViewModels
+@using SocialNetwork.Web.Models
+@using SocialNetwork.Data.Entities
+@using SocialNetwork.Data.Entities.Enums
+@using SocialNetwork.Services.Models
+@using SocialNetwork.Web.Extensions
+@using SocialNetwork.Services.Infrastructure.CustomDataStructures
+
+
+
+
+An error occurred during the compilation of a resource required to process this request. Please review the following specific error details and modify your source code appropriately.
+E:\Studio37\New folder\SocialNetwork.Web\Views\_ViewImports.cshtml
+One or more compilation references are missing. Ensure that your project is referencing 'Microsoft.NET.Sdk.Web' and the 'PreserveCompilationContext' property is not set to false.
+
+The type or namespace name 'InterestViewModels' does not exist in the namespace 'SocialNetwork.Web.Models' (are you missing an assembly reference?)
++
+@using SocialNetwork.Web.Models.InterestViewModels

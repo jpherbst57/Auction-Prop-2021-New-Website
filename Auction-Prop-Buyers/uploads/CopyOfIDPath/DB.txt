@@ -1,0 +1,76 @@
+Auction-Prop Database(Not Normalized)
+
+-Auction-prop Users
+--
+UserID
+UserName
+FirstName
+LastName
+Email
+selNumber
+Role(Buyer, Seller, Admin)
+fullAddress
+
+--
+-Buyers 
+BondedOrCash
+Photo
+Cerrtified_ID_Document
+Proof of Residence
+Terms And Conditions Acception
+
+-BuyersHistory
+All Bids Plased
+Payment History
+ProppertiesInterested in
+propperties bidded on
+Payment Status
+
+
+--
+-BondedBuyer
+(Guarantees)?
+
+--
+-CashBuyer
+(Guarantees)?
+
+
+--
+-Seller Info
+CompanyName or Private
+Additional-CompanyEmails(Optional)
+Company Number(Optional)
+Company Address
+
+--
+-Property Info
+Seller
+Address
+Location
+Reserve
+OpeningBid
+PropertyDescription
+PropertyType
+Documents-Plans
+	Rates&Taxes
+	TitleDeed
+
+--
+-Auction Info
+StartTime
+EndTime
+Date
+Reserve Indication
+
+--
+-Auction Results
+all bids made
+winning bidder
+
+--
+-Payments
+
+--
+FAQ
+FAQ feedback

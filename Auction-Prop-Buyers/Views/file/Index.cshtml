@@ -1,0 +1,444 @@
+﻿@using Auction_Prop_Buyers.Models.DisplayMadels
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Auction-Prop.com | Home</title>
+
+    <!-- Favicons -->
+    <link href="~/assets/img/fat.png" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ef4e2c1ac6.js" crossorigin="anonymous"></script>
+
+    <!-- Vendor CSS Files -->
+    <link rel="stylesheet" href="~/Content2/bootstrap1.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content2/ionicons.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content2/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content2/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/font-awesome.css" type="text/css">
+
+    <!-- Template Main CSS File -->
+    <link href="~/assets/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- ======= Property Search Section Start ======= -->
+    <div class="click-closed"></div>
+
+    <div class="box-collapse">
+        <div class="title-box-d">
+            <h3 class="title-d">Search Property</h3>
+        </div>
+        <span class="close-box-collapse right-boxed ion-ios-close"></span>
+        <div class="box-collapse-wrap form">
+            <form class="form-a">
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+                        <div class="form-group">
+                            <label for="Type">Keyword</label>
+                            <input type="text" class="form-control form-control-lg form-control-a" placeholder="Keyword">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="Type">Type</label>
+                            <select class="form-control form-control-lg form-control-a" id="Type">
+                                <option>All Types</option>
+                                <option>Residential</option>
+                                <option>Commercial</option>
+                                <option>Agricultural</option>
+                                <option>Investment</option>
+                                <option>Bank Instruction</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <select class="form-control form-control-lg form-control-a" id="city">
+                                <option>All City's</option>
+                                <option>Johannesburg</option>
+                                <option>Pretoria</option>
+                                <option>Durban</option>
+                                <option>Cape Town</option>
+                                <option>Nelspruit</option>
+                                <option>Polokwane</option>
+                                <option>East London</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="bedrooms">Bedrooms</label>
+                            <select class="form-control form-control-lg form-control-a" id="bedrooms">
+                                <option>Any</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>3+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="garages">Garages</label>
+                            <select class="form-control form-control-lg form-control-a" id="garages">
+                                <option>Any</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>3+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="bathrooms">Bathrooms</label>
+                            <select class="form-control form-control-lg form-control-a" id="bathrooms">
+                                <option>Any</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>3+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-b">Search Property</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- ======= Property Search Section End ======= -->
+    <!-- ======= Intro Section Start ======= -->
+    @{
+        ICollection<Property> propertiesList = APILibrary.APIMethods.APIGetALL<ICollection<Property>>("Properties");
+
+      
+        <div class="intro intro-carousel">
+                <div id="carousel" class="owl-carousel owl-theme">
+                   
+                        <div class="carousel-item-a intro-item bg-image" style="background-image: url()">
+
+                            <div class="overlay overlay-a"></div>
+                            @foreach (Property prop in propertiesList)
+                            {
+                                <div class="intro-content display-table">
+                                    <div class="table-cell">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-8">
+                                                    <div class="intro-body">
+                                                        <p class="intro-title-top">
+                                                            @prop.Title
+                                                            <br>  @prop.City, @prop.Province
+                                                        </p>
+                                                        <h1 class="intro-title mb-4">
+                                                            <span class="color-b">Opening At: </span> @prop.OpeningBid
+                                                        </h1>
+                                                        <p class="intro-subtitle intro-price">
+                                                            @try
+                                                            {
+                                                                DateTime date = prop.Auction.StartTime;
+                                                                <a href="#"><span class="price-a">Auction Date | @date</span></a>
+                                                            }
+                                                            catch
+                                                            {
+
+                                                                <a href="#"><span class="price-a">Auction Date | Not Scheduled</span></a>
+                                                            }
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                try
+                                {
+
+                                    <img src=@prop.PropertyPhotos.First().PropertyPhotoPath />
+                                }
+                                catch
+                                {
+
+                                    <img src="~/assets/img/glass.jpg" />
+                                }
+
+
+                            }
+                            /**/
+
+                        </div>
+
+                </div>
+        </div>
+        <!-- ======= Intro Section End ======= -->
+    }
+
+    <!-- ======= Latest Properties Section Start ======= -->
+    <section class="section-property section-t8">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title-wrap d-flex justify-content-between">
+                        <div class="title-box">
+                            <h2 class="title-a">Upcoming Auctions</h2>
+                        </div>
+                        <div class="title-link">
+                            <a href="property-grid.html">
+                                All Properties
+                                <span class="ion-ios-arrow-forward"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="property-carousel" class="owl-carousel owl-theme">
+                @{
+                    foreach (Property prop in propertiesList)
+                    {
+                        if (prop.Auction != null)
+                        {
+                            <div class="carousel-item-b" >
+                                <div class="card-box-a card-shadow">
+
+                                    <div class="img-box-a" style="min-height:460px">
+                                        <img src=@prop.PropertyPhotos.First().PropertyPhotoPath alt="" class="img-a img-fluid">
+                                    </div>
+                                    <div class="card-overlay">
+                                        <div class="card-overlay-a-content">
+                                            <div class="card-header-a">
+                                                <h2 class="card-title-a">
+                                                    <a href="property-single.html">
+                                                        @prop.Address
+                                                        <br /> @prop.City, @prop.Province
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <div class="card-body-a">
+                                                <div class="price-box d-flex">
+                                                    <span class="price-a">Auction Date | @prop.Auction.StartTime</span>
+                                                </div>
+                                                <a href="#" class="link-a">
+                                                    Learn More
+                                                    <span class="ion-ios-arrow-forward"></span>
+                                                </a>
+                                            </div>
+                                            <div class="card-footer-a">
+                                                <ul class="card-info d-flex justify-content-around">
+                                                    <li>
+                                                        <h4 class="card-info-title">Building</h4>
+                                                        <span>
+                                                            @prop.FloorSize
+                                                            <sup>2</sup>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <h4 class="card-info-title">Beds</h4>
+                                                        <span>@prop.BedRooms</span>
+                                                    </li>
+                                                    <li>
+                                                        <h4 class="card-info-title">Baths</h4>
+                                                        <span>@prop.BathRooms</span>
+                                                    </li>
+                                                    <li>
+                                                        <h4 class="card-info-title">Garages</h4>
+                                                        <span>@prop.Garages</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+
+                    }
+
+                }
+
+               
+            </div>
+        </div>
+    </section>
+    <!-- ======= Latest Properties Section End ======= -->
+    <!-- ======= Services Section Start ======= -->
+    <section class="section-services section-t8">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title-wrap d-flex justify-content-between">
+                        <div class="title-box">
+                            <h2 class="title-a">Our Services</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card-box-c foo">
+                        <div class="card-header-c d-flex">
+                            <div class="card-box-ico">
+                                <span class="fa fa-gamepad"></span>
+                            </div>
+                            <div class="card-title-c align-self-center">
+                                <h2 class="title-c">Lifestyle</h2>
+                            </div>
+                        </div>
+                        <div class="card-body-c">
+                            <p class="content-c">
+                                Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa,
+                                convallis a pellentesque
+                                nec, egestas non nisi.
+                            </p>
+                        </div>
+                        <div class="card-footer-c">
+                            <a href="#" class="link-c link-icon">
+                                Read more
+                                <span class="ion-ios-arrow-forward"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-box-c foo">
+                        <div class="card-header-c d-flex">
+                            <div class="card-box-ico">
+                                <span class="fa fa-usd"></span>
+                            </div>
+                            <div class="card-title-c align-self-center">
+                                <h2 class="title-c">Loans</h2>
+                            </div>
+                        </div>
+                        <div class="card-body-c">
+                            <p class="content-c">
+                                Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui posuere blandit. Mauris blandit
+                                aliquet elit, eget tincidunt
+                                nibh pulvinar a.
+                            </p>
+                        </div>
+                        <div class="card-footer-c">
+                            <a href="#" class="link-c link-icon">
+                                Read more
+                                <span class="ion-ios-arrow-forward"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-box-c foo">
+                        <div class="card-header-c d-flex">
+                            <div class="card-box-ico">
+                                <span class="fa fa-home"></span>
+                            </div>
+                            <div class="card-title-c align-self-center">
+                                <h2 class="title-c">Sell</h2>
+                            </div>
+                        </div>
+                        <div class="card-body-c">
+                            <p class="content-c">
+                                Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa,
+                                convallis a pellentesque
+                                nec, egestas non nisi.
+                            </p>
+                        </div>
+                        <div class="card-footer-c">
+                            <a href="#" class="link-c link-icon">
+                                Read more
+                                <span class="ion-ios-arrow-forward"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ======= Services Section End ======= -->
+    <!-- ======= Latest News Section ======= -->
+    <section class="section-news section-t8">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title-wrap d-flex justify-content-between">
+                        <div class="title-box">
+                            <h2 class="title-a">Recently Sold Properties</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @try
+            {
+                ICollection<ConcludedAuction> auctionList = APILibrary.APIMethods.APIGetALL<ICollection<ConcludedAuction>>("ConcludedAuctions");
+                        <div id="new-carousel" class="owl-carousel owl-theme">
+                            @foreach (ConcludedAuction auc in auctionList)
+                            {
+                                <div class="carousel-item-c">
+                                    <div class="card-box-b card-shadow news-box">
+                                        <div class="img-box-b">
+                                            <img src=@auc.Property.PropertyPhotos.First().PropertyPhotoPath alt="" class="img-b img-fluid">
+                                        </div>
+                                        <div class="card-overlay">
+                                            <div class="card-header-b">
+                                                <div class="card-category-b">
+                                                    <a href="#" class="category-b">SOLD</a>
+                                                </div>
+                                                <div class="card-title-b">
+                                                    <h2 class="title-2">
+                                                        <a href="blog-single.html">
+                                                            R @auc.HiegestBid
+                                                            <br>
+                                                        </a>
+                                                    </h2>
+                                                </div>
+                                                <div class="card-date">
+                                                    <span class="date-b">@auc.Property.Province, @auc.Property.City</span>
+                                                    <br />
+                                                    <span class="date-b">@auc.Property.Address</span>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+            }
+            catch { 
+            }
+
+        </div>
+    </section><!-- End Latest News Section -->
+    <!-- end Page Content -->
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/jquery.easing.min.js"></script>
+    <script src="~/Scripts/validate.js"></script>
+    <script src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="~/Scripts/scrollreveal.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/Scripts/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Auction_Prop_API.Models.DataBaseModels.Deposit>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RegisteredBuyer.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfPayment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Paid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepositReturned)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProofOfPaymentPath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProofOfReturnPayment)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegisteredBuyer.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfPayment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Paid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepositReturned)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProofOfPaymentPath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProofOfReturnPayment)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BuyerID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BuyerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BuyerID })
+        </td>
+    </tr>
+}
+
+</table>

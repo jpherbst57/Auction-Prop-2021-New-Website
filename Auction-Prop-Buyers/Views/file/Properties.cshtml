@@ -1,0 +1,301 @@
+﻿@using Auction_Prop_Buyers.Models.DisplayMadels
+@using APILibrary
+@{
+    ViewBag.Title = "Properties";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "Auction";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Styles.Render("~/Content2/Bootstrap.css")
+@Styles.Render("~/Content2/Styles.css")
+@Styles.Render("~/Content2/bootstrap-select.min.css")
+@Styles.Render("~/Content2/magnific-popup.css")
+@Scripts.Render("~/Scripts2/bootstrap-select.min.js")
+@Scripts.Render("~/Scripts2/bootstrap.min.js")
+@Scripts.Render("~/Scripts2/custom.js")
+@Scripts.Render("~/Scripts2/jquery-2.1.0.min.js")
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ef4e2c1ac6.js" crossorigin="anonymous"></script>
+
+
+    <title>Auction-Prop.com | Auctions Listings</title>
+
+</head>
+<body>
+    <!-- Page Content -->
+    <div id="page-content">
+        <!-- Breadcrumb -->
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li class="active">Auction Listings</li>
+            </ol>
+        </div>
+        <!-- end Breadcrumb -->
+
+        <div class="container">
+            <div class="row">
+                <!-- Results -->
+                <div class="col-md-9 col-sm-9">
+                    <section id="results">
+                        <header><h1>Auction Listings</h1></header>
+                        <section id="search-filter">
+                            <figure>
+                                <h3><i class="fa fa-search"></i>Search Results:</h3>
+                                <span class="search-count">28</span>
+                                <div class="sorting">
+                                    <div class="form-group">
+                                        <select name="sorting">
+                                            <option value="">Sort By</option>
+                                            <option value="1">Lowest price first</option>
+                                            <option value="2">Highest price first</option>
+                                            <option value="3">Date added</option>
+                                        </select>
+                                    </div><!-- /.form-group -->
+                                </div>
+                            </figure>
+                        </section>
+
+
+
+                        <section id="properties">
+
+                            @{
+                                ICollection<Property>
+                                    propList = APIMethods.APIGetALL<ICollection<Property>>("Properties");
+                                <div class="row">
+
+
+                                    @foreach (Property p in propList)
+                                    {
+
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="property equal-height" style="height:300px">
+                                                <a href='@Url.Action("Detailss", "home", new { id = p.PropertyID })'>
+                                                    <div class="property-image">
+                                                        @{
+                                                            bool displayed = false;
+                                                            foreach (PropertyPhoto pp in p.PropertyPhotos)
+                                                            {
+
+                                                                if (displayed == false)
+                                                                {
+                                                                    if (pp.Title == "MainDispay")
+                                                                    {
+                                                                        <img alt="" src=@pp.PropertyPhotoPath>
+                                                                        displayed = true;
+                                                                    }
+                                                                    else if (pp.Title == "fullview")
+                                                                    {
+
+                                                                        <img alt="" src=@pp.PropertyPhotoPath>
+                                                                        displayed = true;
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <img alt="" src=@pp.PropertyPhotoPath>
+                                                                    }
+
+                                                                }
+
+
+                                                            }
+                                                        }
+
+                                                    </div>
+                                                    <div class="overlay">
+                                                        <div class="info">
+                                                            <h3>@p.Address</h3>
+                                                            <figure>@p.City, @p.Province</figure>
+                                                            <div class="tag price">@p.OpeningBid</div>
+                                                        </div>
+                                                        <ul class="additional-info">
+                                                            <li>
+                                                                @if (p.FloorSize != null)
+                                                                {<header>Terrace Size:</header>
+                                                                    <figure>@p.FloorSize<sup>2</sup></figure>
+
+                                                                }
+                                                                @if (p.YardSize != null)
+                                                                {<header>Terrace Size:</header>
+                                                                    <figure>@p.YardSize<sup>2</sup></figure>
+
+                                                                }
+
+                                                            </li>
+                                                            <li>
+                                                                @if (p.BedRooms != null)
+                                                                {<header>Beds:</header>
+                                                                    <figure>@p.BedRooms</figure>
+
+                                                                }
+
+                                                            </li>
+                                                            <li>
+                                                                @if (p.BathRooms != null)
+                                                                {<header>Baths:</header>
+                                                                    <figure>@p.BathRooms</figure>
+
+                                                                }
+
+                                                            </li>
+                                                            <li>
+                                                                @if (p.Garages != null)
+                                                                {<header>Garages:</header>
+                                                                    <figure>@p.Garages</figure>
+
+                                                                }
+
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </a>
+                                            </div><!-- /.property -->
+                                        </div><!-- /.col-md-3 -->
+                                    }
+
+
+                                </div>
+                               
+                                
+                                
+
+                            }
+
+                        </section>
+                        </section>
+                </div><!-- /.col-md-9 -->
+                <!-- end Results -->
+                <!-- sidebar -->
+                <div class="col-md-3 col-sm-3">
+                    <section id="sidebar">
+                        <aside id="edit-search">
+                            <header><h3>Search Properties</h3></header>
+                            <form role="form" id="form-sidebar" class="form-search" action="properties-listing.html">
+                                <div class="form-group">
+                                    <select name="type" style="width:200px">
+                                        <option value="">Status</option>
+                                        <option value="1">Auction</option>
+                                        <option value="2">For Sale</option>
+                                    </select>
+                                </div><!-- /.form-group -->
+                                <div class="form-group">
+                                    <select name="country" style="width:200px">
+                                        <option value="">Country</option>
+                                        <option value="1">South Africa</option>
+                                    </select>
+                                </div><!-- /.form-group -->
+                                <div class="form-group">
+                                    <select name="city"  style="width:200px">
+                                        <option value="">City</option>
+                                        <option value="1">Johannesburg</option>
+                                        <option value="2">Pretoria</option>
+                                        <option value="3">Cape Town</option>
+                                        <option value="4">Durban</option>
+                                        <option value="5">Nelspruit</option>
+                                    </select>
+                                </div><!-- /.form-group -->
+                                <div class="form-group">
+                                    <select name="district"  style="width:200px">
+                                        <option value="">Province</option>
+                                        <option value="1">Gauteng</option>
+                                        <option value="2">Free State</option>
+                                        <option value="3">Mpumalanga</option>
+                                        <option value="4">Limpopo</option>
+                                        <option value="5">North West</option>
+                                        <option value="6">Kwazulu Natal</option>
+                                        <option value="7">Western Cape</option>
+                                        <option value="8">Northern Cape</option>
+                                        <option value="9">Eastern Cape</option>
+                                    </select>
+                                </div><!-- /.form-group -->
+                                <div class="form-group">
+                                    <select name="property-type"  style="width:200px">
+                                        <option value="">Property Type</option>
+                                        <option value="1">Residential</option>
+                                        <option value="2">Commercial</option>
+                                        <option value="3">Agricultural</option>
+                                        <option value="4">Investment</option>
+                                    </select>
+                                </div><!-- /.form-group -->
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default">Search Now</button>
+                                </div><!-- /.form-group -->
+                            </form><!-- /#form-map -->
+                        </aside><!-- /#edit-search -->
+                        <aside id="featured-properties">
+                            <header><h3>Featured Properties</h3></header>
+                            <div class="property small">
+                                <a href="property-detail.html">
+                                    <div class="property-image">
+                                        <img alt="" src="~/img/properties/property-06.jpg">
+                                    </div>
+                                </a>
+                                <div class="info">
+                                    <a href="property-detail.html"><h4>218 Rinehart Road</h4></a>
+                                    <figure>Olivedale, Johannesburg </figure>
+                                    <div class="tag price">15 May at 14:00</div>
+                                </div>
+                            </div><!-- /.property -->
+                            <div class="property small">
+                                <a href="property-detail.html">
+                                    <div class="property-image">
+                                        <img alt="" src="~/img/properties/property-06.jpg">
+                                    </div>
+                                </a>
+                                <div class="info">
+                                    <a href="property-detail.html"><h4>249 Murphy Court</h4></a>
+                                    <figure>Sandhurst, Johannesburg</figure>
+                                    <div class="tag price">22 June at 14:00</div>
+                                </div>
+                            </div><!-- /.property -->
+                            <div class="property small">
+                                <a href="property-detail.html">
+                                    <div class="property-image">
+                                        <img alt="" src="~/img/properties/property-06.jpg">
+                                    </div>
+                                </a>
+                                <div class="info">
+                                    <a href="property-detail.html"><h4>194 Tennessee Avenue</h4></a>
+                                    <figure>Faerie Glen, Pretoria</figure>
+                                    <div class="tag price">22 June at 15:00</div>
+                                </div>
+                            </div><!-- /.property -->
+                        </aside><!-- /#featured-properties -->
+                        <aside id="our-guides">
+                            <header><h3>Our Guides</h3></header>
+                            <a href="#" class="universal-button">
+                                <figure class="fa fa-home"></figure>
+                                <span>Buyers Guide</span>
+                                <span class="arrow fa fa-angle-right"></span>
+                            </a><!-- /.universal-button -->
+                            <a href="#" class="universal-button">
+                                <figure class="fa fa-home"></figure>
+                                <span>Sellers Guide</span>
+                                <span class="arrow fa fa-angle-right"></span>
+                            </a><!-- /.universal-button -->
+                        </aside><!-- /#our-guide -->
+                    </section><!-- /#sidebar -->
+                </div><!-- /.col-md-3 -->
+                <!-- end Sidebar -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div>
+    <!-- end Page Content -->
+
+</body>
+</html>
+
+

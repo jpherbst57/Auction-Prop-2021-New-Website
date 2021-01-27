@@ -1,0 +1,444 @@
+﻿
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Auction-Prop.com | This Is Us</title>
+
+    <!-- Favicons -->
+    <link href="~/assets/img/fat.png" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ef4e2c1ac6.js" crossorigin="anonymous"></script>
+
+    <!-- Vendor CSS Files -->
+    <link rel="stylesheet" href="~/Content2/bootstrap1.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content2/ionicons.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content2/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content2/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/font-awesome.css" type="text/css">
+
+    <!-- Template Main CSS File -->
+    <link href="~/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Property Search Section Start ======= -->
+    <div class="click-closed"></div>
+
+    <div class="box-collapse">
+        <div class="title-box-d">
+            <h3 class="title-d">Search Property</h3>
+        </div>
+        <span class="close-box-collapse right-boxed ion-ios-close"></span>
+        <div class="box-collapse-wrap form">
+            <form class="form-a">
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+                        <div class="form-group">
+                            <label for="Type">Keyword</label>
+                            <input type="text" class="form-control form-control-lg form-control-a" placeholder="Keyword">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="Type">Type</label>
+                            <select class="form-control form-control-lg form-control-a" id="Type">
+                                <option>All Types</option>
+                                <option>Residential</option>
+                                <option>Commercial</option>
+                                <option>Agricultural</option>
+                                <option>Investment</option>
+                                <option>Bank Instruction</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <select class="form-control form-control-lg form-control-a" id="city">
+                                <option>All City's</option>
+                                <option>Johannesburg</option>
+                                <option>Pretoria</option>
+                                <option>Durban</option>
+                                <option>Cape Town</option>
+                                <option>Nelspruit</option>
+                                <option>Polokwane</option>
+                                <option>East London</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="bedrooms">Bedrooms</label>
+                            <select class="form-control form-control-lg form-control-a" id="bedrooms">
+                                <option>Any</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>3+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="garages">Garages</label>
+                            <select class="form-control form-control-lg form-control-a" id="garages">
+                                <option>Any</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>3+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="bathrooms">Bathrooms</label>
+                            <select class="form-control form-control-lg form-control-a" id="bathrooms">
+                                <option>Any</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>3+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-b">Search Property</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- ======= Property Search Section End ======= -->
+
+    <main id="main">
+
+        <!-- ======= Intro and Breadcrumb Section Start ======= -->
+        <section class="intro-single">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-8">
+                        <div class="title-single-box">
+                            <h1 class="title-single">We do Auctions the Right way</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="#">Home</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    This Is Us
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======= Intro and Breadcrumb Section End ======= -->
+        <!-- ======= About Section Start ======= -->
+        <section class="section-about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="about-img-box">
+                            <img src="~/assets/img/slide-about-1.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="sinse-box">
+                            <h3 class="sinse-title">
+                                Serving You
+                                <br> Since 2015
+                            </h3>
+                            <p>Real Estate Auctions</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 section-t8">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-5">
+                                <img src="~/assets/img/about-2.jpg" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-lg-2  d-none d-lg-block">
+                                <div class="title-vertical d-flex justify-content-start">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-5 section-md-t3">
+                                <div class="title-box-d">
+                                    <h3 class="title-d">Experience Brings Knowledge</h3>
+                                </div>
+                                <p class="color-text-a">
+                                    Auction-prop is one of the leaders in online real-estate marketing, using real time technology to buy and sell property.
+                                    We pride ourselves in pushing the envelope with cutting-edge auction technology. We will create a marketing platform for
+                                    our buyers and sellers to accomplish successful transactions. We specialize in residential- commercial- and agricultural
+                                    properties, as well as a national footprint
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 section-t8">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-5 section-md-t3">
+                                <div class="title-box-d">
+                                    <h3 class="title-d">Cutting Edge Auction Technology</h3>
+                                </div>
+                                <p class="color-text-a">
+                                    Regardless of the type of asset, you have to sell, whether it’s a large Residential Property, Development Land, Commercial
+                                    Property or Agricultural we can handle the auction – live and online. We push the envelope with cutting-edge auction technology
+                                    – from search engine optimization to highlight your assets to specialty internet marketing the professionals as Auction-Prop is
+                                    ready to bring the market to your door. Our highly trained professional staff knows how to organize an auction to benefit you the
+                                    most – from the initial phone call to the marketing process to the final check, you can count on Auction-Prop to provide the maximum
+                                    return for your assets.
+                                </p>
+                            </div>
+                            <div class="col-lg-2  d-none d-lg-block">
+                                <div class="title-vertical d-flex justify-content-start">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-5">
+                                <img src="~/assets/img/about-2.jpg" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 section-t8">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-5">
+                                <img src="~/assets/img/about-2.jpg" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-lg-2  d-none d-lg-block">
+                                <div class="title-vertical d-flex justify-content-start">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-5 section-md-t3">
+                                <div class="title-box-d">
+                                    <h3 class="title-d">Why Online Auctions?</h3>
+                                </div>
+                                <p class="color-text-a">
+                                    Online auctions is a time-proven and highly effective method of selling real estate that offers many advantages over the traditional method
+                                    of selling property. With extensive marketing and a pre-determined auction sale date. The greatest advantage of the online real-estate auction
+                                    process is that it puts the seller in control of when and how the property will be sold.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======= About Section End ======= -->
+
+        <!-- =======Team Section Start ======= -->
+        <section class="section-agents section-t8">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-wrap d-flex justify-content-between">
+                            <div class="title-box">
+                                <h2 class="title-a">Meet Our Team</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card-box-d">
+                            <div class="card-img-d">
+                                <img src="~/assets/img/agent-7.jpg" alt="" class="img-d img-fluid">
+                            </div>
+                            <div class="card-overlay card-overlay-hover">
+                                <div class="card-header-d">
+                                    <div class="card-title-d align-self-center">
+                                        <h3 class="title-d">
+                                            <a>
+                                                Rudo
+                                                <br> Kirsten
+                                            </a>
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="card-body-d">
+                                    <p class="content-d color-text-a">
+                                        Co-Founder and Head Auctioneer
+                                    </p>
+                                    <div class="info-agents color-a">
+                                        <p>
+                                            <strong>Phone: </strong><a href="tel:083-461-6555" style="text-decoration: none">083 461 6555</a>
+                                        </p>
+                                        <p>
+                                            <strong>Email: </strong><a href="mailto:rudo@auction-prop.com" style="text-decoration: none">rudo@auction-prop.com</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card-footer-d">
+                                    <div class="socials-footer d-flex justify-content-center">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a href="#" class="link-one">
+                                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="#" class="link-one">
+                                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="#" class="link-one">
+                                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-box-d">
+                            <div class="card-img-d">
+                                <img src="~/assets/img/agent-6.jpg" alt="" class="img-d img-fluid">
+                            </div>
+                            <div class="card-overlay card-overlay-hover">
+                                <div class="card-header-d">
+                                    <div class="card-title-d align-self-center">
+                                        <h3 class="title-d">
+                                            <a>
+                                                Janus
+                                                <br> Kruger
+                                            </a>
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="card-body-d">
+                                    <p class="content-d color-text-a">
+                                        Founder and CEO of Auction-Prop
+                                    </p>
+                                    <div class="info-agents color-a">
+                                        <p>
+                                            <strong>Phone: </strong><a href="tel:082-316-3702" style="text-decoration: none">082 316 3702</a>
+                                        </p>
+                                        <p>
+                                            <strong>Email: </strong><a href="mailto:janus@auction-prop.com" style="text-decoration: none">janus@auction-prop.com</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card-footer-d">
+                                    <div class="socials-footer d-flex justify-content-center">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a href="#" class="link-one">
+                                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="#" class="link-one">
+                                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="#" class="link-one">
+                                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-box-d">
+                            <div class="card-img-d">
+                                <img src="~/assets/img/agent-5.jpg" alt="" class="img-d img-fluid">
+                            </div>
+                            <div class="card-overlay card-overlay-hover">
+                                <div class="card-header-d">
+                                    <div class="card-title-d align-self-center">
+                                        <h3 class="title-d">
+                                            <a>
+                                                JP
+                                                <br> Herbst
+                                            </a>
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="card-body-d">
+                                    <p class="content-d color-text-a">
+                                        Co-Founder and Marketing Director
+                                    </p>
+                                    <div class="info-agents color-a">
+                                        <p>
+                                            <strong>Phone: </strong><a href="tel:083-556-3529" style="text-decoration: none">083 556 3529</a>
+                                        </p>
+                                        <p>
+                                            <strong>Email: </strong><a href="mailto:jp@auction-prop.com" style="text-decoration: none">jp@auction-prop.com</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card-footer-d">
+                                    <div class="socials-footer d-flex justify-content-center">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a href="#" class="link-one">
+                                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="#" class="link-one">
+                                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="#" class="link-one">
+                                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- =======Team Section End ======= -->
+
+    </main><!-- End #main -->
+
+    <!-- end Page Content -->
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/jquery.easing.min.js"></script>
+    <script src="~/Scripts/validate.js"></script>
+    <script src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="~/Scripts/scrollreveal.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/Scripts/main.js"></script>
+
+</body>
+
+</html>

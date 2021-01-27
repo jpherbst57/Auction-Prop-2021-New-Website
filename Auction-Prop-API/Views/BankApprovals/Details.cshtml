@@ -1,0 +1,51 @@
+﻿@model Auction_Prop_API.Models.DataBaseModels.BankApproval
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BankApproval</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AuctionRegistration.BuyerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuctionRegistration.BuyerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApprovalPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovalPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BankApprovalApprovalstatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BankApprovalApprovalstatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfSubmision)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfSubmision)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AuctionRegistrationID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

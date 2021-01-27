@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Auction_Prop_API.Models.DataBaseModels.Guarintee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AuctionRegistration.BuyerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GuarinteePath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GuarinteeApproval)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfSubmition)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuctionRegistration.BuyerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GuarinteePath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GuarinteeApproval)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfSubmition)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AuctionRegistrationID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AuctionRegistrationID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AuctionRegistrationID })
+        </td>
+    </tr>
+}
+
+</table>

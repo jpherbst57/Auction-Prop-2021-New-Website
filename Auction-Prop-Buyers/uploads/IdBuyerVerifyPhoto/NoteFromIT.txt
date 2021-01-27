@@ -1,0 +1,76 @@
+Note from head of IT
+
+Studio37 will be build using Microsoft's asp.net core framework. Asp.net core provides the ease and reliabilty of
+Microsofts developing environment aswel as cross platform functionallity that will help in saving hosting costs.
+Also asp.net core provides a integrated cross platform app development environment for both Android and IOS that 
+intends to assist us when extending our platform to a mobile application.
+
+Back End
+The Back End is an essential part of the platform. By building an API(Application Programing Inteface) that contains
+all the 'calls'(i.e Communication) made to the Server ass well as the fuctionallity and storage of all Data. Devellopers 
+working on the Front End can be given the documentation of the API Library wich they can then use to send information to 
+and from the Server. This seperation in Front And Back End assists in expanding our product to multiple platforms build by 
+different Front end devellopers that all communicate with a central server.
+
+The Back End will consist of 1 MSSQL Database that contains all user data and one asp.net core API Project that will communicate
+with the user and the database equiped with SignalR for Live video streaming functionallity. This API wil be equiped with a user
+interface that will be purly for admin perposes where our admin team can monitor content beeng posted and remove mellitios content
+if necissary.
+
+Hours estimated
+Database design: 5-10 hours
+DataBase Constuctions: 20 hours
+
+API Design: 10 hours
+API Constuction:30- 40 hours
+
+User interface
+Design: 5 hours
+Construction: 10 hours
+
+Back End Testing:10 hours
+
+Front End
+The Initial user interface will be build ass a website that communicate with the API. For ease of integration and user accesibility,
+the project will be build using the MVC file structer and the template that includes security featers provided by the asp.net platform.
+This allows focus to be directed in to producing a beautiful user experience.
+
+Hours estimated
+Design: 20 hours
+Construction: 20 hours
+API Integration: 10 hours
+Testing: 2 hours
+
+
+We have ellected to withold the construction of a mobile application in order to save costs from the initial budget preposal. However 
+our team strongly beleave that the mobile enfironment is essential to the success of our product. Thus I have included my estimates for
+the mobile application development. We will include this to the revised bedget preposal for your concideration only.
+
+Design: 30 hours
+Construction: 30 hours
+API Integration 10 hours
+Testing: 2 hours
+
+
+Newly Estimated Costs
+Excluding Mobile App 
+Total Hours: 149  
+R170/Hour
+Total Costs R25 330.00
+
+Including  Mobile App
+Total Hours: 211 
+R170/Hour
+Total Costs: R35 870.00
+
+Hosting
+Hosting pakages capable of running the project varies from R100.00 to R5 000.00 per month depending on Provider. We have desided to use
+GoDaddy's delux hosing package thats priced at R139.00 per month with the additional costs of aquireing the domain name for R150 and
+perchasing email addresses to acompany our domain is estimated to cost R150.00. 
+ 
+
+Conclusion
+Concidiring the above information the development of this project will initially cost R25 330.00 for development accompanied with an
+aditional costs of R439.00. That is a Total of R25 769.00 with futher monthly costs of R139.00 for hosting.
+We do relize that this amount exceeds our initial budget projections of only R17 350.00 assigned to Project Development, and do not expect
+funding to increase. We will work within the initial budget projections if that is expected.

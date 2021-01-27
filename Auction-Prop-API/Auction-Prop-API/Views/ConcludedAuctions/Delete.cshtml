@@ -1,0 +1,57 @@
+﻿@model Auction_Prop_API.Models.DataBaseModels.ConcludedAuction
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ConcludedAuction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Bid.BuyerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bid.BuyerID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegisteredBuyer.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegisteredBuyer.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeOfConclution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeOfConclution)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExceededReserve)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExceededReserve)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

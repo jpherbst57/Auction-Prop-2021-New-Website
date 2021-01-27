@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auction-Prop.com</title>
+    <link rel="icon" type="image/x-icon" href="~/assets/assets/img/White A.png" ">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="~/assets/assets/css/libs/swiper.min.css">
+    <link rel="stylesheet" href="~/assets/assets/css/libs/material-components-web.min.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" href="~/assets/assets/css/skins/blue.css">
+    <link rel="stylesheet" href="~/assets/assets/css/responsive.css">
+</head>
+
+    <!-- ======= Header/Navbar ======= -->
+
+    <body class="mdc-theme--background">
+        <div class="spinner-wrapper" id="preloader">
+            <div class="spinner-container">
+                <div class="spinner-outer">
+                    <div class="spinner">
+                        <div class="left mask">
+                            <div class="plane"></div>
+                        </div>
+                        <div class="top mask">
+                            <div class="plane"></div>
+                        </div>
+                        <div class="right mask">
+                            <div class="plane"></div>
+                        </div>
+                        <div class="triangle">
+                            <div class="triangle-plane"></div>
+                        </div>
+                        <div class="top-left mask">
+                            <div class="plane"></div>
+                        </div>
+                        <div class="top-right mask">
+                            <div class="plane"></div>
+                        </div>
+                    </div>
+                    <p class="spinner-text">Auction-Prop.com</p>
+                </div>
+            </div>
+        </div>
+        <aside class="mdc-drawer mdc-drawer--modal sidenav">
+            <div class="row end-xs middle-xs py-1 px-3">
+                <button id="sidenav-close" class="mdc-icon-button material-icons warn-color">close</button>
+            </div>
+            <hr class="mdc-list-divider m-0">
+            <div class="mdc-drawer__content">
+                <div class="vertical-menu">
+                    <div class="mdc-menu-surface--anchor">
+                        <a href="home-page.html" class="mdc-button">
+                            <span class="mdc-button__ripple"></span>
+                            <span class="mdc-button__label">Home</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a @Html.ActionLink("Properties", "Properties", "Home",null, new { @class = "nav-link" }) class="mdc-button">
+                            <span class="mdc-button__ripple"></span>
+                            <span class="mdc-button__label">Properties</span>
+                        </a>
+                    </div>
+                    <div class="mdc-menu-surface--anchor">
+                        <a href="javascript:void(0);" class="mdc-button menu-item-has-children">
+                            <span class="mdc-button__ripple"></span>
+                            <span class="mdc-button__label">How It Works</span>
+                        </a>
+                        <div class="mdc-menu mdc-menu-surface">
+                            <div class="mdc-list">
+                                <div>
+                                    <a href="buyers-guide.html" class="mdc-button">
+                                        <span class="mdc-button__ripple"></span>
+                                        <span class="mdc-button__label">Buyers Guide</span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="sellers-guide.html" class="mdc-button">
+                                        <span class="mdc-button__ripple"></span>
+                                        <span class="mdc-button__label">Sellers Guide</span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="faqs.html" class="mdc-button">
+                                        <span class="mdc-button__ripple"></span>
+                                        <span class="mdc-button__label">FAQs</span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="terms.html" class="mdc-button">
+                                        <span class="mdc-button__ripple"></span>
+                                        <span class="mdc-button__label">Terms & Conditions</span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="privacy-policy.html" class="mdc-button">
+                                        <span class="mdc-button__ripple"></span>
+                                        <span class="mdc-button__label">Privacy Policy</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="contact.html" class="mdc-button">
+                            <span class="mdc-button__ripple"></span>
+                            <span class="mdc-button__label">Contact</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="about.html" class="mdc-button">
+                            <span class="mdc-button__ripple"></span>
+                            <span class="mdc-button__label">About us</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <div class="mdc-drawer-scrim sidenav-scrim"></div>
+        <header class="toolbar-1">
+            <div id="top-toolbar" class="mdc-top-app-bar">
+                <div class="theme-container row between-xs middle-xs h-100">
+                    <div class="row start-xs middle-xs">
+                        <button id="sidenav-toggle" class="mdc-button mdc-ripple-surface d-md-none d-lg-none d-xl-none">
+                            <span class="mdc-button__ripple"></span>
+                            <i class="material-icons">menu</i>
+                        </button>
+                        <div class="row start-xs middle-xs fw-500 d-none d-md-flex d-lg-flex d-xl-flex">
+                            <span class="d-flex center-xs middle-xs item">
+                                <span class="px-1">Sell Your Property in 30 Days, With 0% Sellers Commission</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mdc-menu-surface--anchor">
+                        <button class="mdc-button mdc-ripple-surface">
+                            <span class="mdc-button__ripple"></span>
+                            <i class="material-icons mdc-button__icon mx-1">person</i>
+                            <span class="mdc-button__label">account</span>
+                            <i class="material-icons mdc-button__icon m-0">arrow_drop_down</i>
+                        </button>
+                        <div class="mdc-menu mdc-menu-surface user-menu">
+                            <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+                                <li class="user-info row start-xs middle-xs">
+                                    <img src="~/assets/assets/img/images/profile/adam.jpg" alt="user-image" width="50">
+                                    <p class="m-0" style="color: #fff;">Emilio Verdines <br> <small><i>emilio_v</i></small></p>
+                                </li>
+                                <li role="separator" class="mdc-list-divider m-0"></li>
+                                <li>
+                                    <a href="submit-property.html" class="mdc-list-item" role="menuitem">
+                                        <i class="material-icons mat-icon-sm text-muted">add_circle</i>
+                                        <span class="mdc-list-item__text px-3" style="color: #fa7f15;">Submit Property</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="my-properties.html" class="mdc-list-item" role="menuitem">
+                                        <i class="material-icons mat-icon-sm text-muted">home</i>
+                                        <span class="mdc-list-item__text px-3" style="color: #fa7f15;">My Properties</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="profile.html" class="mdc-list-item" role="menuitem">
+                                        <i class="material-icons mat-icon-sm text-muted">edit</i>
+                                        <span class="mdc-list-item__text px-3" style="color: #fa7f15;">Edit Profile</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="lock-screen.html" class="mdc-list-item" role="menuitem">
+                                        <i class="material-icons mat-icon-sm text-muted">lock</i>
+                                        <span class="mdc-list-item__text px-3" style="color: #fa7f15;">Lock screen</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="faqs.html" class="mdc-list-item" role="menuitem">
+                                        <i class="material-icons mat-icon-sm text-muted">help</i>
+                                        <span class="mdc-list-item__text px-3" style="color: #fa7f15;">Help</span>
+                                    </a>
+                                </li>
+                                <li role="separator" class="mdc-list-divider m-0"></li>
+                                <li>
+                                    <a href="login.html" class="mdc-list-item" role="menuitem">
+                                        <i class="material-icons mat-icon-sm text-muted">power_settings_new</i>
+                                        <span class="mdc-list-item__text px-3" style="color: #fa7f15;">Sign Out</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div id="main-toolbar" class="mdc-elevation--z2">
+                <div class="theme-container row between-xs middle-xs h-100">
+                    <a class="logo" href="home-page.html"><img src="~/assets/assets/img/images/logos/AP White.png" width="250" height="45" alt="Auction-Prop Logo"></a>
+                    </a>
+                    <div class="horizontal-menu d-none d-md-flex d-lg-flex d-xl-flex">
+                        <div class="mdc-menu-surface--anchor">
+                            <a href="home-page.html" class="mdc-button">
+                                <span class="mdc-button__ripple"></span>
+                                <span class="mdc-button__label">Home</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="properties.html" class="mdc-button">
+                                <span class="mdc-button__ripple"></span>
+                                <span class="mdc-button__label">Properties</span>
+                            </a>
+                        </div>
+                        <div class="mdc-menu-surface--anchor">
+                            <a href="javascript:void(0);" class="mdc-button menu-item-has-children">
+                                <span class="mdc-button__ripple"></span>
+                                <span class="mdc-button__label">How It Works</span>
+                            </a>
+                            <div class="mdc-menu mdc-menu-surface">
+                                <div class="mdc-list">
+                                    <div>
+                                        <a href="buyers-guide.html" class="mdc-button">
+                                            <span class="mdc-button__ripple"></span>
+                                            <span class="mdc-button__label">Buyers Guide</span>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="sellers-guide.html" class="mdc-button">
+                                            <span class="mdc-button__ripple"></span>
+                                            <span class="mdc-button__label">Sellers Guide</span>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="faqs.html" class="mdc-button">
+                                            <span class="mdc-button__ripple"></span>
+                                            <span class="mdc-button__label">FAQs</span>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="terms.html" class="mdc-button">
+                                            <span class="mdc-button__ripple"></span>
+                                            <span class="mdc-button__label">Terms & Conditions</span>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="privacy-policy.html" class="mdc-button">
+                                            <span class="mdc-button__ripple"></span>
+                                            <span class="mdc-button__label">Privacy Policy</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="contact.html" class="mdc-button">
+                                <span class="mdc-button__ripple"></span>
+                                <span class="mdc-button__label">Contact</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="about.html" class="mdc-button">
+                                <span class="mdc-button__ripple"></span>
+                                <span class="mdc-button__label">About us</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row middle-xs">
+                        <a href="submit-property.html" class="mdc-fab mdc-fab--mini primary d-sm-none d-md-none d-lg-none d-xl-none">
+                            <span class="mdc-fab__ripple"></span>
+                            <span class="mdc-fab__icon material-icons">add</span>
+                        </a>
+                        <a href="submit-property.html" class="mdc-button mdc-button--raised d-none d-sm-flex d-md-flex d-lg-flex d-xl-flex">
+                            <span class="mdc-button__ripple"></span>
+                            <span class="mdc-button__label">submit property</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ====== End Header/Navbar ====== -->
+       <div class="container-fluid">
+            @RenderBody()
+        </div>
+        <!-- ====== Page Footer Start ====== -->
+
+        <footer>
+            <div class="px-3">
+                <div class="theme-container">
+                    <div class="row center-xs middle-xs content py-5">
+                        <div class="column center-xs middle-xs col-xs-12 col-lg-4 col-md-5">
+                            <h2 class="uppercase">Subscribe to our Newsletter</h2>
+                            <p class="desc mb-1">Stay up to date with our latest news and properties</p>
+                        </div>
+                        <form action="javascript:void(0);" class="subscribe-form row col-xs-12 col-md-5">
+                            <input type="text" placeholder="Your email address..." class="subscribe-input">
+                            <button type="submit" class="mdc-button mdc-button--raised subscribe-btn">
+                                <span class="mdc-button__ripple"></span>
+                                <span class="mdc-button__label">Subscribe</span>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="py-5 content">
+                        <div class="row between-xs">
+                            <div class="col-xs-12 col-sm-5 col-md-4 p-0">
+                                <a class="logo" href="home-page.html"><img src="~/assets/assets/img/images/logos/AP White.png" width="250" height="45" alt="Auction-Prop Logo"></a>
+                                </a>
+                                <!--<p class="mt-5 mb-3 desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum perspiciatis cupiditate numquam odio explicabo accusantium deserunt incidunt.</p>-->
+                                <p class="row middle-xs mt-2">
+                                    <i class="material-icons primary-color">location_on</i>
+                                    <span class="mx-2">Fintech Campus, 81 Botterklapper Str, Pretoria</span>
+                                </p>
+                                <p class="row middle-xs mt-1">
+                                    <i class="material-icons primary-color">call</i>
+                                    <span class="mx-2">083 461 6555</span>
+                                </p>
+                                <p class="row middle-xs mt-1">
+                                    <i class="material-icons primary-color">mail_outline</i>
+                                    <span class="mx-2">info@auction-prop.com</span>
+                                </p>
+                                <p class="row middle-xs mt-1">
+                                    <i class="material-icons primary-color">schedule</i>
+                                    <span class="mx-2">Mon - Fri / 09:00am - 17:00pm</span>
+                                </p>
+                            </div>
+                            <div class="col-xs-12 col-sm-5 col-md-3 p-0 feedback">
+                                <h2 class="uppercase">Ask a Question</h2>
+                                <p class="desc">Have a question for us? Ask away</p>
+                                <form action="javascript:void(0);" class="feedback-form pt-2">
+                                    <div class="mdc-text-field mdc-text-field--outlined w-100">
+                                        <input id="feedback-email" class="mdc-text-field__input" placeholder="Email is required">
+                                        <div class="mdc-notched-outline">
+                                            <div class="mdc-notched-outline__leading"></div>
+                                            <div class="mdc-notched-outline__notch">
+                                                <label for="feedback-email" class="mdc-floating-label">Email</label>
+                                            </div>
+                                            <div class="mdc-notched-outline__trailing"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea w-100 mt-4">
+                                        <textarea id="feedback-message" class="mdc-text-field__input" rows="5" placeholder="Message is required"></textarea>
+                                        <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                                            <div class="mdc-notched-outline__leading"></div>
+                                            <div class="mdc-notched-outline__notch">
+                                                <label for="feedback-message" class="mdc-floating-label">Message for us</label>
+                                            </div>
+                                            <div class="mdc-notched-outline__trailing"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-100 text-center mt-4">
+                                        <button type="submit" class="mdc-button mdc-button--raised">
+                                            <span class="mdc-button__ripple"></span>
+                                            <span class="mdc-button__label">Submit</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-xs-12 col-md-4 p-0 location">
+                                <h2 class="uppercase mb-3">Our location</h2>
+                                <div id="location-map"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row between-xs middle-xs copyright">
+                        <p>Copyright © 2020 All Rights Reserved</p>
+                        <p>
+                            Designed & Developed by
+                            <a class="mdc-button" href="http://www.biditnow.co.za/" target="_blank">
+                                <span class="mdc-button__ripple"></span>
+                                <span class="mdc-button__label">bidITnow.</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- ====== Page Footer End ====== -->
+
+        <div id="back-to-top"><i class="material-icons">arrow_upward</i></div>
+        <script src="~/assets/assetsjs/libs/jquery.min.js"></script>
+        <script src="~/assets/assetsjs/libs/material-components-web.min.js"></script>
+        <script src="~/assets/assetsjs/libs/swiper.min.js"></script>
+        <script src="~/assets/assets/js/scripts.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1rF9bttCxRmsNdZYjW7FzIoyrul5jb-s&callback=initMap" async defer></script>
+
+
+    </body>
+</html>

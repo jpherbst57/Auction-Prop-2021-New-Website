@@ -1,0 +1,283 @@
+﻿@using Microsoft.AspNet.Identity
+
+@model Auction_Prop_Sellers.Models.DataViewModels.Seller
+@{
+    ViewBag.Title = "Registration Wizzard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="jumbotron">
+    <h1>Regestration</h1>
+    <p class="lead">Follow this Step By Step Guid to Register and list Properties on Auction_Prop.</p>
+</div>
+<div>
+    <h4>Sellers</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirtstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirtstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SellerType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SellerType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Signature)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Signature)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApprovalStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovalStatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SellerAddresses)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SellerAddresses)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PrivateSeller.Signiture)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PrivateSeller.Signiture)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Retailer.Signature)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Retailer.Signature)
+        </dd>
+
+
+    </dl>
+</div>
+
+
+@if (User.Identity.IsAuthenticated)
+{
+    try
+    {
+        <div class="row">
+            @if (Model.UserID == null)
+            {
+                <div class="col-md-4">
+                    <h1>
+                        Step 1:
+                    </h1>
+                    <h2>Getting started</h2>
+                    <p>
+                        @Html.ActionLink("Create Seller Profile", "CreateSeller")
+
+                    </p>
+                </div>
+            }
+            else
+            {<div class="col-md-4">
+                    <h1>
+                        Step 1:
+                    </h1>
+                    <h2>Getting started</h2>
+                    <p>
+
+                        Step 1 is Competed.
+
+                    </p>
+                </div>
+
+            }
+
+            @if (Model.SellerAddresses.Count == 0)
+            {
+                <div class="col-md-4">
+                    <h1>Step 2:</h1>
+                    <h2>Address</h2>
+
+                    <p>
+                        You need to submit atleast 1 Address.
+                        @Html.ActionLink("Click here to Add a Address", "AddAddress")
+
+                    </p>
+
+
+                </div>
+            }
+            else
+            {
+                <div class="col-md-4">
+                    <h1>Step 2:</h1>
+                    <h2>Address</h2>
+
+                    <p>
+                        @Html.ActionLink("Click here to Add another Address", "AddAddress")
+
+                    </p>
+
+
+                </div>
+            }
+            <div class="col-md-4">
+                <h1>
+                    Step 3:
+                </h1>
+                <h2>We need some more information</h2>
+
+                @if (Model.SellerType == null)
+                {
+
+                    <p>Please complete step 1 and step 2</p>
+
+
+                }
+                else
+                {
+                    if (Model.SellerType == "Private")
+                    {
+
+                        if (Model.PrivateSeller == null)
+                        {
+                            @Html.ActionLink("Click here to complete youre profile.", "CreatePrivate")
+
+                        }
+                        else
+                        {
+                            <p>
+                                Step 3 is completed.
+                            </p>
+                        }
+                    }
+                    else if (Model.SellerType == "Retailer")
+                    {
+                        if (Model.Retailer == null)
+                        {
+                            @Html.ActionLink("Click here to complete youre profile.", "CreateRetialer")
+
+                        }
+                        else
+                        {
+                            <p>
+                                Step 3 is completed.
+                            </p>
+                        }
+
+                    }
+                    else if (Model.SellerType == "Auctioneer")
+                    {
+                        if (Model.Retailer == null)
+                        {
+                            @Html.ActionLink("Click here to complete youre profile.", "CreateAuctioneer")
+
+                        }
+                        else
+                        {
+                            <p>
+                                Step 3 is completed.
+                            </p>
+                        }
+
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Click here to compete youre profile.", "CreatePrivate")
+                    }
+                    <p></p>
+                }
+            </div>
+            <div class="col-md-4">
+                <h1>Step 4:</h1>
+                <h2>Approval</h2>
+                @if (Model.ApprovalStatus == true)
+                {
+                    <p>
+                        You have been Approved To List Properties.
+                    </p>
+
+                }
+                else
+                {
+                    <p>
+                        Please wait patiantly while the Auction-Prop Admin team reviews your documents and grant you access to list properties for auction.
+                        You will recieve a email confirming youre Approval Status
+                    </p>
+                }
+
+                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+            </div>
+        </div>
+    }
+    catch
+    {
+        <div class="row">
+            <div class="col-md-4">
+                <h1>
+                    Step 1:
+                </h1>
+                <h2>Getting started</h2>
+                <p>
+                    @Html.ActionLink("Create Seller Profile", "CreateSeller")
+
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h1>
+                    Step 2:
+                </h1>
+                <h2>Address</h2>
+                <p>
+                    Complete step 1.
+
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h1>
+                    Step 3:
+                </h1>
+                <h2>We need some more information</h2>
+                <p>
+                    Complete step 1.
+
+                </p>
+            </div> <div class="col-md-4">
+                <h1>
+                    Step 4:
+                </h1>
+                <h2>Approval</h2>
+                <p>
+                    Complete all prior Steps.
+
+                </p>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div>
+        Please Log in or Sign Up with Auction Prop.
+    </div>
+}
+

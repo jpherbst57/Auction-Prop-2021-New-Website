@@ -1,0 +1,264 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auction-Prop | FAQ's</title>
+    <link rel="icon" type="image/x-icon" href="~/assets/assets/img/White A.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="~/assets/assets/css/libs/swiper.min.css">
+    <link rel="stylesheet" href="~/assets/assets/css/libs/material-components-web.min.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" href="~/assets/assets/css/skins/blue.css">
+    <link rel="stylesheet" href="~/assets/assets/css/responsive.css">
+</head>
+
+<body>
+    <main>
+        <div class="px-3">
+            <div class="theme-container">
+                <div class="py-5">
+                    <div class="column center-xs middle-xs text-center">
+                        <h1 class="uppercase">Frequently Asked Questions</h1>
+                        <p class="text-muted fw-500">Click on a question to expand and reveal the answer.</p>
+                    </div>
+                    <div class="expansion-panel-wrapper">
+                        <div class="mdc-card expansion-panel">
+                            <div class="row between-xs middle-xs expansion-panel-header">
+                                <div class="fw-500">How do i stay informed on upcoming auctions?</div>
+                                <div class="text-muted d-none d-md-flex d-lg-flex d-xl-flex">Upcoming Auctions</div>
+                            </div>
+                            <div class="expansion-panel-body">
+                                <p>Go to our website and navigate to our Auction notification page. Just fill out the form, and you will be notified of all upcoming auction dates. Alternatively, follow us on our Facebook page, to stay updated and informed on all things Auction. You can also email us at info@auction-prop.com.</p>
+                                <div class="p-relative py-2 px-4">
+                                    <div class="divider"></div>
+                                </div>
+                                <p class="row middle-xs mt-2 mb-0">
+                                    <span class="text-muted">Was this answer helpful? </span>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>Yes</button>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>No</button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mdc-card expansion-panel">
+                            <div class="row between-xs middle-xs expansion-panel-header">
+                                <div class="fw-500">Can i buy a property before the Auction?</div>
+                                <div class="text-muted d-none d-md-flex d-lg-flex d-xl-flex">Buying Before Auction</div>
+                            </div>
+                            <div class="expansion-panel-body">
+                                <p>This should be discussed with the Auctioneer as that is permissible on rare occasions.</p>
+                                <div class="p-relative py-2 px-4">
+                                    <div class="divider"></div>
+                                </div>
+                                <p class="row middle-xs mt-2 mb-0">
+                                    <span class="text-muted">Was this answer helpful? </span>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>Yes</button>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>No</button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mdc-card expansion-panel">
+                            <div class="row between-xs middle-xs expansion-panel-header">
+                                <div class="fw-500">What does an "AUCTION WITH RESERVE" mean?</div>
+                                <div class="text-muted d-none d-md-flex d-lg-flex d-xl-flex">Auction With Reserve</div>
+                            </div>
+                            <div class="expansion-panel-body">
+                                <p>Lots at auctions are sold with undisclosed reserves set by the Seller, which means offers are subject to confirmation by the Seller within a certain time period. When a lot is sold subject to confirmation, this is not a reserve, but merely a formality to protect sellers and creditors from having secured assets being sold well below their market value, giving Sellers the opportunity to decide whether they are willing to accept the offers achieved on auction.</p>
+                                <div class="p-relative py-2 px-4">
+                                    <div class="divider"></div>
+                                </div>
+                                <p class="row middle-xs mt-2 mb-0">
+                                    <span class="text-muted">Was this answer helpful? </span>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>Yes</button>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>No</button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mdc-card expansion-panel">
+                            <div class="row between-xs middle-xs expansion-panel-header">
+                                <div class="fw-500">Can i get a Bond for Real Estate purchased on Auction?</div>
+                                <div class="text-muted d-none d-md-flex d-lg-flex d-xl-flex">Auctions and Bonds</div>
+                            </div>
+                            <div class="expansion-panel-body">
+                                <p>Yes. However, auctions are non-suspensive transactions and as such your offer at an auction sale is NOT subject to you obtaining a bond. Should you wish to obtain a bond, this is acceptable. If, for any reason you are not granted a bond, or do not qualify for the amount to which you have bid, you will still be held liable and responsible to fulfill al your obligations in terms of the agreement signed at the auction.</p>
+                                <div class="p-relative py-2 px-4">
+                                    <div class="divider"></div>
+                                </div>
+                                <p class="row middle-xs mt-2 mb-0">
+                                    <span class="text-muted">Was this answer helpful? </span>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>Yes</button>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>No</button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mdc-card expansion-panel">
+                            <div class="row between-xs middle-xs expansion-panel-header">
+                                <div class="fw-500">When must i pay the Deposit and Auctioneer's Commission?</div>
+                                <div class="text-muted d-none d-md-flex d-lg-flex d-xl-flex">Deposits and Commissions</div>
+                            </div>
+                            <div class="expansion-panel-body">
+                                <p>The Deposit and Auctioneers Commission are payable immediately on the fall of the hammer, regardless of whether the sale is subject to confirmation. These monies are payable upfront and immediately, and cannot form part of any financing that you may have applied for.</p>
+                                <div class="p-relative py-2 px-4">
+                                    <div class="divider"></div>
+                                </div>
+                                <p class="row middle-xs mt-2 mb-0">
+                                    <span class="text-muted">Was this answer helpful? </span>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>Yes</button>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>No</button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mdc-card expansion-panel">
+                            <div class="row between-xs middle-xs expansion-panel-header">
+                                <div class="fw-500">When is the balance of the purchase price due?</div>
+                                <div class="text-muted d-none d-md-flex d-lg-flex d-xl-flex">Purchase Price</div>
+                            </div>
+                            <div class="expansion-panel-body">
+                                <p>The balance of the bid price is due on registration of transfer in the case of a Real Estate purchase.</p>
+                                <div class="p-relative py-2 px-4">
+                                    <div class="divider"></div>
+                                </div>
+                                <p class="row middle-xs mt-2 mb-0">
+                                    <span class="text-muted">Was this answer helpful? </span>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>Yes</button>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>No</button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mdc-card expansion-panel">
+                            <div class="row between-xs middle-xs expansion-panel-header">
+                                <div class="fw-500">Do i need to register in order to bid on an Auction, or can i just bid?</div>
+                                <div class="text-muted d-none d-md-flex d-lg-flex d-xl-flex">Register to Bid</div>
+                            </div>
+                            <div class="expansion-panel-body">
+                                <p>Yes. You do need to register in order to bid. You will be required to fill out a registration form, and you will be allocated an exclusive Bidders number. You will be able to pre-register for auction events on our website.</p>
+                                <div class="p-relative py-2 px-4">
+                                    <div class="divider"></div>
+                                </div>
+                                <p class="row middle-xs mt-2 mb-0">
+                                    <span class="text-muted">Was this answer helpful? </span>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>Yes</button>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>No</button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mdc-card expansion-panel">
+                            <div class="row between-xs middle-xs expansion-panel-header">
+                                <div class="fw-500">Do i need to pay a deposit in order to register to bid?</div>
+                                <div class="text-muted d-none d-md-flex d-lg-flex d-xl-flex">Deposit in Order to Bid</div>
+                            </div>
+                            <div class="expansion-panel-body">
+                                <p>No. You are required to indicate whether your purchase will be cash and/or bonded. And then supply the necessary documentation in order to participate in an auction.</p>
+                                <div class="p-relative py-2 px-4">
+                                    <div class="divider"></div>
+                                </div>
+                                <p class="row middle-xs mt-2 mb-0">
+                                    <span class="text-muted">Was this answer helpful? </span>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>Yes</button>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>No</button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mdc-card expansion-panel">
+                            <div class="row between-xs middle-xs expansion-panel-header">
+                                <div class="fw-500">What happens if i default on the sale?</div>
+                                <div class="text-muted d-none d-md-flex d-lg-flex d-xl-flex">Defaulting on a Sale</div>
+                            </div>
+                            <div class="expansion-panel-body">
+                                <p>The Seller will reserve his/her right to take the necessary legal action agains you, should you be in breach of contract or fail to fulfill any of your obligations in terms of the Conditions of Sale/ They can exercise their various options, which will be stipulated in the Conditions of Sale. Ultimately you will be held liable and responsible to fulfill your obligations. Should you still remain in breach of contract, all monies already paid by you to the auctioneer and/or Seller will be forfeited as (pre-estimated damages). It is very serious to go into breach after an auction and legal action will be taken. Therfore, if you harbour any uncertainty, it is better not to bid.</p>
+                                <div class="p-relative py-2 px-4">
+                                    <div class="divider"></div>
+                                </div>
+                                <p class="row middle-xs mt-2 mb-0">
+                                    <span class="text-muted">Was this answer helpful? </span>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>Yes</button>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>No</button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mdc-card expansion-panel">
+                            <div class="row between-xs middle-xs expansion-panel-header">
+                                <div class="fw-500">What happens if an item is sold to me "STC" (Subject To Confirmation)?</div>
+                                <div class="text-muted d-none d-md-flex d-lg-flex d-xl-flex">Subject to Confirmation</div>
+                            </div>
+                            <div class="expansion-panel-body">
+                                <p>Items sold STC are usually encumbered to a secured creditor and confirmation will be obtained within the time frame specified at the auction. During this period, you are held bound by your offer. Payments is required immediately after the auction sale nonetheless. Should the sale for any reason not be confirmed, you will be immediately refunded.</p>
+                                <div class="p-relative py-2 px-4">
+                                    <div class="divider"></div>
+                                </div>
+                                <p class="row middle-xs mt-2 mb-0">
+                                    <span class="text-muted">Was this answer helpful? </span>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>Yes</button>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>No</button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mdc-card expansion-panel">
+                            <div class="row between-xs middle-xs expansion-panel-header">
+                                <div class="fw-500">What recourse do i have if my purchase is not to my satisfaction after the auction?</div>
+                                <div class="text-muted d-none d-md-flex d-lg-flex d-xl-flex">Recourse on Purchase</div>
+                            </div>
+                            <div class="expansion-panel-body">
+                                <p>Purchasers bidding on lots at an auction acknowledge that they have familiarized themselves with the items for which they are bidding. All items sold are voetstoots and the bids are transparent. Therefore, there is no recourse if you have made a mistake and bid for the wrong items or discover later that you are not happy with your purchase. Once you have bid, you are bound and you will subsequently be required to pay in full for these assets.</p>
+                                <div class="p-relative py-2 px-4">
+                                    <div class="divider"></div>
+                                </div>
+                                <p class="row middle-xs mt-2 mb-0">
+                                    <span class="text-muted">Was this answer helpful? </span>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>Yes</button>
+                                    <button class="mdc-button"><span class="mdc-button__ripple"></span>No</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="get-in-touch bg-primary">
+                    <img src="~/assets/assets/img/images/others/operator.png" alt="operator" class="d-none d-sm-flex d-md-flex d-lg-flex d-xl-flex">
+                    <div class="row between-xs middle-xs content">
+                        <div class="column p-3">
+                            <h2>LOOKING TO SELL YOUR PROPERTY?</h2>
+                            <p class="mb-0">We can sell your property within 30 days</p>
+                        </div>
+                        <div class="row start-xs middle-xs p-3">
+                            <i class="material-icons mat-icon-xlg mx-2">call</i>
+                            <div class="column">
+                                <p class="mb-0">CALL US NOW!</p>
+                                <h2 class="ws-nowrap">083 461 6555</h2>
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <a href="javascript:void(0);" class="mdc-button mdc-button--raised mx-3">
+                                <span class="mdc-button__ripple"></span>
+                                <span class="mdc-button__label">get in touch</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="back-to-top"><i class="material-icons">arrow_upward</i></div>
+    <script src="~/assets/assets/js/libs/jquery.min.js"></script>
+    <script src="~/assets/assets/js/libs/material-components-web.min.js"></script>
+    <script src="~/assets/assets/js/libs/swiper.min.js"></script>
+    <script src="~/assets/assets/js/scripts.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1rF9bttCxRmsNdZYjW7FzIoyrul5jb-s&callback=initMap" async defer></script>
+
+</body>
+
+</html>
+
+
+
+
+
+

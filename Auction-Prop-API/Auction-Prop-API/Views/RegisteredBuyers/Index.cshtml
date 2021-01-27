@@ -1,0 +1,112 @@
+﻿@model IEnumerable<Auction_Prop_API.Models.DataBaseModels.RegisteredBuyer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Deposit.ProofOfPaymentPath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BondedOrCash)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProfilePhotoPath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProofOfResidencePath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CopyOfIDPath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProofOfBankAccount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDBuyerVerifyPhoto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApprovalStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistrationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Signiture)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Deposit.ProofOfPaymentPath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BondedOrCash)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProfilePhotoPath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProofOfResidencePath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CopyOfIDPath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProofOfBankAccount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDBuyerVerifyPhoto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApprovalStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegistrationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Signiture)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
+        </td>
+    </tr>
+}
+
+</table>

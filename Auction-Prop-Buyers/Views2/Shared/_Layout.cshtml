@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="~/assets/img/fat.png">
+    <title>Auction-Prop.com</title>
+
+    <script src="https://kit.fontawesome.com/5cb4d6169e.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/font-awesome.css" type="text/css">
+
+</head>
+<body>
+
+    <!-- ======= Header/Navbar ======= -->
+    <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="@Url.Action("Index", "Home")" class="navbar-brand" style="padding-left:30px">
+                <img src="~/Logo/Asset 1.png" width="350" height="60" alt="Auction-Prop Logo" padding-left="20px">
+            </a>
+            <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-expanded="false">
+                <span class="fa fa-search" aria-hidden="true"></span>
+            </button>
+            <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Properties</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Buyers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="property-grid.html">Sellers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog-grid.html">This Is Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog-grid.html">FAQ's</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog-grid.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog-grid.html">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog-grid.html">Log In</a>
+                    </li>
+                    @*<!--<li>@Html.Partial("_LoginPartial")</li>--*@ 
+                </ul>
+            </div>
+            <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-expanded="false">
+                <span class="fa fa-search" aria-hidden="true"></span>
+            </button>
+        </div>
+    </nav><!-- End Header/Navbar -->
+
+    <!--------Header Start---------->
+
+    <!--<div class="container-fluid">
+        <div class="navigation">
+            <header class="navbar" id="top" role="banner">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-brand" id="brand">
+
+                    <a href="@Url.Action("Index", "Home")" class="navbar-brand">
+                        <img src="~/Logo/Asset 1.png" width="350" height="60" alt="Auction-Prop Logo">
+                    </a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+                    <ul class="nav navbar-nav">
+
+                        <li class="active">@Html.ActionLink("Properties", "Properties", "Home")</li>
+                        <li>@Html.ActionLink("Buyers", "Buyers", "Home")</li>
+                        <li>@Html.ActionLink("Sellers", "Sellers", "Home")</li>
+                        <li>@Html.ActionLink("This is Us", "About", "Home")</li>
+                        <li>@Html.ActionLink("FAQ", "FAQ", "Home")</li>
+                        <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                        <li>@Html.Partial("_LoginPartial")</li>
+
+                    </ul>
+
+
+                    <div class="add-your-property">
+                        <a href="@Url.Action("Add", "Home")" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
+                    </div>
+
+                </nav>
+
+
+            </header>
+        </div>
+    </div>-->
+
+    <div class="container-fluid">
+        @RenderBody()
+    </div>
+
+    <!-- Page Footer -->
+    <footer id="page-footer">
+        <div class="inner">
+            <aside id="footer-main">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3">
+                            <article>
+                                <a href="#"><img src="~/Logo/Asset 1.png" width="250" height="45" alt="Auction-Prop Logo"></a>
+                                <address>
+                                    <br>
+                                    Fintech Campus<br>
+                                    81 Botterklapper Street<br>
+                                    The Willows, 0083<br>
+                                    Pretoria East
+                                </address>
+                                <a href="tel:082-316-3702" style="text-decoration: none">082 316 3702</a><br>
+                                <a href="mailto:info@auction-prop.com" style="text-decoration: none">info@auction-prop.com</a>
+                            </article>
+                        </div><!-- /.col-sm-3 -->
+                        <div class="col-md-3 col-sm-3">
+                            <article>
+                                <h3>Auctions</h3>
+                                <ul class="list-unstyled list-links">
+                                    <li><a href="#" style="text-decoration: none">Residential</a></li>
+                                    <li><a href="#" style="text-decoration: none">Commercial</a></li>
+                                    <li><a href="#" style="text-decoration: none">Agricultural</a></li>
+                                    <li><a href="#" style="text-decoration: none">Investment</a></li>
+                                    <li><a href="#" style="text-decoration: none">Bank Instruction</a></li>
+                                </ul>
+                            </article>
+                        </div><!-- /.col-sm-3 -->
+                        <div class="col-md-3 col-sm-3" style="text-decoration: none">
+                            <article>
+                                <h3>Useful Links</h3>
+                                <ul class="list-unstyled list-links" style="text-decoration: none">
+                                    <li style="text-decoration: none">@Html.ActionLink("This is Us", "About", "Home")</li>
+                                    <li style="text-decoration: none">@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                                    <li style="text-decoration: none">@Html.ActionLink("FAQ", "FAQ", "Home")</li>
+                                    <li style="text-decoration: none">@Html.ActionLink("Privacy Policy", "Privacy", "Home")</li>
+                                    <li style="text-decoration: none">@Html.ActionLink("Terms and Conditions", "Terms", "Home")</li>
+                                </ul>
+                            </article>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <article>
+                                <h3>Email Sign Up</h3>
+                                <div class="panel-body">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="newsletter-name" class="hidden">Name</label>
+                                                    <input type="name" class="form-control" id="newsletter-name" placeholder="Name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="newsletter-email" class="hidden">Email address</label>
+                                                    <input type="email" class="form-control" id="newsletter-email" placeholder="Email">
+                                                </div>
+                                                <button type="submit" class="btn btn-b">Submit</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--<h3>Recent Properties</h3>
+                                <div class="property small">
+                                    <a href="property-detail.html" style="text-decoration: none">
+                                        <div class="property-image">
+                                            <img alt="" src="~/assets/img/properties/property-06.jpg">
+                                        </div>
+                                    </a>
+                                    <div class="info">
+                                        <a href="property-detail.html" style="text-decoration: none"><h4>218 Rinehart Road</h4></a>
+                                        <figure>Olivedale, Johannesburg </figure>
+                                        <div class="tag date">15 May at 14:00</div>
+                                    </div>
+                                </div>
+                                <div class="property small">
+                                    <a href="property-detail.html" style="text-decoration: none">
+                                        <div class="property-image">
+                                            <img alt="" src="~/assets/img/properties/property-06.jpg">
+                                        </div>
+                                    </a>
+                                    <div class="info">
+                                        <a href="property-detail.html" style="text-decoration: none"><h4>249 Murphy Court</h4></a>
+                                        <figure>Sandhurst, Johannesburg</figure>
+                                        <div class="tag date">22 June at 14:00</div>
+                                    </div>
+                                </div>-->
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </aside><!-- /#footer-main -->
+            <aside id="footer-thumbnails" class="footer-thumbnails"></aside><!-- /#footer-thumbnails -->
+            <aside id="footer-copyright">
+                <div class="container">
+                    <span>All Rights Reserved Auction-Prop. Copyright © 2020.</span>
+                </div>
+            </aside>
+        </div><!-- /.inner -->
+        <!-- end Page Footer -->
+    </footer>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+
+    @RenderSection("JavaScript", required: false)
+
+</body>
+</html>

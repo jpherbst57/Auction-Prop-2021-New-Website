@@ -1,0 +1,51 @@
+﻿@model Auction_Prop_API.Models.DataBaseModels.AdminFee
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AdminFee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AuctionRegistration.BuyerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuctionRegistration.BuyerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProofOfPaymentPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProofOfPaymentPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfPayment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfPayment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PaymentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

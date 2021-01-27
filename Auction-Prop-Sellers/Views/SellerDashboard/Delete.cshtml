@@ -1,0 +1,338 @@
+﻿@model Auction_Prop_Sellers.Models.DataViewModels.Property
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this Property</h3>
+<div>
+    <h4>Property</h4>
+    <hr />
+    <dl class="dl-horizontal">
+    
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Province)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Province)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistrationType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegistrationType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BedRooms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BedRooms)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BathRooms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BathRooms)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FloorSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FloorSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YardSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YardSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Garages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Garages)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpeningBid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpeningBid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reserve)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reserve)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlansPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlansPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaxesAndRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaxesAndRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.levies)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.levies)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaxesAndRates)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaxesAndRates)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TitleDeedPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TitleDeedPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HOARules)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOARules)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApprovalStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovalStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SellerSigniture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SellerSigniture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Garden)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Garden)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Terrace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Terrace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gerages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gerages)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SwimmingPool)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SwimmingPool)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fibre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fibre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Clubhouse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clubhouse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Braai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Braai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OutdoorKitchen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OutdoorKitchen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FireplacePit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FireplacePit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TennisCourts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TennisCourts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Jacquizzi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jacquizzi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Parking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Parking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Borehole)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Borehole)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MandateType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MandateType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MandateSingedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MandateSingedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MandateExpireDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MandateExpireDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

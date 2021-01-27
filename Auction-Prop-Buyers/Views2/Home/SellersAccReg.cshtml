@@ -1,0 +1,395 @@
+﻿
+@{
+    ViewBag.Title = "SellersAccReg";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Auction-Prop.com | Buyers</title>
+
+    <!-- Favicons -->
+    <link href="~/assets/img/fat.png" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ef4e2c1ac6.js" crossorigin="anonymous"></script>
+
+    <!-- Vendor CSS Files -->
+    <link rel="stylesheet" href="~/Content2/bootstrap1.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content2/ionicons.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content2/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content2/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/font-awesome.css" type="text/css">
+
+    <!-- Template Main CSS File -->
+    <link href="~/assets/css/style.css" rel="stylesheet">
+    <link href="~/assets/assets/css/gsdk-bootstrap-wizard.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Property Search Section Start ======= -->
+    <div class="click-closed"></div>
+
+    <div class="box-collapse">
+        <div class="title-box-d">
+            <h3 class="title-d">Search Property</h3>
+        </div>
+        <span class="close-box-collapse right-boxed ion-ios-close"></span>
+        <div class="box-collapse-wrap form">
+            <form class="form-a">
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+                        <div class="form-group">
+                            <label for="Type">Keyword</label>
+                            <input type="text" class="form-control form-control-lg form-control-a" placeholder="Keyword">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="Type">Type</label>
+                            <select class="form-control form-control-lg form-control-a" id="Type">
+                                <option>All Types</option>
+                                <option>Residential</option>
+                                <option>Commercial</option>
+                                <option>Agricultural</option>
+                                <option>Investment</option>
+                                <option>Bank Instruction</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <select class="form-control form-control-lg form-control-a" id="city">
+                                <option>All City's</option>
+                                <option>Johannesburg</option>
+                                <option>Pretoria</option>
+                                <option>Durban</option>
+                                <option>Cape Town</option>
+                                <option>Nelspruit</option>
+                                <option>Polokwane</option>
+                                <option>East London</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="bedrooms">Bedrooms</label>
+                            <select class="form-control form-control-lg form-control-a" id="bedrooms">
+                                <option>Any</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>3+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="garages">Garages</label>
+                            <select class="form-control form-control-lg form-control-a" id="garages">
+                                <option>Any</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>3+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="bathrooms">Bathrooms</label>
+                            <select class="form-control form-control-lg form-control-a" id="bathrooms">
+                                <option>Any</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>3+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-b">Search Property</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- ======= Property Search Section End ======= -->
+    <!-- ======= Intro and Breadcrumb Section Start ======= -->
+    <section class="intro-single">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-8">
+                    <div class="title-single-box">
+                        <h1 class="title-single">Sellers Account Registration</h1>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="#">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Sellers Account Registration
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ======= Intro and Breadcrumb Section End ======= -->
+
+    <div class="image-container set-full-height" style="background-image: url('~/assets/assets/img/wizard-city.jpg')">
+        <!-- ====== Big Container Start ====== -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <!-- ====== Wizard Container Start ====== -->
+                    <div class="wizard-container">
+                        <div class="card wizard-card" data-color="orange" id="wizardProfile">
+                            <form action="" method="">
+                                <div class="wizard-header">
+                                    <h3>
+                                        LET'S
+                                        <b>BUILD</b> YOUR PROFILE <br>
+                                        <small>This information will let us know more about you</small>
+                                    </h3>
+                                </div>
+                                <div class="wizard-navigation">
+                                    <ul>
+                                        <li><a href="#about" data-toggle="tab">About</a></li>
+                                        <li><a href="#account" data-toggle="tab">Type of Buyer</a></li>
+                                        <li><a href="#address" data-toggle="tab">Address</a></li>
+                                        <li><a href="#upload" data-toggle="tab">Documents</a></li>
+                                    </ul>
+                                </div>
+                                <!-- ====== Registration Form Start ====== -->
+                                <div class="tab-content">
+                                    <!-- ====== About Section Start ====== -->
+                                    <div class="tab-pane" id="about">
+                                        <div class="row">
+                                            <h4 class="info-text"> Let's start with the basic information</h4>
+                                            <div class="col-sm-4 col-sm-offset-1">
+                                                <div class="picture-container">
+                                                    <div class="picture">
+                                                        <img src="~/assets/assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title="" />
+                                                        <input type="file" id="wizard-picture">
+                                                    </div>
+                                                    <h6>Upload Profile Photo</h6>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>User Name <small> *</small></label>
+                                                    <input name="username" type="text" class="form-control1" placeholder="eg. John212">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>First Name <small> *</small></label>
+                                                    <input name="firstname" type="text" class="form-control1" placeholder="eg. John">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Last Name <small> *</small></label>
+                                                    <input name="lastname" type="text" class="form-control1" placeholder="eg. Doe">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-10 col-sm-offset-1">
+                                                <div class="form-group">
+                                                    <label>Email <small> *</small></label>
+                                                    <input name="email" type="email" class="form-control1" placeholder="eg. john212@youremail.com">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Password <small> *</small></label>
+                                                        <input type="password" class="form-control1" placeholder="Password">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Confirm Password <small> *</small></label>
+                                                        <input type="password" class="form-control1" placeholder=" Confirm Password">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ====== About Section End ====== -->
+                                    <!-- ====== Type of Buyer Section Start ====== -->
+                                    <div class="tab-pane" id="account">
+                                        <h4 class="info-text"> What type of buyer are you?</h4>
+                                        <div class="row">
+                                            <div class="col-sm-10 col-sm-offset-1">
+                                                <div class="col-sm-6">
+                                                    <div class="choice" data-toggle="wizard-checkbox">
+                                                        <input type="checkbox" name="jobb" value="Design">
+                                                        <div class="icon">
+                                                            <i class="fa fa-pencil"></i>
+                                                        </div>
+                                                        <h6>Cash</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="choice" data-toggle="wizard-checkbox">
+                                                        <input type="checkbox" name="jobb" value="Code">
+                                                        <div class="icon">
+                                                            <i class="fa fa-terminal"></i>
+                                                        </div>
+                                                        <h6>Bonded</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ====== Type of Buyer Section End ====== -->
+                                    <!-- ====== Address Section Start ====== -->
+                                    <div class="tab-pane" id="address">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h4 class="info-text"> What's your current address? </h4>
+                                            </div>
+                                            <div class="col-sm-10 col-sm-offset-1">
+                                                <div class="form-group">
+                                                    <label>Address<small> *</small></label>
+                                                    <input type="text" class="form-control1" placeholder="Address Line 1">
+                                                    <br />
+                                                    <input type="text" class="form-control1" placeholder="Address Line 2">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5 col-sm-offset-1">
+                                                <div class="form-group">
+                                                    <label>Postal Code<small> *</small></label>
+                                                    <input type="text" class="form-control1" placeholder="eg. 0081">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-group">
+                                                    <label>City<small> *</small></label>
+                                                    <input type="text" class="form-control1" placeholder="eg. Pretoria...">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5 col-sm-offset-1">
+                                                <div class="form-group">
+                                                    <label>Province/Region<small> *</small></label>
+                                                    <input type="text" class="form-control1" placeholder="eg. Gauteng">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-group">
+                                                    <label>Country<small> *</small></label><br>
+                                                    <select name="country" class="form-control1">
+                                                        <option value="Afghanistan"> South Africa </option>
+                                                        <option value="...">...</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ====== Address Section End ====== -->
+                                    <!-- ====== Document Upload Section Start ====== -->
+                                    <div class="tab-pane" id="upload">
+                                        <div class="row">
+                                            <h4 class="info-text"> Please Upload the following Documents to finish your Account</h4>
+                                            <div class="col-sm-4 col-sm-offset-1">
+                                                <div class="picture-container">
+                                                    <div class="picture">
+                                                        <img src="~/assets/assets/img/upload.png" class="picture-src" id="wizardPicturePreview" title="" />
+                                                        <input type="file" id="wizard-picture">
+                                                    </div>
+                                                    <label><strong>Copy of ID</strong><small> *</small></label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 col-sm-offset-1">
+                                                <div class="picture-container">
+                                                    <div class="picture">
+                                                        <img src="~/assets/assets/img/upload.png" class="picture-src" id="wizardPicturePreview" title="" />
+                                                        <input type="file" id="wizard-picture">
+                                                    </div>
+                                                    <label><strong>Proof of Address</strong><small> *</small></label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 col-sm-offset-1">
+                                                <div class="picture-container">
+                                                    <div class="picture">
+                                                        <img src="~/assets/assets/img/upload.png" class="picture-src" id="wizardPicturePreview" title="" />
+                                                        <input type="file" id="wizard-picture">
+                                                    </div>
+                                                    <label><strong>Proof of Bank Account</strong><small> *</small></label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4 col-sm-offset-1">
+                                                <div class="picture-container">
+                                                    <div class="picture">
+                                                        <img src="~/assets/assets/img/upload.png" class="picture-src" id="wizardPicturePreview" title="" />
+                                                        <input type="file" id="wizard-picture">
+                                                    </div>
+                                                    <label><strong>Selfie with ID document</strong><small> *</small></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ====== Document Upload Section End ====== -->
+                                </div>
+                                <!-- ====== Registration Form End ====== -->
+                                <div class="wizard-footer height-wizard">
+                                    <div class="pull-right">
+                                        <input type='button' class="btn btn-next btn-fill btn-warning btn-wd btn-sm" name='next' value='Next' />
+                                        <input type='button' class="btn btn-finish btn-fill btn-warning btn-wd btn-sm" name='finish' value='Finish' />
+                                    </div>
+                                    <div class="pull-left">
+                                        <input type='button' class="btn btn-previous btn-fill btn-default btn-wd btn-sm" name='previous' value='Previous' />
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- ====== Wizard Container End ====== -->
+                </div>
+            </div>
+            <!-- ====== End Row ====== -->
+        </div>
+        <!-- ====== Big Container End ====== -->
+    </div>
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <div id="preloader"></div>
+
+    <!-- ====== Vendor JS Files ====== -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/jquery.easing.min.js"></script>
+    <script src="~/Scripts/validate.js"></script>
+    <script src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="~/Scripts/scrollreveal.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/Scripts/main.js"></script>
+
+    <!-- ====== Core JS Files ====== -->
+    <script src="~/assets/assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+    <script src="~/assets/assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/assets/assets/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
+
+    <!-- ====== Plugin for the Wizard ====== -->
+    <script src="~/assets/assets/js/gsdk-bootstrap-wizard.js"></script>
+
+    <!-- ====== Jquery.Validate ====== -->
+    <script src="~/assets/assets/js/jquery.validate.min.js"></script>
+
+</body>
+</html>
+
+
+

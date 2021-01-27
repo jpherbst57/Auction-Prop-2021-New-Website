@@ -1,0 +1,36 @@
+﻿@model Auction_Prop_Buyers.Models.DisplayMadels.AuctionRegistration
+@{
+    ViewBag.Title = "_PayDeposiAndAdminFees";
+
+}
+
+<div class="col">
+
+    <div class="panel panel-info">
+
+        <div class="panel-heading">
+
+            <h3 class="panel-title">Admin fees Payment</h3>
+
+        </div>
+
+
+
+        <div class="panel-body">
+
+            <p><h5>You need to pay R150 as admin fees</h5></p>
+
+            <p>This is a once off payment.</p>
+
+        </div>
+
+        <div class="text-right">
+
+            @Html.ActionLink("Pay Now", "PayAdmin", "PaymentGate", Model, new { @class = "btn btn-block btn-success" })
+
+
+        </div>
+
+    </div>
+
+</div>

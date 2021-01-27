@@ -1,0 +1,75 @@
+﻿@model Auction_Prop_API.Models.DataBaseModels.AuctionRegistration
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AuctionRegistration</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AdminFee.ProofOfPaymentPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdminFee.ProofOfPaymentPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Property.SellerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Property.SellerID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegisteredBuyer.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegisteredBuyer.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistrationFees)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegistrationFees)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegesterDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegesterDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Signiture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Signiture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistrationStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegistrationStatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

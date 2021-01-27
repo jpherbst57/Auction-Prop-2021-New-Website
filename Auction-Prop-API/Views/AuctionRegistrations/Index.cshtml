@@ -1,0 +1,105 @@
+﻿@model IEnumerable<Auction_Prop_API.Models.DataBaseModels.AuctionRegistration>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyID)
+        </th> 
+        <th>
+            @Html.DisplayNameFor(model => model.RegisteredBuyer.FirstName)
+        </th> <th>
+            @Html.DisplayNameFor(model => model.BuyerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdminFee.ProofOfPaymentPath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BankApproval.ApprovalPath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Guarintee.GuarinteePath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Property.SellerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegisteredBuyer.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistrationFees)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegesterDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Signiture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistrationStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bonded)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.PropertyID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.RegisteredBuyer.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BuyerId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AdminFee.ProofOfPaymentPath)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BankApproval.ApprovalPath)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Guarintee.GuarinteePath)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Property.SellerID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.RegisteredBuyer.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.RegistrationFees)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.RegesterDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Signiture)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.RegistrationStatus)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Bonded)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.id })
+    </td>
+</tr>
+}
+
+</table>

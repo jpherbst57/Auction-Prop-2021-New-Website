@@ -1,0 +1,493 @@
+﻿@using Auction_Prop_Buyers.Models.DisplayMadels
+@model Auction
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using Microsoft.AspNet.Identity
+@using System.Data
+
+
+@{
+    Bid HighestB = new Bid(); 
+    }
+       
+@if (Model.StartTime < DateTime.Now && DateTime.Now < Model.EndTime)
+{
+    if (Model.Bids != null)
+    {
+        bool first = true;
+        foreach (Bid b in Model.Bids)
+        {
+            if (first)
+            {
+                HighestB = b;
+            }
+            else
+            {
+                if (HighestB.AmuntOfBid > b.AmuntOfBid)
+                {
+                    HighestB = b;
+                }
+            }
+
+        }
+
+    }
+    else
+    {
+        HighestB.AmuntOfBid = Model.Property.OpeningBid;
+    }
+
+    decimal userBid = Convert.ToDecimal(Html.DisplayTextFor(model => model.Property.OpeningBid).ToString());
+    decimal hieghestBid = Convert.ToDecimal(Html.DisplayTextFor(model => model.Property.OpeningBid).ToString());
+    <div class="jumbotron" style="text-align:center">
+        <h1>Current Bid</h1>
+        <p class="lead">
+            R<label id="cur">@HighestB.AmuntOfBid</label>
+
+        </p>
+    </div>
+
+    <div id="left" style="width: 50%; float: left; height: auto; background-color:lightgrey; text-align: center">
+        <div height="40px" style="background-color:coral; padding:10px">
+            Auction Ends in:
+            <div id="CountDown">
+                @Html.DisplayFor(model => model.EndTime)
+            </div>
+
+        </div>
+        <div style="padding:10px; text-align:center ; margin:auto">
+            Auction By
+            <div style="width:20% ; text-align:center ; margin:auto">
+                @if (Model.Property.Seller.PrivateSeller != null)
+                {
+                    try
+                    {
+                        string Paths = Model.Property.Seller.PrivateSeller.ProfilePhotoPath;
+                        <img src=@Paths style="width:99%" />
+
+                    }
+                    catch
+                    {
+                        <img src="~/assets/img/member-01.jpg" style="width:99%" />
+                    }
+
+
+
+
+                }
+                else
+                {
+                    try
+                    {
+                        string Paths = Model.Property.Seller.Retailer.CompaynLogoPath;
+                        <img src=@Url.Content(Paths) style="width:99%" />
+                    }
+                    catch
+                    {
+
+                        <img src="~/assets/img/member-01.jpg" style="width:99%" />
+                    }
+
+
+                }
+            </div>
+        </div>
+        <div style="padding:10px">
+            Current Bid:
+            <div id="Cur"> @HighestB.AmuntOfBid</div>
+        </div>
+        <div style="padding:20px; width:50%; margin:auto;   height:100px">
+            <div id="Possision" style="float:left; width:90px; border:ridge; border-radius:5px; height:65px; text-align:center ; padding-bottom:20px">
+                current possision
+            </div>
+            <div id="Reserve" style="float: right;width: 90px; border: ridge;border-radius: 5px; height: 65px; text-align: center;     padding-bottom: 20px">
+                Reserve
+
+            </div>
+            <div id="reserve" type="hidden" class="hidden">
+                @if (Model.Property.Reserve != null)
+                {
+                    @Html.DisplayFor(model => model.Property.Reserve)
+
+                }
+                else
+                {
+                    <p>No Reseerve</p>
+                }
+
+            </div>
+
+        </div>
+
+
+        <div style="padding-top:30px; text-align:center;  margin:auto; width:43%">
+            Your Bid:
+            <div style=" width:240px;float:inherit;margin:auto">
+
+                <input type="button" id="Decriment5k" value="-" style="float:left; width:8px " />
+                <input type="button" id="Increment5k" value="+" style="float:right; width:8px" />
+                <div id="Biddd" style=" margin:auto;width:150px;border:solid; border-radius:3px;float:none">@userBid</div>
+
+            </div>
+            <div style="padding-top:30px; margin:auto">
+                <div>Add increment of:</div>
+
+
+                <input type="button" id="10KIncreas" value="R10 000" style="float:left " />
+                <input type="button" id="50KIncreas" value="R50 000" />
+                <input type="button" id="100KIncreas" value="R100 000" style="float:right " />
+
+            </div>
+
+            <div style="padding-top:30px ;padding-bottom:20px">
+
+
+                <input type="button" id="placeBid" value="Plase youre bid" style="border-color:red ;padding-bottom:20px" />
+
+            </div>
+            <div style="padding-top: 30px ;padding-bottom:20px">
+                <input type="button" id="PlaceMaximumBid" value="Place Maximum Bid " />
+            </div>
+
+        </div>
+
+        <div style="padding-bottom:40px">
+            <div style=" padding-top:20px">Disclaimer</div>
+            <p style="padding-left:20px; padding-right:20px">Please place youre bids with more than 20 seconds on the countdown clock to insure youre bid is regestered on the server bevore time runs out. </p>
+        </div>
+
+        <div class="container" title="Auction History " style="border:dashed; width:80%">
+            <input type="text" id="Bid" />
+            <input type="button" id="PlaceBid" value="Bid" />
+
+            <div class="row" style="text-align:center; padding:20px; border-bottom:ridge">
+                <div class="col-lg-6" style="text-align:left">
+                    Bitter
+                </div>
+                <div class="col-lg-3">
+                    Time of bid
+                </div><div class="col-lg-3">
+                    Bid
+                </div>
+            </div>
+
+            <div type="hidden" id="displayname" style="visibility:hidden">@User.Identity.GetUserName()</div>
+            <div id="CurentBid" style="text-align:left">
+
+            </div>
+            <div class="col-lg-6" id="bidUser" style="text-align:left">
+
+            </div>
+            <div class="col-lg-3" id="bidTime" style="text-align:left">
+
+            </div>
+            <div class="col-lg-3" id="bidAmount" style="text-align:left">
+
+            </div>
+        </div>
+        <div id="USER" type="hidden"></div>
+
+    </div>
+
+}
+else if (Model.StartTime > DateTime.Now && DateTime.Now < Model.EndTime)
+{<div class="jumbotron" style="text-align: center ">
+        <h1>Opening Bid</h1>
+        <p class="lead">
+            R<label id="cur">@Html.DisplayFor(model => model.Property.OpeningBid)</label>
+
+        </p>
+    </div>
+    <div id="left" style="width: 50%; float: left; height: auto; background-color:lightgrey; text-align: center ; padding:20px">
+        <div height="40px" style="background-color:coral; padding:10px">
+            Auction Ends in:
+            <div id="CountDown">
+                @Html.DisplayFor(model => model.EndTime)
+            </div>
+
+        </div>
+        <div style="padding:10px ; text-align:center; margin:auto">
+            On Auction By
+            <div style="padding:20px; width:20% ; text-align:center; margin:auto">
+                @if (Model.Property.Seller.PrivateSeller.ProfilePhotoPath != null)
+                {
+
+                    string Paths = Model.Property.Seller.PrivateSeller.ProfilePhotoPath;
+                    <img src=@Paths style="width:99%" />
+
+
+                }
+                else
+                {
+                    string Paths = Model.Property.Seller.Retailer.CompaynLogoPath;
+                    <img src=@Url.Content(Paths) style="width:99%" />
+                }
+            </div>
+        </div>
+        <div>
+            <div>Opening Bid.</div>
+            <div id="cur" style="padding:10px">R @Html.DisplayFor(model => model.Property.OpeningBid)</div>
+        </div>
+
+
+        <div style="padding:20px">
+            Auction Start on:
+            <div id="StartTime">@Html.DisplayFor(model => model.StartTime)</div>
+        </div>
+        <div style="padding:20px">
+            Auction Ends on
+            <div id="EndTime">@Html.DisplayFor(model => model.EndTime)</div>
+        </div>
+
+
+    </div>
+
+}
+else
+{
+    <div class="jumbotron" style="text-align:center">
+        <h1>Auction is over</h1>
+        <p class="lead">
+
+        </p>
+    </div>
+
+}
+<div id="right" style="width: 50%; float:right; height:auto; background-color:royalblue">
+
+    <div height="40px" style="background-color:royalblue; padding:10px">
+        <div>Property Info</div>
+        <div>@Html.DisplayFor(model => model.Property.Province) , @Html.DisplayFor(model => model.Property.City)</div>
+        <div>@Html.DisplayFor(model => model.Property.Address)</div>
+
+    </div>
+    <div style="padding:1%">
+        @if (true)
+        {
+
+            int count = 0;
+            foreach (PropertyPhoto P in Model.Property.PropertyPhotos)
+            {
+                if (count == 0)
+                {
+                    <img src=@Url.Content(P.PropertyPhotoPath) style="width:99%" />
+
+                }
+                else
+                {
+                    <img src=@Url.Content(P.PropertyPhotoPath) style="width:20%" />
+                }
+
+                count++;
+            }
+
+        }
+    </div>
+    <div>description, location, documents</div>
+
+
+</div>
+
+
+
+<div class="container">
+    <div>Chat Window</div>
+    <input type="text" id="message" />
+    <ul id="discussion">
+    </ul>
+    <input type="button" id="sendmessage" value="Send" />
+    <input type="hidden" id="displayname" />
+
+</div>
+
+
+@section JavaScript{
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <!--Reference the SignalR library. -->
+    <script src="~/Scripts/jquery.signalR-2.4.1.js"></script>
+    <!--Reference the autogenerated SignalR hub script. -->
+    <script src="~/signalr/hubs"></script>
+
+
+    <script type="text/javascript">
+
+
+        $(function () {
+            // Declare a proxy to reference the hub.
+            var auction = $.connection.auctionHub;
+            // Create a function that the hub can call to broadcast messages.
+            auction.client.broadcastMessage2 = function (name, message) {
+                // Html encode display name and message.
+                var encodedName = $('<div />').text(name).html();
+                var encodedMsg = $('<div />').text(message).html();
+                // Add the message to the page.
+                $('#discussion').append('<li><strong>' + encodedName
+                    + '</strong>:&nbsp;&nbsp;' + encodedMsg + '</li>');
+            };
+             auction.client.broadcastMessage = function (name, bid) {
+                // Html encode display name and message.
+                var encodedName = $('<div />').text(name).html();
+                var encodedBid = $('<div />').text(bid).html();
+                var time = $('<div />').text('@DateTime.Now.ToString("hh:mm:ss")').html();
+                 // Add the message to the page.
+                 $('#bidUser').prepend('<li>' + encodedName +  '</li>');
+                 $('#bidTime').prepend('<li>'  + time
+                     +  '</li>');
+                 $('#bidAmount').prepend('<li>R' +  encodedBid + '</li>');
+
+                 $('#cur').text(encodedBid );
+                 $('#Cur').text(encodedBid);
+                 $('#USER').text(encodedName)
+            };
+            // Get the user name and store it to prepend to messages.
+            $('#displayname').val('@User.Identity.GetUserName()');
+            // Set initial focus to message input box.
+            $('#Bid').focus();
+            // Start the connection.
+            $.connection.hub.start().done(function () {
+                $('#sendmessage').click(function () {
+                    // Call the Send method on the hub.
+                    auction.server.send($('#displayname').val(), $('#message').val());
+                    // Clear text box and reset focus for next comment.
+                    $('#message').val('').focus();
+                });
+                $('#PlaceBid').click(function () {
+                    // Call the Send method on the hub.
+                    auction.server.bid($('#displayname').val(), $('#Bid').val(), $('#cur').text());
+                    // Clear text box and reset focus for next comment.
+                    $('#Bid').val('').focus();
+                });
+                 $('#placeBid').click(function () {
+                     // Call the Send method on the hub.
+                     auction.server.bid2($('#displayname').val(), $('#Biddd').text(),'@Model.Property.PropertyID','@User.Identity.GetUserId()');
+                    // Clear text box and reset focus for next comment.
+                 });
+                 var $bid = $('#Biddd');
+                $('#Increment5k').click(function () {
+                    var value = parseInt($bid.html());
+                    value = value + 5000;
+                    $('#Biddd').text(value);
+                });
+                 $('#Decriment5k').click(function () {
+                    var value = parseInt($bid.html());
+                    value = value - 5000;
+                    $('#Biddd').text(value );
+                 });
+                $('#10KIncreas').click(function () {
+                    var value = parseInt($bid.html());
+                    value = value + 10000;
+                    $('#Biddd').text(value );
+                });
+                $('#50KIncreas').click(function () {
+                    var value = parseInt($bid.html());
+                    value = value + 50000;
+                    $('#Biddd').text(value );
+                });
+                $('#100KIncreas').click(function () {
+                    var value = parseInt($bid.html());
+                    value = value + 100000;
+                    $('#Biddd').text(value );
+                });
+
+
+
+
+            });
+
+
+
+        });
+    </script>
+    <script>
+        // Set the date we're counting down to
+        //var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
+        var countDownDate = new Date(document.getElementById("CountDown").innerHTML).getTime();
+        // var countDownDate = new Date(document.getElementById("EndTime").innerHTML).getTime();
+
+
+
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="demo"
+            document.getElementById("CountDown").innerHTML = days + " Days, " + hours + " Hours, "
+                + minutes + " Minutes, " + seconds + " Seconds. ";
+
+            //document.getElementById("CountDown").innerHTML = document.getElementById("StartTime").innerHTML;
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+
+                document.getElementById("CountDown").innerHTML = "EXPIRED";
+                location.reload();
+            }
+            if ($('#CountDown').text() == "EXPIRED")
+            {
+
+            }
+
+
+            if (Math.floor($('#Biddd').text()) > Math.floor($('#cur').text())) {
+                document.getElementById("Biddd").style.borderColor = "green";
+                document.getElementById("placeBid").style.borderColor = "green";
+            }
+            else {
+                 document.getElementById("Biddd").style.borderColor = "red";
+                 document.getElementById("placeBid").style.borderColor = "red";
+            }
+
+
+            if ($('#USER').text() == '@User.Identity.GetUserName()') {
+                document.getElementById("Possision").style.borderColor = "green";
+                $('#Possision').text("You are Leading the bid.");
+            }
+            else {
+                document.getElementById("Possision").style.borderColor = "red";
+                 $('#Possision').text($('#USER').text() + " are winning the Bid.");
+            }
+
+
+            if (Math.floor($('#reserve').text())  <=   Math.floor($('#cur').text())){
+                   document.getElementById("Reserve").style.borderColor = "green";
+                $('#Reserve').text("Reserve is met.");
+            }
+            else {
+                document.getElementById("Reserve").style.borderColor = "red";
+                $('#Reserve').text("Reserve not met");
+
+            }
+
+
+
+
+        }, 1000);
+    </script>
+
+}
+
+
+
+
+
+

@@ -1,0 +1,525 @@
+﻿
+@{
+    ViewBag.Title = "Auctionroompage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Auction_Prop_Buyers.Models.DisplayMadels
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Auction-Prop.com | Property Details</title>
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ef4e2c1ac6.js" crossorigin="anonymous"></script>
+
+    <!-- Vendor CSS Files -->
+    <link rel="stylesheet" href="~/Content2/bootstrap1.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content2/ionicons.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content2/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content2/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/font-awesome.css" type="text/css">
+
+    <!-- Template Main CSS File -->
+    <link href="~/assets/css/style.css" rel="stylesheet">
+
+    <style>
+
+        html, body {
+            padding: 0;
+            margin: 0;
+            background: #fafafa;
+            text-align: center;
+        }
+
+        body {
+            padding-top: 3em;
+        }
+
+        
+
+        h2 {
+            margin-top: 2em;
+        }
+
+        .clock {
+            position: relative;
+            font-family: monaco,consolas,"courier new",monospace;
+            font-size: 3.5rem;
+            line-height: 1.375;
+        }
+
+            .clock:before,
+            .clock:after {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                content: ':';
+                z-index: 2;
+                line-height: 1.15;
+                color: #333;
+            }
+
+            .clock:before {
+                left: 2.325em;
+            }
+
+            .clock:after {
+                right: 2.325em;
+            }
+
+            .clock span {
+                position: relative;
+                display: inline-block;
+                padding: 0 .25em;
+                margin: 0 .06125em;
+                z-index: 1;
+                -webkit-transform: perspective(750);
+                -moz-transform: perspective(750);
+                -ms-transform: perspective(750);
+                transform: perspective(750);
+                -webkit-transform-style: preserve-3d;
+                -moz-transform-style: preserve-3d;
+                -ms-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+            }
+
+                .clock span:first-child {
+                    margin-left: 0;
+                }
+
+                .clock span:last-child {
+                    margin-right: 0;
+                }
+
+                .clock span:nth-child(2),
+                .clock span:nth-child(4) {
+                    margin-right: .3em;
+                }
+
+                .clock span:nth-child(3),
+                .clock span:nth-child(5) {
+                    margin-left: .3em;
+                }
+
+                .clock span:before,
+                .clock span:after {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    color: #fafafa;
+                    text-shadow: 0 1px 0 #fff;
+                    background: #fa7f15;
+                    border-radius: .125em;
+                    outline: 1px solid transparent; /* fix jagged edges in ff */
+                    -webkit-backface-visibility: hidden;
+                    -moz-backface-visibility: hidden;
+                    -ms-backface-visibility: hidden;
+                    backface-visibility: hidden;
+                    -webkit-transition: -webkit-transform .75s, opacity .75s;
+                    -moz-transition: -moz-transform .75s, opacity .75s;
+                    -ms-transition: -ms-transform .75s, opacity .75s;
+                    transition: transform .75s, opacity .75s;
+                }
+
+                .clock span:before {
+                    opacity: 1;
+                    z-index: 1;
+                    content: attr(data-old);
+                    -webkit-transform-origin: 0 0;
+                    -moz-transform-origin: 0 0;
+                    -ms-transform-origin: 0 0;
+                    transform-origin: 0 0;
+                    -webkit-transform: translate3d(0,0,0) rotateX(0);
+                    -moz-transform: translate3d(0,0,0) rotateX(0);
+                    -ms-transform: translate3d(0,0,0) rotateX(0);
+                    transform: translate3d(0,0,0) rotateX(0);
+                }
+
+                .clock span:after {
+                    opacity: 0;
+                    z-index: 2;
+                    content: attr(data-now);
+                    -webkit-transform-origin: 0 100%;
+                    -moz-transform-origin: 0 100%;
+                    -ms-transform-origin: 0 100%;
+                    transform-origin: 0 100%;
+                    -webkit-transform: translate3d(0,-102.5%,0) rotateX(90deg);
+                    -moz-transform: translate3d(0,-102.5%,0) rotateX(90deg);
+                    -ms-transform: translate3d(0,-102.5%,0) rotateX(90deg);
+                    transform: translate3d(0,-102.5%,0) rotateX(90deg);
+                }
+
+            .clock .flip:before {
+                opacity: 0;
+                -webkit-transform: translate3d(0,102.5%,0) rotateX(-90deg);
+                -moz-transform: translate3d(0,102.5%,0) rotateX(-90deg);
+                -ms-transform: translate3d(0,102.5%,0) rotateX(-90deg);
+                transform: translate3d(0,102.5%,0) rotateX(-90deg);
+            }
+
+            .clock .flip:after {
+                opacity: 1;
+                -webkit-transform: translate3d(0,0,0) rotateX(0);
+                -moz-transform: translate3d(0,0,0) rotateX(0);
+                -ms-transform: translate3d(0,0,0) rotateX(0);
+                transform: translate3d(0,0,0) rotateX(0);
+            }
+
+    </style>
+
+</head>
+<body>
+
+    <!-- ======= Property Search Section ======= -->
+    <div class="click-closed"></div>
+    <!--/ Form Search Star /-->
+    <div class="box-collapse">
+        <div class="title-box-d">
+            <h3 class="title-d">Search Property</h3>
+        </div>
+        <span class="close-box-collapse right-boxed ion-ios-close"></span>
+        <div class="box-collapse-wrap form">
+            <form class="form-a">
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+                        <div class="form-group">
+                            <label for="Type">Keyword</label>
+                            <input type="text" class="form-control form-control-lg form-control-a" placeholder="Keyword">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="Type">Type</label>
+                            <select class="form-control form-control-lg form-control-a" id="Type">
+                                <option>All Types</option>
+                                <option>Residential</option>
+                                <option>Commercial</option>
+                                <option>Agricultural</option>
+                                <option>Investment</option>
+                                <option>Bank Instrution</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <select class="form-control form-control-lg form-control-a" id="city">
+                                <option>All City's</option>
+                                <option>Johannesburg</option>
+                                <option>Pretoria</option>
+                                <option>Durban</option>
+                                <option>Cape Town</option>
+                                <option>Nelspruit</option>
+                                <option>Polokwane</option>
+                                <option>East London</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="bedrooms">Bedrooms</label>
+                            <select class="form-control form-control-lg form-control-a" id="bedrooms">
+                                <option>Any</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>3+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="garages">Garages</label>
+                            <select class="form-control form-control-lg form-control-a" id="garages">
+                                <option>Any</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>3+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="bathrooms">Bathrooms</label>
+                            <select class="form-control form-control-lg form-control-a" id="bathrooms">
+                                <option>Any</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>3+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-b">Search Property</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div><!-- End Property Search Section -->
+
+    <main id="main">
+
+        <!-- ============================================= Property Name & Opening Bid ======================================================== -->
+        <section class="intro-single">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="title-single-box">
+                            <h1 class="title-single; text-center"><strong>304 Vista Drive</strong></h1>
+                            <h1 class="title-single; text-center">Pretoria East</h1>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="title-single-box" style="border-right: 3px solid #fa7f15">
+                            <h1 class="title-single; text-center"><strong>Opening Bid:</strong></h1>
+                            <h1 class="title-single; text-center">R1 450 000.00 </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section><!-- End Intro Single-->
+        <!-- ============================================= Property Images ======================================================== -->
+        <section class="property-single nav-arrow-b">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="property-single-carousel" class="owl-carousel owl-arrow gallery-property">
+                            <div class="carousel-item-b">
+                                <img src="~/assets/img/slide-2.jpg" alt="">
+                            </div>
+                            <div class="carousel-item-b">
+                                <img src="~/assets/img/slide-3.jpg" alt="">
+                            </div>
+                            <div class="carousel-item-b">
+                                <img src="~/assets/img/slide-1.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <!-- ============================================= Current Bid & Timer ======================================================== -->
+
+            <div class="container" style="border-right: solid #fa7f15; border-left: solid #fa7f15; padding-bottom:30px">
+                <h1 class="title-single; text-center"><strong>AUCTION ENDS</strong></h1>
+                <div class="title-single-box">
+                    <span class="clock"></span>
+                </div>
+            </div>
+        </section>
+        <br />
+        <br />
+
+        <!-- ============================================= Auction Panel & Video ======================================================== -->
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    <div class="bid" style="padding-top:20px; text-align:center;  margin:auto; border-top: solid #07033c;; border-bottom: solid #07033c; width:100%; height:90%">
+                        <h4 class="title-single; text-center">Current Bid</h4>
+                        <h4 class="title-single; text-center">R1 500 000.00</h4>
+                        Your Bid:
+
+                        <div class="Yourbid" style=" width:240px;float:inherit;margin:auto;">
+                            <input type="button" id="Decriment5k" value="-" style="float:left; width:25px; border: solid #07033c  " />
+                            <input type="button" id="Increment5k" value="+" style="float:right; width:25px; border: solid #07033c" />
+                            <div id="Bidd" style="        margin: auto;       width: 150px;       border: 3px solid #fa7f15;        border-radius: 3px;        float: none; border: solid #fa7f15">userbid</div>
+                        </div>
+                        <div class="Increments" style="padding-top:30px; margin:auto">
+                            <div>Add increment of:</div>
+                            <input type="button" id="10KIncreas" value="R10 000" style="float:left; border: solid #fa7f15" />
+                            <input type="button" id="50KIncreas" value="R50 000" style="border: solid #fa7f15" />
+                            <input type="button" id="100KIncreas" value="R100 000" style="float:right; border: solid #fa7f15 " />
+
+                            <div class="Placebid" style="padding-top:30px ;padding-bottom:20px">
+                                <input type="button" id="placeBid" value="Plase youre bid" style="border: solid #07033c" />
+                            </div>
+                            <div class="Maximumbid" style="padding-top: 40px ;padding-bottom:20px">
+                                <input type="button" id="PlaceMaximumBid" value="Place Maximum Bid" style="border: solid #07033c" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="embed-responsive embed-responsive-16by9 hoverable">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fa3Iczgh8Ok" style="height: 100%"
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <!--Grid column-->
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="container">
+            <h4 class="text-center">Please place youre bids with more than 20 seconds on the countdown clock to insure youre bid is regestered on the server bevore time runs out.</h4>
+        </div>
+        <br />
+        <!-- ============================================= Bidding Window ======================================================== -->
+
+
+        <div class="container">
+            <div class="title-single-box text-left">
+                <h2><strong>Bidding Window</strong></h2>
+            </div>
+            <div class="container" title="Auction History " style="border: solid #07033c;width: 100%">
+
+
+                <div class="row" style="text-align:center; padding:20px; border-bottom:ridge">
+                    <div class="col-lg-6" style="text-align:left">
+                        Bitter
+                    </div>
+                    <div class="col-lg-3">
+                        Time of bid
+                    </div><div class="col-lg-3">
+                        Bid
+                    </div>
+                </div>
+                <div type="hidden" id="displayname" style="visibility:hidden">Username</div>
+                <div id="CurentBid" style="text-align:left">
+                </div>
+                <div class="col-lg-6" id="bidUser" style="text-align:left">
+                </div>
+                <div class="col-lg-3" id="bidTime" style="text-align:left">
+                </div>
+                <div class="col-lg-3" id="bidAmount" style="text-align:left">
+                </div>
+            </div>
+        </div>
+        <div id="USER" type="hidden"></div>
+
+        <br />
+        <!-- ============================================= Chat Room ======================================================== -->
+        <div class="container">
+            <h2 class="title-single; text-left"><strong>ChatBox</strong></h2>
+            <input type="text" id="message" style="border: dashed #07033c; width: 100%">
+            <ul id="discussion">
+            </ul>
+
+            <div class="title-single; text-left">
+                <input type="button" id="sendmessage" value="Send" style="border: solid #07033c "/>
+                <input type="hidden" id="displayname" />
+            </div>
+        </div>
+
+
+
+    </main><!-- End #main -->
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/jquery.easing.min.js"></script>
+    <script src="~/Scripts/validate.js"></script>
+    <script src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="~/Scripts/scrollreveal.min.js"></script>
+
+    <script>
+        var Clock = (function () {
+
+            var exports = function (element) {
+                this._element = element;
+                var html = '';
+                for (var i = 0; i < 6; i++) {
+                    html += '<span>&nbsp;</span>';
+                }
+                this._element.innerHTML = html;
+                this._slots = this._element.getElementsByTagName('span');
+                this._tick();
+            };
+
+            exports.prototype = {
+
+                _tick: function () {
+                    var time = new Date();
+                    this._update(this._pad(time.getHours()) + this._pad(time.getMinutes()) + this._pad(time.getSeconds()));
+                    var self = this;
+                    setTimeout(function () {
+                        self._tick();
+                    }, 1000);
+                },
+
+                _pad: function (value) {
+                    return ('0' + value).slice(-2);
+                },
+
+                _update: function (timeString) {
+
+                    var i = 0, l = this._slots.length, value, slot, now;
+                    for (; i < l; i++) {
+
+                        value = timeString.charAt(i);
+                        slot = this._slots[i];
+                        now = slot.dataset.now;
+
+                        if (!now) {
+                            slot.dataset.now = value;
+                            slot.dataset.old = value;
+                            continue;
+                        }
+
+                        if (now !== value) {
+                            this._flip(slot, value);
+                        }
+                    }
+                },
+
+                _flip: function (slot, value) {
+
+                    // setup new state
+                    slot.classList.remove('flip');
+                    slot.dataset.old = slot.dataset.now;
+                    slot.dataset.now = value;
+
+                    // force dom reflow
+                    slot.offsetLeft;
+
+                    // start flippin
+                    slot.classList.add('flip');
+
+                }
+
+            };
+
+            return exports;
+        }());
+
+        var i = 0, clocks = document.querySelectorAll('.clock'), l = clocks.length;
+        for (; i < l; i++) {
+            new Clock(clocks[i]);
+        }
+
+
+    </script>
+
+    <!-- Template Main JS File -->
+    <script src="~/Scripts/main.js"></script>
+
+</body>
+
+</html>
+

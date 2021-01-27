@@ -1,0 +1,12 @@
+﻿@model Auction_Prop_Sellers.Models.ErrorModels.ErrorViewModel
+@{
+    ViewBag.Title = "ErrorView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Ann Error Aucured</h1>
+<h2>@Html.DisplayFor(model => model.Msge)</h2>
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

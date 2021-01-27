@@ -1,0 +1,51 @@
+﻿@model Auction_Prop_API.Models.DataBaseModels.PrivateSeller
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PrivateSeller</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Seller.FirtstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Seller.FirtstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProofOfResedence)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProofOfResedence)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Signiture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Signiture)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

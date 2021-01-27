@@ -1,0 +1,146 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auction-Prop | Contact Us</title>
+    <link rel="icon" type="image/x-icon" href="~/assets/assets/img/White A.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="~/assets/assets/css/libs/swiper.min.css">
+    <link rel="stylesheet" href="~/assets/assets/css/libs/material-components-web.min.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" href="~/assets/assets/css/skins/blue.css">
+    <link rel="stylesheet" href="~/assets/assets/css/responsive.css">
+</head>
+
+<body>
+    <main class="content-offset-to-top">
+        <div class="header-image-wrapper">
+            <div class="bg" style="background-image: url('/assets/assets/img/images/others/contact.jpg');"></div>
+            <div class="mask"></div>
+            <div class="header-image-content offset-bottom">
+                <h1 class="title">Contact Us</h1>
+                <p class="desc">Got a question? We'll give you straight answer</p>
+            </div>
+        </div>
+        <div class="px-3">
+            <div class="theme-container">
+                <div class="mdc-card main-content-header mb-5">
+                    <div class="row around-xs">
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="column center-xs middle-xs text-center">
+                                <i class="material-icons mat-icon-lg primary-color">home</i>
+                                <h3 class="primary-color py-1">ADDRESS :</h3>
+                                <span class="text-muted fw-500">Fintech Campus | 81 Botterklapper Str. | Pretoria</span>
+                                <span class="text-muted fw-500">Gauteng | South Africa | 0081</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="column center-xs middle-xs text-center">
+                                <i class="material-icons mat-icon-lg primary-color">call</i>
+                                <h3 class="primary-color py-1">PHONES :</h3>
+                                <span class="text-muted fw-500">083 461 6555</span>
+                                <span class="text-muted fw-500">083 556 3529</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <div class="column center-xs middle-xs text-center">
+                                <i class="material-icons mat-icon-lg primary-color">mail_outline</i>
+                                <h3 class="primary-color py-1">E-MAIL :</h3>
+                                <span class="text-muted fw-500">info@auction-prop.com</span>
+                                <span class="text-muted fw-500">rudo@auction-prop.com</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 mt-3 px-3 p-relative">
+                            <div class="divider w-100"></div>
+                        </div>
+                        <h3 class="w-100 text-center py-3">CONTACT US</h3>
+                        <form action="javascript:void(0);" class="contact-form row">
+                            <div class="col-xs-12 col-sm-12 col-md-4 p-2">
+                                <div class="mdc-text-field mdc-text-field--outlined w-100">
+                                    <input class="mdc-text-field__input" placeholder=" Full name is required">
+                                    <div class="mdc-notched-outline">
+                                        <div class="mdc-notched-outline__leading"></div>
+                                        <div class="mdc-notched-outline__notch">
+                                            <label class="mdc-floating-label">Full Name</label>
+                                        </div>
+                                        <div class="mdc-notched-outline__trailing"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-4 p-2">
+                                <div class="mdc-text-field mdc-text-field--outlined w-100">
+                                    <input class="mdc-text-field__input" placeholder="Email address is required">
+                                    <div class="mdc-notched-outline">
+                                        <div class="mdc-notched-outline__leading"></div>
+                                        <div class="mdc-notched-outline__notch">
+                                            <label class="mdc-floating-label">Email Address</label>
+                                        </div>
+                                        <div class="mdc-notched-outline__trailing"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-4 p-2">
+                                <div class="mdc-text-field mdc-text-field--outlined w-100">
+                                    <input class="mdc-text-field__input" placeholder="Phone number is required">
+                                    <div class="mdc-notched-outline">
+                                        <div class="mdc-notched-outline__leading"></div>
+                                        <div class="mdc-notched-outline__notch">
+                                            <label class="mdc-floating-label">Phone Number</label>
+                                        </div>
+                                        <div class="mdc-notched-outline__trailing"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 p-2">
+                                <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea w-100">
+                                    <textarea class="mdc-text-field__input" rows="5" placeholder="Message is required"></textarea>
+                                    <div class="mdc-notched-outline mdc-notched-outline--upgraded">
+                                        <div class="mdc-notched-outline__leading"></div>
+                                        <div class="mdc-notched-outline__notch">
+                                            <label class="mdc-floating-label">Message</label>
+                                        </div>
+                                        <div class="mdc-notched-outline__trailing"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 w-100 py-3 text-center">
+                                <button class="mdc-button mdc-button--raised" type="submit">
+                                    <span class="mdc-button__ripple"></span>
+                                    <span class="mdc-button__label">Submit</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="mt-5">
+                        <div id="contact-map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="back-to-top"><i class="material-icons">arrow_upward</i></div>
+    <script src="~/assets/assets/js/libs/jquery.min.js"></script>
+    <script src="~/assets/assets/js/libs/material-components-web.min.js"></script>
+    <script src="~/assets/assets/js/libs/swiper.min.js"></script>
+    <script src="~/assets/assets/js/scripts.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1rF9bttCxRmsNdZYjW7FzIoyrul5jb-s&callback=initMap" async defer></script>
+
+</body>
+
+</html>
+
+
+
+
+
+

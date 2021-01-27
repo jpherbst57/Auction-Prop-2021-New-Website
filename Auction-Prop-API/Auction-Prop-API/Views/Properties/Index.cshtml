@@ -1,0 +1,292 @@
+﻿@model IEnumerable<Auction_Prop_API.Models.DataBaseModels.Property>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Auction.PropertyID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seller.FirtstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Province)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BedRooms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BathRooms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuildingArea)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TerraceArea)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Garages)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrpertyValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MinimubBid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reserve)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlansPath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaxesAndRates)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TitleDeedPath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApprovalStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SellerSigniture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.A_C)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PetsAllowed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Garden)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CableTV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Terrace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wi_fi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fibre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pool)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Balcony)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Parquet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Beach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gerage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoofTarrace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sauna)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutdoorKitchen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FireplacePit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SunRoom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConcreteFlooring)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WoodFloring)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TennisCourts)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Auction.PropertyID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Seller.FirtstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Province)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BedRooms)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BathRooms)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuildingArea)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TerraceArea)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Garages)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrpertyValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MinimubBid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reserve)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlansPath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaxesAndRates)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TitleDeedPath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApprovalStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SellerSigniture)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.A_C)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PetsAllowed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Garden)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CableTV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Terrace)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.wi_fi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fibre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pool)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Balcony)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Parquet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Beach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gerage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoofTarrace)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sauna)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutdoorKitchen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FireplacePit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SunRoom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConcreteFlooring)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WoodFloring)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TennisCourts)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PropertyID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PropertyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PropertyID })
+        </td>
+    </tr>
+}
+
+</table>

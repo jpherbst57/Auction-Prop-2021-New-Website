@@ -1,0 +1,83 @@
+﻿@model Auction_Prop_API.Models.DataBaseModels.Retailer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Retailer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Seller.FirtstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Seller.FirtstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RetailerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RetailerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Branch)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Branch)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyContactNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyContactNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompaynLogoPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompaynLogoPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Signature)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Signature)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyDescription)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

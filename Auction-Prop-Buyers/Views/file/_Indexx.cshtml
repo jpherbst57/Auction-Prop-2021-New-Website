@@ -1,0 +1,163 @@
+﻿@using Auction_Prop_Buyers.Models.DisplayMadels
+@using Microsoft.AspNet.Identity;
+
+@using AutoMapper;
+@model Property
+
+@if (Request.IsAuthenticated)
+{
+    RegisteredBuyer mod = new RegisteredBuyer();
+
+
+    try
+    {
+        mod = APILibrary.APIMethods.APIGet<RegisteredBuyer>(User.Identity.GetUserId(), "RegisteredBuyers");
+
+    }
+    catch
+    {
+
+        mod = null;
+
+
+    }
+
+
+    if (mod == null)
+    {
+        <h2>Step 1: Buyer Registration</h2>
+        <h3>
+            You are not registered as a Buyer.
+        </h3>
+        <button onclick='@Html.ActionLink("Click here to register and qualify to bid on this Auction", "Index", "Buyers")'  class="btn btn-primary"/>
+    }
+    else if (mod.BuyerAddresses.Count == 0)
+    {
+        <h2>
+            Step 2: Address
+        </h2>
+        <h3>
+            You need to submit atleast one address to complete youre Registration.
+        </h3>
+        <button onclick='@Html.ActionLink("Click here to enter youre address", "CreateAddress", "Buyers")'  class="btn btn-primary"/>
+    }
+    else
+    {
+        if (mod.AuctionRegistrations.Count > 0)
+        {
+            bool registered = false;
+            bool bankG = false;
+            bool guarintees = false;
+            foreach (AuctionRegistration reg in mod.AuctionRegistrations)
+            {
+                if (reg.PropertyID == Model.PropertyID)
+                {
+                    if (reg.Bonded)
+                    {
+                        try
+                        {
+                            if (reg.BankApproval == null)
+                            {
+                                throw new Exception();
+                            }
+                        }
+                        catch
+                        {
+
+
+                            <h3>
+                                Plaese Submit youre banks pre approvals.
+                                For assistance contact one of our bond orginators: admin@infinitymortgagefinance.co.za
+                            </h3>
+                            <button onclick='@Html.ActionLink("Click here to Submit Bank Pre Approvals", "AdPreApproval", "Buyers", new { id = reg.id }, null)'  class="btn btn-primary"/>
+                        }
+                    }
+                    else
+                    {
+                        try
+                        {
+                            if (reg.Guarintee == null)
+                            {
+                                throw new Exception();
+                            }
+                        }
+                        catch
+                        {
+
+
+                            <h3>
+                                Plaese Submit youre banks Guarintees.
+                                For assistance contact one of our bond orginators: admin@infinitymortgagefinance.co.za
+                            </h3>
+                            <button onclick='@Html.ActionLink("Click here to Submit Bank Guarintees", "AddBankGuarintee", "Buyers", new { id = reg.id }, null)'  class="btn btn-primary"/>
+                        }
+                    }
+                    registered = true;
+                    if (guarintees || bankG)
+                    {
+                        try
+                        {
+                            <h3>Congratulations.</h3>
+                            <p>You are nou Registered to Bid on this Auction.</p>
+                            if (Model.Auction == null)
+                            {
+
+                                <p>This Propperty is not yet Scheduled for auction.</p>
+                            }
+                            if (Model.Auction.StartTime >= DateTime.Now)
+                            {
+                                <p>This Auction Starts at @Model.Auction.StartTime</p>
+                            }
+                            else if (Model.Auction.StartTime <= DateTime.Now && DateTime.Now <= Model.Auction.EndTime)
+                            {
+                                <button onclick='@Html.ActionLink("Click Here to go to Auction", "Index", "AuctionRoom", new { id = Model.Auction.PropertyID }, null)'  class="btn btn-primary"/>
+                            }
+
+
+
+                        }
+                        catch
+                        {
+
+
+                            <p>This Propperty is not yet Scheduled for auction.</p>
+                        }
+                    }
+
+                }
+            }
+            if (registered == false)
+            {
+                <h2>
+                    Step 3: Auction Registration
+                </h2>
+                <h3>
+                    You need to register for each Auction you want to bid on.
+                </h3>
+
+                <button onclick='@Html.ActionLink("Click Here to Register for this Auction.", "RegisterForAuction", "Buyers", new { id = Model.PropertyID }, Model)'  class="btn btn-primary"/>
+            }
+
+        }
+        else
+        {
+            <h2>
+                Step 3: Auction Registration
+            </h2>
+            <h3>
+                You need to register for each Auction you want to bid on.
+            </h3>
+
+            <button onclick='@Html.ActionLink("Click Here to Register for this Auction.", "RegisterForAuction", "Buyers", new { id = Model.PropertyID }, Model)' class="btn btn-primary"/>
+        }
+     }
+ }
+  else
+  {
+    <h5>You Have to sign up or log in with Auction-Prop before you can register for a auction.</h5>
+    <button   onclick="location.href='@Url.Action("Sign up | Log in","Register","Account")'"  class="btn btn-primary"/>
+
+}
+
+
+

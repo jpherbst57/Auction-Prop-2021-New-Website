@@ -1,0 +1,35 @@
+﻿@model Auction_Prop_API.Models.UserInfoViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UserInfoViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HasRegistered)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasRegistered)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoginProvider)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoginProvider)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Email }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

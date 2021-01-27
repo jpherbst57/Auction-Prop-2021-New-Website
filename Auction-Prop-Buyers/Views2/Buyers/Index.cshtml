@@ -1,0 +1,313 @@
+﻿@using Auction_Prop_Buyers.Models.DisplayMadels
+@model RegisteredBuyer
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Auction-Prop.com | User Profile</title>
+
+<!-- Favicons -->
+<link href="~/assets/img/fat.png" rel="icon">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+<script src="https://kit.fontawesome.com/ef4e2c1ac6.js" crossorigin="anonymous"></script>
+
+<!-- Vendor CSS Files -->
+<link rel="stylesheet" href="~/Content2/bootstrap1.min.css" type="text/css">
+<link rel="stylesheet" href="~/Content2/ionicons.min.css" type="text/css">
+<link rel="stylesheet" href="~/Content2/animate.min.css" type="text/css">
+<link rel="stylesheet" href="~/Content2/owl.carousel.min.css" type="text/css">
+<link rel="stylesheet" href="~/Content/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="~/Content/font-awesome.css" type="text/css">
+
+<!-- Template Main CSS File -->
+<link href="~/assets/css/style.css" rel="stylesheet">
+
+<!-- ======= Property Search Section Start ======= -->
+<div class="click-closed"></div>
+
+<div class="box-collapse">
+    <div class="title-box-d">
+        <h3 class="title-d">Search Property</h3>
+    </div>
+    <span class="close-box-collapse right-boxed ion-ios-close"></span>
+    <div class="box-collapse-wrap form">
+        <form class="form-a">
+            <div class="row">
+                <div class="col-md-12 mb-2">
+                    <div class="form-group">
+                        <label for="Type">Keyword</label>
+                        <input type="text" class="form-control form-control-lg form-control-a" placeholder="Keyword">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="form-group">
+                        <label for="Type">Type</label>
+                        <select class="form-control form-control-lg form-control-a" id="Type">
+                            <option>All Types</option>
+                            <option>Residential</option>
+                            <option>Commercial</option>
+                            <option>Agricultural</option>
+                            <option>Investment</option>
+                            <option>Bank Instruction</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <select class="form-control form-control-lg form-control-a" id="city">
+                            <option>All City's</option>
+                            <option>Johannesburg</option>
+                            <option>Pretoria</option>
+                            <option>Durban</option>
+                            <option>Cape Town</option>
+                            <option>Nelspruit</option>
+                            <option>Polokwane</option>
+                            <option>East London</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="form-group">
+                        <label for="bedrooms">Bedrooms</label>
+                        <select class="form-control form-control-lg form-control-a" id="bedrooms">
+                            <option>Any</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>3+</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="form-group">
+                        <label for="garages">Garages</label>
+                        <select class="form-control form-control-lg form-control-a" id="garages">
+                            <option>Any</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>3+</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="form-group">
+                        <label for="bathrooms">Bathrooms</label>
+                        <select class="form-control form-control-lg form-control-a" id="bathrooms">
+                            <option>Any</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>3+</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-b">Search Property</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- ======= Property Search Section End ======= -->
+
+<!-- ======= Intro and Breadcrumb Section Start ======= -->
+<section class="intro-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-8">
+                <div class="title-single-box">
+                    <h1 class="title-single">User Profile</h1>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-4">
+                <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            User Profile
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======= Intro and Breadcrumb Section End ======= -->
+
+<section class="intro1">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div>
+                    <div>
+                        <h4>Your Information</h4>
+                        <br />
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.FirstName)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.FirstName)
+                            </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.LastName)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.LastName)
+                            </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.DateOfBirth)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.DateOfBirth)
+                            </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.ApprovalStatus)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.ApprovalStatus)
+                            </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.RegistrationDate)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.RegistrationDate)
+                            </dd>
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Signiture)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Signiture)
+                            </dd>
+                        </dl><div style="max-width:20%">
+                            @if (Model.AuctionRegistrations == null)
+                            {
+                                <h1>
+                                    Congratulations!
+                                </h1>
+                                <p>
+                                    You are now Registered as a Buyer with Auction-Prop. You're Registration will be reviewed for approval,
+                                    you can view all our listings on the Properties page whilest you await approval
+                                    @Html.ActionLink("View Property lListings.", "Properties", "Home");
+                                </p>
+                            }
+                            else
+                            {
+                                <h2 class="col-md-12">You are approved to take part in the following Auctions</h2>
+                                <div class="row">
+                                    @foreach (AuctionRegistration Auc in Model.AuctionRegistrations)
+                                    {
+                                        bool bankG = false;
+                                        bool bankApp = false;
+                                        <div class="col-md-4">
+                                            <h2>@Auc.Property.Title</h2>
+                                            <h3>@Auc.Property.Address</h3>
+
+                                            @if (Auc.Bonded)
+                                            {
+                                                try
+                                                {
+                                                    if (Auc.BankApproval == null)
+                                                    {
+                                                        throw new Exception();
+                                                    }
+                                                    else
+                                                    {
+                                                        bankApp = true;
+                                                    }
+
+                                                }
+                                                catch
+                                                {
+                                                    @Html.ActionLink("Click Here to submit youre Bank Pre Approval", "AdPreApproval", "Buyers", new { id = Auc.PropertyID }, null)
+                                                    <p>Should you require any assistance with a bond. Please contact one of our Bond Originators: admin@infinitymortagefinance.co.za</p>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                try
+                                                {
+                                                    if (Auc.Guarintee == null)
+                                                    {
+                                                        throw new NullReferenceException();
+
+
+                                                    }
+                                                    else
+                                                    {
+                                                        bankG = true;
+                                                    }
+
+                                                }
+                                                catch (NullReferenceException e)
+                                                {
+
+                                                    @Html.ActionLink("Click Here to go to Auction", "AddBankGuarintee", "Buyers", new { id = Auc.PropertyID }, null)
+                                                }
+                                            }
+                                            @if (bankApp || bankG)
+                                            {
+                                                try
+                                                {
+                                                    <h3>Congratulations</h3>
+                                                    <p>You Are Now Registered To Bid On This Auction</p>
+                                                    if (Auc.Property.Auction.StartTime >= DateTime.Now)
+                                                    {
+                                                        <p>This Auction Starts At @Auc.Property.Auction.StartTime</p>
+                                                    }
+                                                    else if (Auc.Property.Auction.StartTime <= DateTime.Now && DateTime.Now <= Auc.Property.Auction.EndTime)
+                                                    {
+                                                        @Html.ActionLink("Click Here to go to Auction", "Index", "AuctionRoom", new { id = Auc.Property.Auction.PropertyID }, null)
+                                                    }
+                                                }
+                                                catch
+                                                {
+
+                                                    <h3>Congratulations</h3>
+                                                    <p>You Are Now Registered to Bid On This Auction</p>
+
+                                                    <p>This Propperty Is Not Yet Scheduled For Auction</p>
+                                                }
+                                            }
+                                            <img alt="" src=@Auc.Property.PropertyPhotos.First().PropertyPhotoPath>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <br />
+                    <p>
+                        @Html.ActionLink("Click here to go back to Property listings", "Properties", "home")
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<div id="preloader"></div>
+
+<!-- ====== Vendor JS Files ====== -->
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="~/Scripts/bootstrap.bundle.min.js"></script>
+<script src="~/Scripts/jquery.easing.min.js"></script>
+<script src="~/Scripts/validate.js"></script>
+<script src="~/Scripts/owl.carousel.min.js"></script>
+<script src="~/Scripts/scrollreveal.min.js"></script>
+
+<!-- ====== Template Main JS File ====== -->
+<script src="~/Scripts/main.js"></script>

@@ -1,0 +1,131 @@
+﻿@model Auction_Prop_API.Models.DataBaseModels.RegisteredBuyer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RegisteredBuyer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Deposit.ProofOfPaymentPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deposit.ProofOfPaymentPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BondedOrCash)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BondedOrCash)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfilePhotoPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProfilePhotoPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProofOfResidencePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProofOfResidencePath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CopyOfIDPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CopyOfIDPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProofOfBankAccount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProofOfBankAccount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDBuyerVerifyPhoto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDBuyerVerifyPhoto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApprovalStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovalStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistrationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegistrationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Signiture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Signiture)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

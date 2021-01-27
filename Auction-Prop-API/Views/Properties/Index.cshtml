@@ -1,0 +1,281 @@
+﻿@model IEnumerable<Auction_Prop_API.Models.DataBaseModels.Property>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConcludedAuction.WinningBidder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seller.FirtstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Province)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistrationType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BedRooms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BathRooms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FloorSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YardSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Garages)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OpeningBid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reserve)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlansPath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaxesAndRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.levies)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaxesAndRates)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TitleDeedPath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HOARules)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApprovalStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SellerSigniture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Garden)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Terrace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gerages)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SwimmingPool)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fibre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clubhouse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Braai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutdoorKitchen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FireplacePit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TennisCourts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Jacquizzi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Parking)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Borehole)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MandateType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MandateSingedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MandateExpireDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConcludedAuction.WinningBidder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Seller.FirtstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Province)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegistrationType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BedRooms)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BathRooms)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FloorSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YardSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Garages)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpeningBid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reserve)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlansPath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaxesAndRate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.levies)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaxesAndRates)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TitleDeedPath)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HOARules)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApprovalStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SellerSigniture)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Garden)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Terrace)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gerages)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SwimmingPool)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fibre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clubhouse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Braai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutdoorKitchen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FireplacePit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TennisCourts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Jacquizzi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Parking)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Borehole)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MandateType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MandateSingedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MandateExpireDate)
+        </td>
+        <td>
+            @Html.ActionLink("Schedule for auction", "Create","Auctions", new { id=item.PropertyID },null) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.PropertyID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PropertyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PropertyID })
+        </td>
+    </tr>
+}
+
+</table>

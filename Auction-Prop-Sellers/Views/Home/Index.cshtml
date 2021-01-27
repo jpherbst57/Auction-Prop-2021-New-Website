@@ -1,0 +1,85 @@
+﻿@using Microsoft.AspNet.Identity
+
+
+@model Auction_Prop_Sellers.Models.DataViewModels.Seller
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@if (Request.IsAuthenticated)
+{
+    if (Model != null)
+    {
+
+        <div class="header-image-wrapper">
+            <div class="bg" style="background-image: url('~/assets/assets/img/images/carousel/slide-2.jpg');"></div>
+            <div class="mask"></div>
+            <div class="header-image-content mh-200">
+                <p class="desc">
+                    “Real estate cannot be lost or stolen, nor can it be carried away. Purchased with common sense, paid for in full,
+                    and managed with reasonable care, it is about the safest investment in the world.”
+                </p>
+                <p class="desc">- Franklin D. Roosevelt, U.S. president -</p>
+            </div>
+        </div>
+
+        <div class="jumbotron">
+            <h1>Sellers Portal</h1>
+            <p class="lead">Welcome @Model.FirtstName  to our Property Auction Platform.</p>
+            <p></p>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Users Account</h2>
+                <p>
+                    Here you can view and manage youre user Account and Activities.
+                </p>
+                @Html.ActionLink("Mannage User Account", "Index", "Manage")
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Seller Dashboard</h2>
+                    <p>
+                        Here you can list, view and manage youre Properties to be auctioned.
+                    </p>
+                    @Html.ActionLink("Mannage youre Properties", "Index", "SellerDashboard")
+                </div>
+            </div>
+        </div>
+
+
+    }
+    else
+    {
+
+
+        <div class="jumbotron">
+            <h1>Sellers Portal</h1>
+            <p class="lead">Welcome to our Property Auction Platform.</p>
+            <p>You are not Registered as a seller.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Please Register As a Seller</h2>
+                <p>
+                    You are not registered as aseller.
+                </p>
+                @Html.ActionLink("Register", "Index", "SellerRegistration")
+            </div>
+
+        </div>
+    }
+
+}
+else
+{
+    <div class="jumbotron">
+        <h1>Sellers Portal</h1>
+        <p class="lead">Welcome to our Property Auction Platform.</p>
+        <p>You have not signed up or logged in with Auction-Prop.</p>
+    </div>
+    <div style="text-align:center">
+        Please Log in to continue.
+    </div>
+}

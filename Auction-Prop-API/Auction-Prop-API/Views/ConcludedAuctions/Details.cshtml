@@ -1,0 +1,51 @@
+﻿@model Auction_Prop_API.Models.DataBaseModels.ConcludedAuction
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ConcludedAuction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Bid.BuyerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bid.BuyerID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegisteredBuyer.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegisteredBuyer.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeOfConclution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeOfConclution)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExceededReserve)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExceededReserve)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PropertyID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

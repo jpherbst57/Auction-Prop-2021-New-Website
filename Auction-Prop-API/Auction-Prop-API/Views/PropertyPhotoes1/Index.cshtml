@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Auction_Prop_API.Models.DataBaseModels.PropertyPhoto>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Property.SellerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyPhotoPath)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Property.SellerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyPhotoPath)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ImageID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ImageID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ImageID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,51 @@
+﻿@model Auction_Prop_API.Models.DataBaseModels.Bid
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Bid</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Auction.PropertyID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Auction.PropertyID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegisteredBuyer.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegisteredBuyer.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AmuntOfBid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AmuntOfBid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeOfbid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeOfbid)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BidID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

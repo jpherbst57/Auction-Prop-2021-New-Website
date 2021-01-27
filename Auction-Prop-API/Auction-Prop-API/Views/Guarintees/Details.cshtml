@@ -1,0 +1,51 @@
+﻿@model Auction_Prop_API.Models.DataBaseModels.Guarintee
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Guarintee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RegisteredBuyer.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegisteredBuyer.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuarinteePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuarinteePath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuarinteeApproval)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuarinteeApproval)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfSubmition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfSubmition)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GuarinteeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

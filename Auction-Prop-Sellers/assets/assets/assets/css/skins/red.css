@@ -1,0 +1,20 @@
+:root {
+    --mdc-theme-primary: #d32f2f;
+    --mdc-theme-on-primary: #fff;
+    --mdc-theme-secondary: #e91e63;
+    --mdc-theme-on-secondary: #fff;
+    --mdc-theme-background: #fafafa; 
+    --mdc-theme-surface: #fff; 
+    --mdc-theme-on-surface: #000;
+    --mdc-theme-error: #ff5252;
+    --mdc-theme-text-primary-on-background: rgba(0, 0, 0, 0.87);
+    --mdc-theme-text-secondary-on-background: rgba(0, 0, 0, 0.54); 
+    --theme-base-color: rgba(0,0,0,.87);
+    --theme-primary-rgb: 211,47,47;
+    --theme-primary-rgb-lighter: 255,235,238;
+    --theme-divider: rgba(0, 0, 0, 0.12);
+    --theme-surface-rgb: 255,255,255;
+    --theme-inputs-border-color: rgba(0, 0, 0, 0.2);
+    --theme-unselected-chip: #e0e0e0; 
+    --swiper-theme-color: #d32f2f; 
+}

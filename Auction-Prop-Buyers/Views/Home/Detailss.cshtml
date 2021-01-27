@@ -1,0 +1,733 @@
+﻿@model Auction_Prop_Buyers.Models.DisplayMadels.Property
+@using Auction_Prop_Buyers.Models.DisplayMadels
+@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Auction-Prop.com | Property Details</title>
+
+    <!-- Favicons -->
+    <link href="~/assets/img/fat.png" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link rel="stylesheet" href="~/Content2/bootstrap1.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content2/ionicons.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content2/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content2/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css" type="text/css">
+
+    <!-- Template Main CSS File -->
+    <link href="~/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Property Search Section ======= -->
+    <div class="click-closed"></div>
+    <!--/ Form Search Star /-->
+    <div class="box-collapse">
+        <div class="title-box-d">
+            <h3 class="title-d">Search Property</h3>
+        </div>
+        <span class="close-box-collapse right-boxed ion-ios-close"></span>
+        <div class="box-collapse-wrap form">
+            <form class="form-a">
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+                        <div class="form-group">
+                            <label for="Type">Keyword</label>
+                            <input type="text" class="form-control form-control-lg form-control-a" placeholder="Keyword">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="Type">Type</label>
+                            <select class="form-control form-control-lg form-control-a" id="Type">
+                                <option>All Types</option>
+                                <option>Residential</option>
+                                <option>Commercial</option>
+                                <option>Agricultural</option>
+                                <option>Investment</option>
+                                <option>Bank Instruction</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <select class="form-control form-control-lg form-control-a" id="city">
+                                <option>All City's</option>
+                                <option>Johannesburg</option>
+                                <option>Pretoria</option>
+                                <option>Durban</option>
+                                <option>Cape Town</option>
+                                <option>Nelspruit</option>
+                                <option>Polokwane</option>
+                                <option>East London</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="bedrooms">Bedrooms</label>
+                            <select class="form-control form-control-lg form-control-a" id="bedrooms">
+                                <option>Any</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>3+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="garages">Garages</label>
+                            <select class="form-control form-control-lg form-control-a" id="garages">
+                                <option>Any</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>3+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <div class="form-group">
+                            <label for="bathrooms">Bathrooms</label>
+                            <select class="form-control form-control-lg form-control-a" id="bathrooms">
+                                <option>Any</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>3+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-b">Search Property</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div><!-- End Property Search Section -->
+
+    <main id="main">
+
+        <!-- ======= Intro Single ======= -->
+        <section class="intro-single">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="title-single-box">
+                            <h1 class="title-single">@Model.Address - @Model.City - @Model.Province</h1>
+                            @try
+                            {
+
+                                <h1 class="title-single"> @Model.Auction.StartTime.ToString("dddd, dd MMMM HH:mm:ss")</h1>
+                            }
+                            catch
+                            {
+
+                                <h1 class="title-single"> Not Scheduled for Auction</h1>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+        <!-- End Intro Single-->
+        <!--
+         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                @{
+                    int i = 0;
+
+                    foreach (PropertyPhoto PP in Model.PropertyPhotos)
+                    {
+                        if (i == 0)
+                        {
+                            <div class="carousel-item active">
+                                <img src=@PP.PropertyPhotoPath class="d-block w-100" alt="...">
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="carousel-item ">
+                                <img src=@PP.PropertyPhotoPath class="d-block w-100" alt="...">
+                            </div>
+                        }
+
+
+
+                    }
+
+                }
+
+
+
+
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    -->
+        <!-- ======= Property Single ======= -->
+        <section class="property-single nav-arrow-b">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="property-single-carousel" class="owl-carousel owl-arrow gallery-property h-auto">
+                            @foreach (PropertyPhoto PP in Model.PropertyPhotos)
+                            {
+                                <div class="carousel-item-b">
+                                    <img src=@PP.PropertyPhotoPath class="d-block w-100" alt="..." style="min-height:550px; max-height:650px">
+                                </div> 
+
+                            }
+                        </div>
+
+
+                        <div class="container" style="background-color: #1d293d">
+
+                            <div class="button" style="text-align:center; border-top: solid #1d293d; border-bottom: solid #1d293d">
+                                @{
+                                    bool buyer = false;
+                                    bool admin = false;
+                                    bool deposit = false;
+                                    bool registered = false;
+                                    int registratinID = 0;
+
+                                    RegisteredBuyer Buyer = new RegisteredBuyer();
+                                    try
+                                    {
+
+                                        Buyer = APILibrary.APIMethods.APIGet<RegisteredBuyer>(User.Identity.GetUserId(), "RegisteredBuyers");
+                                        buyer = true;
+                                    }
+                                    catch
+                                    {
+                                    }
+                                    if (buyer == true)
+                                    {
+                                        foreach (AuctionRegistration reg in Model.AuctionRegistrations)
+                                        {
+                                            if (reg.BuyerId == User.Identity.GetUserId() && Model.PropertyID == reg.PropertyID)
+                                            {
+                                                registered = true;
+                                                registratinID = reg.id;
+                                                if (reg.AdminFee.Amount != null)
+                                                {
+                                                    admin = true;
+                                                }
+                                                try
+                                                {
+                                                    if (Buyer.Deposit != null)
+                                                    {
+                                                        deposit = true;
+                                                    }
+                                                }
+                                                catch
+                                                {
+                                                }
+                                            }
+                                        }
+                                        if (registered && admin && deposit)
+                                        {
+                                            @Html.ActionLink("Go Bid", "Index", "AuctionRoom", new { area = "", id = Model.PropertyID }, new { @class = "btn btn-b center" })
+                                        }
+                                        else
+                                        {
+                                            if (!registered)
+                                            {
+                                                @Html.ActionLink("Bid Now", "RegisterForAuction", "Buyers", new { area = "", id = Model.PropertyID }, new { @class = "btn btn-b center" })
+
+
+                                            }
+
+                                            else if (!admin && !deposit)
+
+                                            {
+
+
+                                                <h3 class="panel-title" style="color:aliceblue">Registration fees</h3>
+
+
+
+
+                                                <p style="color:aliceblue">Pay R5,150 </p>
+
+                                                <p style="color:aliceblue">Should your bid not be successful or you don’t win the auction, your registration fee will be refunded to you within 48-72 hours</p>
+
+
+                                                @Html.ActionLink("Pay Now", "AdminAndDeposit", "Payment", new { area = "", id = registratinID }, new { @class = "btn btn-b center" })
+
+
+                                            }
+                                            else if (!deposit)
+                                            {
+
+
+                                                <h3 class="panel-title" style="color:aliceblue">Registration fees</h3>
+
+
+                                                <p style="color:aliceblue">Pay R5,000 </p>
+                                                <p style="color:aliceblue">Should your bid not be successful or you don’t win the auction, your registration fee will be refunded to you within 48-72 hours</p>
+
+
+                                                @Html.ActionLink("Pay Now", "Deposit", "Payment", new { area = "" }, new { @class = "btn btn-b center" })
+
+
+                                            }
+
+                                            else if (!admin)
+                                            {
+
+
+                                                <h3 class="panel-title" style="color:aliceblue">Registration fees</h3>
+
+
+
+                                                <p style="color:aliceblue">Pay R150 </p>
+                                                <p></p>
+
+                                                @Html.ActionLink("Pay Now", "AdminFees", "Payment", new { area = "", id = registratinID }, new { @class = "btn btn-b center" })
+
+
+                                            }
+
+
+                                        }
+
+
+
+
+                                    }
+                                    else if (buyer == false)
+                                    {
+                                        if (User.Identity.IsAuthenticated)
+                                        {
+                                            @Html.ActionLink("Bid Now", "Create", "Buyers", new { area = "", id = Model.PropertyID }, new { @class = "btn btn-b center" })
+
+                                        }
+                                        else
+                                        {
+                                            @Html.ActionLink("Bid Now", "index", "Buyers", new { area = "", id = Model.PropertyID }, new { @class = "btn btn-b center" })
+
+                                        }
+
+                                    }
+
+
+
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="container">
+                    <div class="row justify-content-between">
+                        <div class="col">
+                            <div class="title-box-d">
+                                <h1 class="title-d">Opening Bid</h1>
+                            </div>
+                            <div class="property-price d-flex justify-content-center foo">
+                                <div class="card-header-c d-flex">
+                                    <div class="card-box-ico">
+                                        <span class="ion-money">R</span>
+                                    </div>
+                                    <div class="card-title-c align-self-center">
+                                        <h2 class="title-c" style="padding-left: 60px">
+                                            @Model.OpeningBid.ToString("C2").Substring(1)
+                                        </h2>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="property-summary">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="title-box-d section-t4">
+                                            <h3 class="title-d">Quick Summary</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="summary-list">
+                                    <ul class="list">
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Property ID:</strong>
+                                            <span>@Model.PropertyID</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Bidding Starts At:</strong>
+                                            <span>R @Model.OpeningBid.ToString("C0").Substring(1)</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Buyers Commission:</strong>
+                                            <span>10%</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Location:</strong>
+                                            <span>@Model.Address, @Model.City</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Title Deed:</strong>
+                                            <span>@Model.TitleDeedPath</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Rates & Taxes:</strong>
+                                            <span>R @Model.TaxesAndRate.ToString("C0").Substring(1)</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Levies:</strong>
+                                            <span>R @Model.levies.ToString("C0").Substring(1)</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Property Type:</strong>
+                                            <span>@Model.PropertyType</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Status:</strong>
+                                            <span>Auction</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Building Size:</strong>
+                                            <span>
+                                                @Model.FloorSize m
+                                                <sup>2</sup>
+                                            </span>
+                                        </li>
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Land Size:</strong>
+                                            <span>
+                                                @Model.YardSize m
+                                                <sup>2</sup>
+                                            </span>
+                                        </li>
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Beds:</strong>
+                                            <span>@Model.BathRooms</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Baths:</strong>
+                                            <span>@Model.BathRooms</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Garage:</strong>
+                                            <span>@Model.Garages</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-lg-7 section-md-t3">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="title-box-d">
+                                        <h3 class="title-d">Property Description</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="property-description">
+                                <p class="description color-text-a">
+                                    @Model.Description
+                                </p>
+
+
+                                <div class="col-lg-12">
+                                    <ul class="nav nav-pills-a nav-pills mb-3 section-t3 navbar-expand-md" id="pills-tab" role="tablist">
+                                        <li class="nav-item pull-left">
+                                            <a class="nav-link active" id="pills-video-tab" data-toggle="pill" href="#pills-video" role="tab" aria-controls="pills-video" aria-selected="true" style="position:center">Virtual Tour</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div class="tab-pane fade show active" id="pills-video" role="tabpanel" aria-labelledby="pills-video-tab">
+                                            @try
+                                            {
+                                                @*@Model.PromoVideos https://www.theasys.io/viewer/nmxvUeePtLwolLrOwqIe2WLHk7JRCh/"*@
+                                                if (@Model.PromoVideos.Count == 0)
+                                                {
+                                                    <iframe src="~/assets/img/13.png" width="100%" height="750px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                                }
+                                                else
+                                                {
+                                                    <iframe src=@Model.PromoVideos.First().VideoPath width="100%" height="750px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+                                                }
+
+                                            }
+                                            catch
+                                            {
+                                            }
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br />
+        <div class="container">
+            <div class="title-box-d">
+                <h3 class="title-d">Amenities</h3>
+            </div>
+
+
+            <div class="amenities-list color-text-a">
+                <ul class="list-a">
+                    @if (Model.OutdoorKitchen)
+                    {
+                        <li style="width:130px">Outdoor Kitchen</li>
+                    }
+                    @if (Model.Garden)
+                    {
+                        <li style="width:100px">Garden</li>
+                    }
+                    @if (Model.Terrace)
+                    {
+                        <li style="width:130px">Terrace </li>
+                    }
+                    @if (Model.Clubhouse)
+                    {
+                        <li style="width:130px">Clubhouse </li>
+                    }
+
+                    @if (Model.Braai)
+                    {
+                        <li style="width:130px">Braai </li>
+                    }
+                    @if (Model.FireplacePit)
+                    {
+                        <li style="width:130px">Fireplace </li>
+                    }
+                    @if (Model.TennisCourts)
+                    {
+                        <li style="width:130px">Tennis Court </li>
+                    }
+                    @if (Model.Jacquizzi)
+                    {
+                        <li style="width:130px">Jacquizzi </li>
+                    }
+                    @if (Model.Parking)
+                    {
+                        <li style="width:130px">Parking </li>
+                    }
+                    @if (Model.Borehole)
+                    {
+                        <li style="width:130px">Borehole </li>
+                    }
+
+                </ul>
+            </div>
+
+        </div>
+
+
+
+
+
+        <div class="container">
+
+
+
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="row section-t3">
+                        <div class="col-sm-12">
+                            <div class="title-box-d">
+                                <h3 class="title-d">Contact Agent</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4">
+
+
+                            <img src=@Model.Seller.ProfilePhoto alt="" class="img-fluid">
+
+
+
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="property-agent">
+                                <h4 class="title-agent">@Model.Seller.FirtstName @Model.Seller.LastName</h4>
+
+                                @if (Model.Seller.Retailer != null)
+                                {
+                                    <h5>
+                                        Company: @Model.Seller.Retailer.RetailerName;
+                                    </h5>
+                                    <p class="color-text-a">
+                                        @Model.Seller.Retailer.CompanyDescription
+                                    </p>
+                                    <ul>
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Phone:</strong>
+                                            <span class="color-text-a">@Model.Seller.Retailer.CompanyContactNumber</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Email:</strong>
+                                            <span class="color-text-a">@Model.Seller.Retailer.CompanyEmail</span>
+                                        </li>
+                                    </ul>
+
+                                }
+                                else if (Model.Seller.Auctioneer != null)
+                                {
+                                    <h5>
+                                        Company: @Model.Seller.Auctioneer.CompanyName
+                                    </h5>
+                                    <p class="color-text-a">
+                                        @Model.Seller.Auctioneer.CompanyDescriprion
+                                    </p>
+                                    <ul>
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Phone:</strong>
+                                            <span class="color-text-a">@Model.Seller.Auctioneer.CompanyContactNumber</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between">
+                                            <strong>Email:</strong>
+                                            <span class="color-text-a">@Model.Seller.Auctioneer.CompanyEmail</span>
+                                        </li>
+                                    </ul>
+                                }
+                                else
+                                {
+                                    <h5>
+                                        Company: Private
+                                    </h5>
+
+                                }
+
+
+
+
+
+
+                                <!--  <ul class="list-unstyled">
+                                <li class="d-flex justify-content-between">
+                                    <strong>Agent Phone:</strong>
+                                    <span class="color-text-a">@Model.Seller.SellerNumber</span>
+                                </li>
+
+                                <li class="d-flex justify-content-between">
+                                    <strong>Agent Email:</strong>
+                                    <span class="color-text-a">@Model.Seller.SellerEmail</span>
+                                </li>
+
+                            </ul></-->
+
+                                <div class="socials-a">
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a href="#">
+                                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="#">
+                                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="#">
+                                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="#">
+                                                <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="#">
+                                                <i class="fa fa-dribbble" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4">
+                            <div class="property-contact">
+                                <form class="form-a">
+                                    <div class="row">
+                                        <div class="col-md-12 mb-1">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control form-control-lg form-control-a" id="inputName" placeholder="Name *" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mb-1">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control form-control-lg form-control-a" id="inputEmail1" placeholder="Email *" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mb-1">
+                                            <div class="form-group">
+                                                <textarea id="textMessage" class="form-control" placeholder="Comment *" name="message" cols="45" rows="8" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn btn-a">Send Message</button>
+                                        </div>
+                                        <br />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Property Single-->
+
+    </main><!-- End #main -->
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/jquery.easing.min.js"></script>
+    <script src="~/Scripts/validate.js"></script>
+    <script src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="~/Scripts/scrollreveal.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/Scripts/main.js"></script>
+
+</body>
+
+</html>
+
+
+
+

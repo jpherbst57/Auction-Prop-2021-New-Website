@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Auction_Prop_API.Models.DataBaseModels.ConcludedAuction>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Bid.BuyerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Property.SellerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegisteredBuyer.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeOfConclution)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExceededReserve)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bid.BuyerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Property.SellerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegisteredBuyer.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeOfConclution)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExceededReserve)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PropertyID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PropertyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PropertyID })
+        </td>
+    </tr>
+}
+
+</table>
