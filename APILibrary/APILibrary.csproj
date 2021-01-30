@@ -8,13 +8,4 @@
     <PackageReference Include="SendGrid" Version="9.21.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="System.Configuration">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Extensions">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Extensions.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
