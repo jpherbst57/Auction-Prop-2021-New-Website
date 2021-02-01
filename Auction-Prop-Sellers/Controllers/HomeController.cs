@@ -15,21 +15,20 @@ namespace Auction_Prop_Sellers.Controllers
             {
                 return View();
             }
-            else
+
+            try
             {
-                try
-                {
-                    Seller sellerModel = APIMethods.APIGet<Seller>(User.Identity.GetUserId(), "Sellers");
+                string userId = User.Identity.GetUserId();
+                Seller seller = APIMethods.APIGet<Seller>(userId, "Seller");
 
-                    return View(sellerModel);
+                return View(seller);
 
 
-                }
-                catch (Exception E)
-                {
-                    return View();
-                }
-
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+                return View();
             }
 
 

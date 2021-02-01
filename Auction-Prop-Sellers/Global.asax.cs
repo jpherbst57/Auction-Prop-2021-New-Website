@@ -12,7 +12,6 @@ namespace Auction_Prop_Sellers
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
             SqlServerTypes.Utilities.LoadNativeAssemblies(Server.MapPath("~"));
         }
     }

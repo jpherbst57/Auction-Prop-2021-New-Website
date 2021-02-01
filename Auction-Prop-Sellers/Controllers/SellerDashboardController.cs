@@ -33,7 +33,7 @@ namespace Auction_Prop_Sellers.Controllers
 
 
                 }
-                catch (Exception E)
+                catch 
                 {
                     return View();
                 }
@@ -125,7 +125,7 @@ namespace Auction_Prop_Sellers.Controllers
                         FromEmailAddress = "cmmadeleyn@gmail.com",
                         ToEmailAddress = model.Seller.SellerEmail,
                         EmailSubject ="New Property listing.",
-                        EmailBody = "Property: Title-"+model.Title+"/n Address- "+model.Address+"./n Property listed by "+model.Seller.FirtstName+" "+model.Seller.LastName
+                        EmailBody = "Property: Title-"+model.Title+"/n Address- "+model.Address+"./n Property listed by "+model.Seller.FirstName+" "+model.Seller.LastName
                     };
                     await ser.Send(msgAdmin);*/
 

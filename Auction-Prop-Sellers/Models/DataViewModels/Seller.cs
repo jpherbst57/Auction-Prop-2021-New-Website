@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Web;
 
 namespace Auction_Prop_Sellers.Models.DataViewModels
@@ -19,7 +17,7 @@ namespace Auction_Prop_Sellers.Models.DataViewModels
 
         [Required]
         [StringLength(100)]
-        public string FirtstName { get; set; }
+        public string FirstName { get; set; }
 
         [Required]
         [StringLength(100)]
@@ -52,7 +50,7 @@ namespace Auction_Prop_Sellers.Models.DataViewModels
 
         public virtual ICollection<SellerAddress> SellerAddresses { get; set; }
     }
-     
+
     public partial class SellersView
     {
         public SellersView()
@@ -66,7 +64,7 @@ namespace Auction_Prop_Sellers.Models.DataViewModels
 
         [Required]
         [StringLength(100)]
-        public string FirtstName { get; set; }
+        public string FirstName { get; set; }
 
         [Required]
         [StringLength(100)]
