@@ -4,169 +4,57 @@
     ViewBag.Title = "Error";
 }
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auction-Prop | Error</title>
+    <link rel="icon" type="image/x-icon" href="~/assets/img/13.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="~/assets/assets/css/libs/swiper.min.css" />
+    <link rel="stylesheet" href="~/assets/assets/css/libs/material-components-web.min.css" />
+    <link rel="stylesheet" href="~/assets/css/style.css" />
+    <link rel="stylesheet" href="~/assets/assets/css/skins/blue.css" />
+    <link rel="stylesheet" href="~/assets/assets/css/responsive.css" />
 
-<title>Auction-Prop.com | Error</title>
+    <script src="~/assets/assets/js/libs/jquery.min.js"></script>
+    <script src="~/assets/assets/js/libs/material-components-web.min.js"></script>
+    <script src="~/assets/assets/js/libs/swiper.min.js"></script>
+    <script src="~/assets/assets/js/scripts.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1rF9bttCxRmsNdZYjW7FzIoyrul5jb-s&callback=initMap" async defer></script>
 
-<!-- Favicons -->
-<link href="~/assets/img/fat.png" rel="icon">
+</head>
+<body>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-<script src="https://kit.fontawesome.com/ef4e2c1ac6.js" crossorigin="anonymous"></script>
-
-<!-- Vendor CSS Files -->
-<link rel="stylesheet" href="~/Content2/bootstrap1.min.css" type="text/css">
-<link rel="stylesheet" href="~/Content2/ionicons.min.css" type="text/css">
-<link rel="stylesheet" href="~/Content2/animate.min.css" type="text/css">
-<link rel="stylesheet" href="~/Content2/owl.carousel.min.css" type="text/css">
-<link rel="stylesheet" href="~/Content/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="~/Content/font-awesome.css" type="text/css">
-
-<!-- Template Main CSS File -->
-<link href="~/assets/css/style.css" rel="stylesheet">
-
-<!-- ======= Property Search Section Start ======= -->
-<div class="click-closed"></div>
-
-<div class="box-collapse">
-    <div class="title-box-d">
-        <h3 class="title-d">Search Property</h3>
-    </div>
-    <span class="close-box-collapse right-boxed ion-ios-close"></span>
-    <div class="box-collapse-wrap form">
-        <form class="form-a">
+    <!--<section class="intro1">
+        <div class="container">
             <div class="row">
-                <div class="col-md-12 mb-2">
-                    <div class="form-group">
-                        <label for="Type">Keyword</label>
-                        <input type="text" class="form-control form-control-lg form-control-a" placeholder="Keyword">
+                <div class="col">
+                    <div class="col-md-12">
+                        <h1 class="text-danger" style="text-align:center;">Oops, an Error occurred while trying to processing your request</h1>
+                        @*@Model.Exception.Message*@
                     </div>
-                </div>
-                <div class="col-md-6 mb-2">
-                    <div class="form-group">
-                        <label for="Type">Type</label>
-                        <select class="form-control form-control-lg form-control-a" id="Type">
-                            <option>All Types</option>
-                            <option>Residential</option>
-                            <option>Commercial</option>
-                            <option>Agricultural</option>
-                            <option>Investment</option>
-                            <option>Bank Instruction</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-2">
-                    <div class="form-group">
-                        <label for="city">City</label>
-                        <select class="form-control form-control-lg form-control-a" id="city">
-                            <option>All City's</option>
-                            <option>Johannesburg</option>
-                            <option>Pretoria</option>
-                            <option>Durban</option>
-                            <option>Cape Town</option>
-                            <option>Nelspruit</option>
-                            <option>Polokwane</option>
-                            <option>East London</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-2">
-                    <div class="form-group">
-                        <label for="bedrooms">Bedrooms</label>
-                        <select class="form-control form-control-lg form-control-a" id="bedrooms">
-                            <option>Any</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>3+</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-2">
-                    <div class="form-group">
-                        <label for="garages">Garages</label>
-                        <select class="form-control form-control-lg form-control-a" id="garages">
-                            <option>Any</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>3+</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-2">
-                    <div class="form-group">
-                        <label for="bathrooms">Bathrooms</label>
-                        <select class="form-control form-control-lg form-control-a" id="bathrooms">
-                            <option>Any</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>3+</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <button type="submit" class="btn btn-b">Search Property</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-<!-- ======= Property Search Section End ======= -->
-<!-- ======= Intro and Breadcrumb Section Start ======= -->
-<section class="intro-single">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-lg-8">
-                <div class="title-single-box">
-                    <h1 class="title-single">Oops! We Encountered a Problem</h1>
-                </div>
-            </div>
-            <div class="col-md-12 col-lg-4">
-                <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">
-                            Error
-                        </li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ======= Intro and Breadcrumb Section End ======= -->
-
-<section class="intro1">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="col-md-10">
-                    <h1 class="text-danger">Error</h1>
-                    <h2 class="text-danger">An Error occurred while processing your request.</h2>
-                    @*@Model.Exception.Message*@
                 </div>
             </div>
         </div>
+    </section>-->
+
+    <div class="header-image-wrapper">
+        <div class="bg" style="background-image: url('/assets/assets/img/images/carousel/slide-2.jpg');"></div>
+        <div class="mask"></div>
+        <div class="header-image-content mh-250">
+            <h1 style="text-align:center center">Oops, looks like an Error occured trying to process your request</h1>
+            <!--<h2 style="text-align:center">@*@Html.DisplayFor(model => model.msge*@)</h2>-->
+        </div>
     </div>
-</section>
 
-<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-<div id="preloader"></div>
-
-<!-- Vendor JS Files -->
-<script src="~/Scripts/jquery.min.js"></script>
-<script src="~/Scripts/bootstrap.bundle.min.js"></script>
-<script src="~/Scripts/jquery.easing.min.js"></script>
-<script src="~/Scripts/validate.js"></script>
-<script src="~/Scripts/owl.carousel.min.js"></script>
-<script src="~/Scripts/scrollreveal.min.js"></script>
-
-<!-- Template Main JS File -->
-<script src="~/Scripts/main.js"></script>
+    <!--<h1 style="text-align:center">Oops, looks like an Error Occured trying to process your request</h1>
+    <h2>@*@Html.DisplayFor(model => model.msge)*@</h2>-->
+    <!--<div>
+        @*@Html.ActionLink("Back to List", "Index")*@
+    </div>-->
+</body>
+</html>
