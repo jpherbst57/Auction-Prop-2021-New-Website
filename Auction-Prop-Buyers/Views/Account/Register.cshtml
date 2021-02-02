@@ -6,217 +6,173 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auction-Prop | Register an Account</title>
+    <link rel="icon" type="image/x-icon" href="~/assets/img/13.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="~/assets/assets/css/libs/swiper.min.css" />
+    <link rel="stylesheet" href="~/assets/assets/css/libs/material-components-web.min.css" />
+    <link rel="stylesheet" href="~/assets/css/style.css" />
+    <link rel="stylesheet" href="~/assets/assets/css/skins/blue.css" />
+    <link rel="stylesheet" href="~/assets/assets/css/responsive.css" />
+    <script src="~/assets/assets/js/libs/jquery.min.js"></script>
+    <script src="~/assets/assets/js/libs/material-components-web.min.js"></script>
+    <script src="~/assets/assets/js/libs/swiper.min.js"></script>
+    <script src="~/assets/assets/js/scripts.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1rF9bttCxRmsNdZYjW7FzIoyrul5jb-s&callback=initMap" async defer></script>
 
-<title>Auction-Prop.com | Sign Up</title>
-
-<!-- Favicons -->
-<link href="~/assets/img/fat.png" rel="icon">
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-<script src="https://kit.fontawesome.com/5cb4d6169e.js" crossorigin="anonymous"></script>
-
-<!-- Vendor CSS Files -->
-<link rel="stylesheet" href="~/Content2/bootstrap1.min.css" type="text/css">
-<link rel="stylesheet" href="~/Content2/ionicons.min.css" type="text/css">
-<link rel="stylesheet" href="~/Content2/animate.min.css" type="text/css">
-<link rel="stylesheet" href="~/Content2/owl.carousel.min.css" type="text/css">
-<link rel="stylesheet" href="~/Content/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="~/Content/font-awesome.css" type="text/css">
-
-<!-- Template Main CSS File -->
-<link href="~/assets/css/style.css" rel="stylesheet">
-
-<!-- ======= Property Search Section Start ======= -->
-<div class="click-closed"></div>
-
-<div class="box-collapse">
-    <div class="title-box-d">
-        <h3 class="title-d">Search Property</h3>
-    </div>
-    <span class="close-box-collapse right-boxed ion-ios-close"></span>
-    <div class="box-collapse-wrap form">
-        <form class="form-a">
-            <div class="row">
-                <div class="col-md-12 mb-2">
-                    <div class="form-group">
-                        <label for="Type">Keyword</label>
-                        <input type="text" class="form-control form-control-lg form-control-a" placeholder="Keyword">
+</head>
+<body
+<main>
+    <div class="px-3">
+        <div class="theme-container">
+            <div class="row center-xs middle-xs my-5">
+                <div class="mdc-card p-3 p-relative mw-500px">
+                    <div class="column center-xs middle-xs text-center">
+                        <h1 class="uppercase">Register</h1>
+                        <a href="login.html" class="mdc-button mdc-ripple-surface mdc-ripple-surface--accent accent-color normal w-100">
+                            Already have an account? Sign in!
+                        </a>
                     </div>
-                </div>
-                <div class="col-md-6 mb-2">
-                    <div class="form-group">
-                        <label for="Type">Type</label>
-                        <select class="form-control form-control-lg form-control-a" id="Type">
-                            <option>All Types</option>
-                            <option>Residential</option>
-                            <option>Commercial</option>
-                            <option>Agricultural</option>
-                            <option>Investment</option>
-                            <option>Bank Instruction</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-2">
-                    <div class="form-group">
-                        <label for="city">City</label>
-                        <select class="form-control form-control-lg form-control-a" id="city">
-                            <option>All City's</option>
-                            <option>Johannesburg</option>
-                            <option>Pretoria</option>
-                            <option>Durban</option>
-                            <option>Cape Town</option>
-                            <option>Nelspruit</option>
-                            <option>Polokwane</option>
-                            <option>East London</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-2">
-                    <div class="form-group">
-                        <label for="bedrooms">Bedrooms</label>
-                        <select class="form-control form-control-lg form-control-a" id="bedrooms">
-                            <option>Any</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>3+</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-2">
-                    <div class="form-group">
-                        <label for="garages">Garages</label>
-                        <select class="form-control form-control-lg form-control-a" id="garages">
-                            <option>Any</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>3+</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-2">
-                    <div class="form-group">
-                        <label for="bathrooms">Bathrooms</label>
-                        <select class="form-control form-control-lg form-control-a" id="bathrooms">
-                            <option>Any</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>3+</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <button type="submit" class="btn btn-b">Search Property</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-<!-- ======= Property Search Section End ======= -->
-<!-- ======= Intro and Breadcrumb Section Start ======= -->
-<section class="intro-single">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-lg-8">
-                <div class="title-single-box">
-                    <h1 class="title-single">Create a New Account</h1>
-                </div>
-            </div>
-            <div class="col-md-12 col-lg-4">
-                <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">
-                            Sign Up
-                        </li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ======= Intro and Breadcrumb Section End ======= -->
-
-<section class="intro1">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div>
-                    <section id="loginForm">
-                        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                        {
-                            @Html.AntiForgeryToken()
-
-                            @Html.ValidationSummary("", new { @class = "text-danger" })
-
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.UserName, new { @class = "col-md-4 control-label" })
-                                <div class="col-md-12">
-                                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                    <form action="javascript:void(0);">
+                        <div class="mdc-select mdc-select--outlined mdc-select--with-leading-icon mt-3 custom-field">
+                            <div class="mdc-select__anchor w-100">
+                                <i class="material-icons mdc-select__icon pt-1">group</i>
+                                <i class="mdc-select__dropdown-icon"></i>
+                                <div class="mdc-select__selected-text"></div>
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label class="mdc-floating-label">User Type</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.Email, new { @class = "col-md-4 control-label" })
-                                <div class="col-md-12">
-                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                                </div>
+                            <div class="mdc-select__menu mdc-menu mdc-menu-surface">
+                                <ul class="mdc-list">
+                                    <li class="mdc-list-item mdc-list-item--selected" data-value=""></li>
+                                    <li class="mdc-list-item" data-value="1">Agent</li>
+                                    <li class="mdc-list-item" data-value="2">Buyer</li>
+                                    <li class="mdc-list-item" data-value="3">Seller</li>
+                                </ul>
                             </div>
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-md-4 control-label" })
-                                <div class="col-md-12">
-                                    @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon w-100 mt-3 custom-field ">
+                            <i class="material-icons mdc-text-field__icon text-muted">person</i>
+                            <input class="mdc-text-field__input" required>
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label class="mdc-floating-label">First Name</label>
                                 </div>
+                                <div class="mdc-notched-outline__trailing"></div>
                             </div>
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.Password, new { @class = "col-md-4 control-label" })
-                                <div class="col-md-12">
-                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon w-100 mt-3 custom-field ">
+                            <i class="material-icons mdc-text-field__icon text-muted">person</i>
+                            <input class="mdc-text-field__input" required>
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label class="mdc-floating-label">Last Name</label>
                                 </div>
+                                <div class="mdc-notched-outline__trailing"></div>
                             </div>
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-4 control-label" })
-                                <div class="col-md-12">
-                                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon w-100 mt-3 custom-field ">
+                            <i class="material-icons mdc-text-field__icon text-muted">person</i>
+                            <input class="mdc-text-field__input" required>
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label class="mdc-floating-label">Username</label>
                                 </div>
+                                <div class="mdc-notched-outline__trailing"></div>
                             </div>
-                            <div class="form-group">
-                                <div class="col-md-offset-2 col-md-10">
-                                    <button type="submit" class="btn btn-b">Submit</button>
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon w-100 mt-3 custom-field ">
+                            <i class="material-icons mdc-text-field__icon text-muted">email</i>
+                            <input class="mdc-text-field__input" required>
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label class="mdc-floating-label">Email</label>
                                 </div>
+                                <div class="mdc-notched-outline__trailing"></div>
                             </div>
-                        }
-                    </section>
-                </div>
-            </div>
-            <div class="col">
-                <div>
-                    <section id="socialLoginForm">
-                        @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-                    </section>
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon mdc-text-field--with-trailing-icon w-100 custom-field mt-4 custom-field">
+                            <i class="material-icons mdc-text-field__icon text-muted">lock</i>
+                            <i class="material-icons mdc-text-field__icon text-muted password-toggle" tabindex="1">visibility_off</i>
+                            <input class="mdc-text-field__input" type="password" required>
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label class="mdc-floating-label">Password</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon mdc-text-field--with-trailing-icon w-100 custom-field mt-4 custom-field">
+                            <i class="material-icons mdc-text-field__icon text-muted">lock</i>
+                            <i class="material-icons mdc-text-field__icon text-muted password-toggle" tabindex="1">visibility_off</i>
+                            <input class="mdc-text-field__input" type="password" required>
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label class="mdc-floating-label">Confirm Password</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <div class="mdc-form-field mt-3 w-100">
+                            <div class="mdc-checkbox">
+                                <input type="checkbox" class="mdc-checkbox__native-control" id="keep" />
+                                <div class="mdc-checkbox__background">
+                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                    </svg>
+                                    <div class="mdc-checkbox__mixedmark"></div>
+                                </div>
+                                <div class="mdc-checkbox__ripple"></div>
+                            </div>
+                            <label for="keep" class="text-muted fw-500">Receive Newsletter</label>
+                        </div>
+                        <div class="text-center mt-2">
+                            <button class="mdc-button mdc-button--raised bg-accent" type="submit">
+                                <span class="mdc-button__ripple"></span>
+                                <span class="mdc-button__label">Create an Account</span>
+                            </button>
+                        </div>
+                    </form>
+                    <div class="row my-4 px-3 p-relative">
+                        <div class="divider w-100"></div>
+                    </div>
+                    <div class="row center-xs middle-xs">
+                        <small>By clicking the "Create an Account" button you agree with our</small>
+                        <a href="terms.html" class="mdc-button normal">
+                            <span class="mdc-button__ripple"></span>
+                            <span class="mdc-button__label">Terms and conditions</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</main>
 
-<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-<div id="preloader"></div>
+<!--<div id="back-to-top"><i class="material-icons">arrow_upward</i></div>-->
+<script src="~/assets/assetsjs/libs/jquery.min.js"></script>
+<script src="~/assets/assetsjs/libs/material-components-web.min.js"></script>
+<script src="~/assets/assetsjs/libs/swiper.min.js"></script>
+<script src="~/assets/assets/js/scripts.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1rF9bttCxRmsNdZYjW7FzIoyrul5jb-s&callback=initMap" async defer></script>
 
-<!-- Vendor JS Files -->
-<script src="~/Scripts/jquery.min.js"></script>
-<script src="~/Scripts/bootstrap.bundle.min.js"></script>
-<script src="~/Scripts/jquery.easing.min.js"></script>
-<script src="~/Scripts/validate.js"></script>
-<script src="~/Scripts/owl.carousel.min.js"></script>
-<script src="~/Scripts/scrollreveal.min.js"></script>
-
-<!-- Template Main JS File -->
-<script src="~/Scripts/main.js"></script>
+    </body>
+</html>

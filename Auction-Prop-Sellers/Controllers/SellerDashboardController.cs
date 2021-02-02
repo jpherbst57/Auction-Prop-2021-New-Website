@@ -23,13 +23,13 @@ namespace Auction_Prop_Sellers.Controllers
 
                 try
                 {
-                    Seller sellerModel = APIMethods.APIGet<Seller>(User.Identity.GetUserId(), "Sellers");
+                    var sellerModel = APIMethods.APIGet<Seller>(User.Identity.GetUserId(), "Sellers");
 
                     return View(sellerModel);
 
 
                 }
-                catch (Exception E)
+                catch
                 {
                     return View();
                 }
@@ -122,7 +122,7 @@ namespace Auction_Prop_Sellers.Controllers
                         FromEmailAddress = "cmmadeleyn@gmail.com",
                         ToEmailAddress = model.Seller.SellerEmail,
                         EmailSubject ="New Property listing.",
-                        EmailBody = "Property: Title-"+model.Title+"/n Address- "+model.Address+"./n Property listed by "+model.Seller.FirtstName+" "+model.Seller.LastName
+                        EmailBody = "Property: Title-"+model.Title+"/n Address- "+model.Address+"./n Property listed by "+model.Seller.FirstName+" "+model.Seller.LastName
                     };
                     await ser.Send(msgAdmin);*/
 

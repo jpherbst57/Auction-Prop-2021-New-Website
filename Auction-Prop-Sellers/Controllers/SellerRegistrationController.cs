@@ -27,7 +27,7 @@ namespace Auction_Prop_Sellers.Controllers
 
                     return View(sellerModel);
                 }
-                catch (Exception E)
+                catch
                 {
                     return View();
                 }
@@ -46,10 +46,10 @@ namespace Auction_Prop_Sellers.Controllers
             {
                 try
                 {
-                    var newData = new Seller
+                    Seller newData = new Seller
                     {
                         UserID = model.UserID,
-                        FirtstName = model.FirtstName,
+                        FirstName = model.FirstName,
                         Signature = model.Signature,
                         SellerNumber = model.SellerNumber,
                         SellerEmail = model.SellerEmail,
@@ -103,7 +103,7 @@ namespace Auction_Prop_Sellers.Controllers
             {
                 try
                 {
-                    var newData = new Retailer
+                    Retailer newData = new Retailer
                     {
                         UserID = model.UserID,
                         RetailerName = model.RetailerName,
@@ -143,7 +143,7 @@ namespace Auction_Prop_Sellers.Controllers
                 try
                 {
 
-                    var newData = new PrivateSeller
+                    PrivateSeller newData = new PrivateSeller
                     {
                         UserID = model.UserID,
                         IDNumber = model.IDNumber,
@@ -175,7 +175,7 @@ namespace Auction_Prop_Sellers.Controllers
             {
                 try
                 {
-                    var newData = new Auctioneer
+                    Auctioneer newData = new Auctioneer
                     {
                         UserID = model.UserID,
                         CompanyName = model.CompanyName,
@@ -220,9 +220,11 @@ namespace Auction_Prop_Sellers.Controllers
                 {  //Call Post Method
                     Address objec = APIMethods.APIPost<Address>(model, "Addresses");
 
-                    SellerAddress sAdd = new SellerAddress();
-                    sAdd.AddressID = objec.AddressID;
-                    sAdd.UserID = User.Identity.GetUserId();
+                    SellerAddress sAdd = new SellerAddress
+                    {
+                        AddressID = objec.AddressID,
+                        UserID = User.Identity.GetUserId()
+                    };
                     APIMethods.APIPost<SellerAddress>(sAdd, "SellerAddresses");
                     return RedirectToAction("Index");
 

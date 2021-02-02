@@ -1,6 +1,4 @@
-﻿@using Microsoft.AspNet.Identity
-
-
+﻿
 @model Auction_Prop_Sellers.Models.DataViewModels.Seller
 
 @{
@@ -26,24 +24,24 @@
 
         <div class="jumbotron">
             <h1>Sellers Portal</h1>
-            <p class="lead">Welcome @Model.FirtstName  to our Property Auction Platform.</p>
+            <p class="lead">Welcome @Model.FirstName  to our Property Auction Platform.</p>
             <p></p>
         </div>
         <div class="row">
             <div class="col-md-4">
                 <h2>Users Account</h2>
                 <p>
-                    Here you can view and manage youre user Account and Activities.
+                    Here you can view and manage your user Account and Activities.
                 </p>
-                @Html.ActionLink("Mannage User Account", "Index", "Manage")
+                @Html.ActionLink("Manage User Account", "Index", "Manage")
             </div>
             <div class="row">
                 <div class="col-md-4">
                     <h2>Seller Dashboard</h2>
                     <p>
-                        Here you can list, view and manage youre Properties to be auctioned.
+                        Here you can list, view and manage your Properties to be auctioned.
                     </p>
-                    @Html.ActionLink("Mannage youre Properties", "Index", "SellerDashboard")
+                    @Html.ActionLink("Manage your Properties", "Index", "SellerDashboard")
                 </div>
             </div>
         </div>
@@ -63,7 +61,7 @@
             <div class="col-md-4">
                 <h2>Please Register As a Seller</h2>
                 <p>
-                    You are not registered as aseller.
+                    You are not registered as a seller.
                 </p>
                 @Html.ActionLink("Register", "Index", "SellerRegistration")
             </div>

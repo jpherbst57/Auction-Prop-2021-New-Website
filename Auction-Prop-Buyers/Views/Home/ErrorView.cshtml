@@ -6,42 +6,59 @@
 }
 
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-
-
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auction-Prop | Error</title>
+    <link rel="icon" type="image/x-icon" href="~/assets/img/13.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="~/assets/assets/css/libs/swiper.min.css" />
+    <link rel="stylesheet" href="~/assets/assets/css/libs/material-components-web.min.css" />
+    <link rel="stylesheet" href="~/assets/css/style.css" />
+    <link rel="stylesheet" href="~/assets/assets/css/skins/blue.css" />
+    <link rel="stylesheet" href="~/assets/assets/css/responsive.css" />
 
-    <title>Auction-Prop.com </title>
+    <script src="~/assets/assets/js/libs/jquery.min.js"></script>
+    <script src="~/assets/assets/js/libs/material-components-web.min.js"></script>
+    <script src="~/assets/assets/js/libs/swiper.min.js"></script>
+    <script src="~/assets/assets/js/scripts.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1rF9bttCxRmsNdZYjW7FzIoyrul5jb-s&callback=initMap" async defer></script>
 
-    <!-- Favicons -->
-    <link href="~/assets/img/fat.png" rel="icon">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/ef4e2c1ac6.js" crossorigin="anonymous"></script>
-
-    <!-- Vendor CSS Files -->
-    <link rel="stylesheet" href="~/Content2/bootstrap1.min.css" type="text/css">
-    <link rel="stylesheet" href="~/Content2/ionicons.min.css" type="text/css">
-    <link rel="stylesheet" href="~/Content2/animate.min.css" type="text/css">
-    <link rel="stylesheet" href="~/Content2/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="~/Content/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="~/Content/font-awesome.css" type="text/css">
-
-    <!-- Template Main CSS File -->
-    <link href="~/assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Ann Error Aucured</h1>
-    <h2>@Html.DisplayFor(model => model.msge)</h2>
 
+    <!--<section class="intro1">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="col-md-12">
+                        <h1 class="text-danger" style="text-align:center;">Oops, an Error occurred while trying to processing your request</h1>
+                        @*@Model.Exception.Message*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
 
-
-    <div>
-        @Html.ActionLink("Back to List", "Index")
+    <div class="header-image-wrapper">
+        <div class="bg" style="background-image: url('/assets/assets/img/images/carousel/slide-2.jpg');"></div>
+        <div class="mask"></div>
+        <div class="header-image-content mh-250">
+            <h1 style="text-align:center center">Oops, looks like an Error occured trying to process your request</h1>
+            <!--<h2 style="text-align:center">@*@Html.DisplayFor(model => model.msge*@)</h2>-->
+        </div>
     </div>
+
+    <!--<h1 style="text-align:center">Oops, looks like an Error Occured trying to process your request</h1>
+    <h2>@*@Html.DisplayFor(model => model.msge)*@</h2>-->
+
+
+
+    <!--<div>
+        @*@Html.ActionLink("Back to List", "Index")*@
+    </div>-->
 </body>
 </html>

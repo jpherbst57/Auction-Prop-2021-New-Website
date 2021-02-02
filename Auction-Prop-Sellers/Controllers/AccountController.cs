@@ -12,8 +12,8 @@ namespace Auction_Prop_Sellers.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-        private ApplicationSignInManager signInManager;
-        private ApplicationUserManager userManager;
+        private ApplicationSignInManager _signInManager;
+        private ApplicationUserManager _userManager;
 
         public AccountController()
         {
@@ -29,11 +29,11 @@ namespace Auction_Prop_Sellers.Controllers
         {
             get
             {
-                return signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
             private set
             {
-                signInManager = value;
+                _signInManager = value;
             }
         }
 
@@ -41,11 +41,11 @@ namespace Auction_Prop_Sellers.Controllers
         {
             get
             {
-                return userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             }
             private set
             {
-                userManager = value;
+                _userManager = value;
             }
         }
 
@@ -404,16 +404,16 @@ namespace Auction_Prop_Sellers.Controllers
         {
             if (disposing)
             {
-                if (userManager != null)
+                if (_userManager != null)
                 {
-                    userManager.Dispose();
-                    userManager = null;
+                    _userManager.Dispose();
+                    _userManager = null;
                 }
 
-                if (signInManager != null)
+                if (_signInManager != null)
                 {
-                    signInManager.Dispose();
-                    signInManager = null;
+                    _signInManager.Dispose();
+                    _signInManager = null;
                 }
             }
 
