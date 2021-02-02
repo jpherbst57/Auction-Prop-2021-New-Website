@@ -3,9 +3,6 @@ using Auction_Prop_Sellers.Models.DataViewModels;
 using Auction_Prop_Sellers.Models.ErrorModels;
 using Microsoft.AspNet.Identity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Auction_Prop_Sellers.Controllers
@@ -30,7 +27,7 @@ namespace Auction_Prop_Sellers.Controllers
 
 
                 }
-                catch(Exception E)
+                catch (Exception E)
                 {
                     return View();
                 }

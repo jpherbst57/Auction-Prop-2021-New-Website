@@ -1,13 +1,9 @@
-﻿using Auction_Prop_Sellers.Models.DataViewModels;
+﻿using APILibrary;
+using Auction_Prop_Sellers.Models.DataViewModels;
+using Auction_Prop_Sellers.Models.ErrorModels;
 using Microsoft.AspNet.Identity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using APILibrary;
-using Auction_Prop_Sellers.Models.ErrorModels;
-using System.Web.Hosting;
 
 namespace Auction_Prop_Sellers.Controllers
 {
@@ -23,13 +19,13 @@ namespace Auction_Prop_Sellers.Controllers
             }
             else
             {
-                     
-                   
+
+
                 try
                 {
-                     Seller sellerModel = APIMethods.APIGet<Seller>(User.Identity.GetUserId(), "sellers");
-                   
-                      return View(sellerModel);
+                    Seller sellerModel = APIMethods.APIGet<Seller>(User.Identity.GetUserId(), "sellers");
+
+                    return View(sellerModel);
                 }
                 catch (Exception E)
                 {
@@ -74,7 +70,7 @@ namespace Auction_Prop_Sellers.Controllers
 
                         return RedirectToAction("CreateRetialer");
                     }
-                    else if (ob.SellerType == "Auctioneer") 
+                    else if (ob.SellerType == "Auctioneer")
                     {
 
                         return RedirectToAction("CreateAuctioneer");
@@ -82,7 +78,7 @@ namespace Auction_Prop_Sellers.Controllers
                     else
                     {
 
-                         return RedirectToAction("CreatePrivate");
+                        return RedirectToAction("CreatePrivate");
                     }
                 }
                 catch (Exception E)
@@ -95,7 +91,7 @@ namespace Auction_Prop_Sellers.Controllers
                 return View();
             }
         }
-    
+
 
 
 
@@ -188,7 +184,7 @@ namespace Auction_Prop_Sellers.Controllers
                         CompanyEmail = model.CompanyEmail,
                         Signature = model.Signature,
                         CompanyDescriprion = model.CompanyDescriprion,
-                        
+
 
                     };
 
@@ -219,14 +215,14 @@ namespace Auction_Prop_Sellers.Controllers
         {
             if (ModelState.IsValid)
             {
-              
+
                 try
                 {  //Call Post Method
-                Address objec = APIMethods.APIPost<Address>(model, "Addresses");
+                    Address objec = APIMethods.APIPost<Address>(model, "Addresses");
 
-                SellerAddress sAdd = new SellerAddress();
-                sAdd.AddressID = objec.AddressID;
-                sAdd.UserID = User.Identity.GetUserId();
+                    SellerAddress sAdd = new SellerAddress();
+                    sAdd.AddressID = objec.AddressID;
+                    sAdd.UserID = User.Identity.GetUserId();
                     APIMethods.APIPost<SellerAddress>(sAdd, "SellerAddresses");
                     return RedirectToAction("Index");
 

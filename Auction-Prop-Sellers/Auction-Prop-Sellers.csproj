@@ -200,6 +200,28 @@
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\AddressesController.cs" />
+    <Compile Include="Controllers\AdminFeesController.cs" />
+    <Compile Include="Controllers\AuctioneersController.cs" />
+    <Compile Include="Controllers\AuctionRegistrationsController.cs" />
+    <Compile Include="Controllers\Auctions1Controller.cs" />
+    <Compile Include="Controllers\AuctionsController.cs" />
+    <Compile Include="Controllers\BankApprovalsController.cs" />
+    <Compile Include="Controllers\BidsController.cs" />
+    <Compile Include="Controllers\BuyerAddressesController.cs" />
+    <Compile Include="Controllers\ConcludedAuctionsController.cs" />
+    <Compile Include="Controllers\DepositsController.cs" />
+    <Compile Include="Controllers\GuarinteesController.cs" />
+    <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Controllers\PrivateSellersController.cs" />
+    <Compile Include="Controllers\PromoVideos1Controller.cs" />
+    <Compile Include="Controllers\PromoVideosController.cs" />
+    <Compile Include="Controllers\PropertiesController.cs" />
+    <Compile Include="Controllers\PropertyPhotoesController.cs" />
+    <Compile Include="Controllers\RegisteredBuyersController.cs" />
+    <Compile Include="Controllers\RetailersController.cs" />
+    <Compile Include="Controllers\SellerAddressesController.cs" />
+    <Compile Include="Controllers\SellersController.cs" />
     <Compile Include="Controllers\SellerDashboardController.cs" />
     <Compile Include="Controllers\SellerRegistrationController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1523,6 +1545,10 @@
     <ProjectReference Include="..\APILibrary\APILibrary.csproj">
       <Project>{9dd2a452-ff37-444e-b7a8-d888f2025daa}</Project>
       <Name>APILibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Auction-Prop-API\Auction-Prop-API.csproj">
+      <Project>{ACD758F4-1F09-4F77-98FC-EE456735B78A}</Project>
+      <Name>Auction-Prop-API</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

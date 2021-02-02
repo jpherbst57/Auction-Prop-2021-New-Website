@@ -1,9 +1,5 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System;
 using System.IO;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
@@ -11,7 +7,7 @@ namespace Auction_Prop_Sellers.Controllers
 {
     public class FileController : Controller
     {
-    
+
         //public static string uri = "https://auctionpropfiles.blob.core.windows.net/";
         public static string uri = "http://sellers.auction-prop.com/";
 
@@ -53,35 +49,35 @@ namespace Auction_Prop_Sellers.Controllers
             }
 
 
-        
-    }
 
-      /*  private static CloudBlobContainer GetContainer(string uriExtension)
-        {
-            var storageAccount = CloudStorageAccount.Parse(ConfigurationManager.AppSettings["StorageAccount"]);
-            var blobClient = storageAccount.CreateCloudBlobClient();
-            var container = blobClient.GetContainerReference(ConfigurationManager.AppSettings[uriExtension +"Container"]);
-            return container;
-        }
-      /*  [HttpPost]
-        public ActionResult UploadFile()
-        {
-            if (Request.Files.Count > 0)
-            {
-                var file = Request.Files[0];
-                if (file != null && file.ContentLength > 0)
-                    SaveToStorage(file.InputStream, file.FileName,uriExtension);
-            }
-            return View();
         }
 
-        public static void SaveToStorage(Stream inputStream, string fileName, string uriExtension)
-        {
-            var container = GetContainer(uriExtension);
-            var blob = container.GetBlockBlobReference(fileName);
+        /*  private static CloudBlobContainer GetContainer(string uriExtension)
+          {
+              var storageAccount = CloudStorageAccount.Parse(ConfigurationManager.AppSettings["StorageAccount"]);
+              var blobClient = storageAccount.CreateCloudBlobClient();
+              var container = blobClient.GetContainerReference(ConfigurationManager.AppSettings[uriExtension +"Container"]);
+              return container;
+          }
+        /*  [HttpPost]
+          public ActionResult UploadFile()
+          {
+              if (Request.Files.Count > 0)
+              {
+                  var file = Request.Files[0];
+                  if (file != null && file.ContentLength > 0)
+                      SaveToStorage(file.InputStream, file.FileName,uriExtension);
+              }
+              return View();
+          }
 
-            using (inputStream)
-                blob.UploadFromStream(inputStream);
-        }*/
+          public static void SaveToStorage(Stream inputStream, string fileName, string uriExtension)
+          {
+              var container = GetContainer(uriExtension);
+              var blob = container.GetBlockBlobReference(fileName);
+
+              using (inputStream)
+                  blob.UploadFromStream(inputStream);
+          }*/
     }
 }
