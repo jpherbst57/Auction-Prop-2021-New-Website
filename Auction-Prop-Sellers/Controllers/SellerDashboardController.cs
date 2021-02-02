@@ -4,11 +4,7 @@ using Auction_Prop_Sellers.Models.ErrorModels;
 using AutoMapper;
 using Microsoft.AspNet.Identity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
-using System.Web.Hosting;
 using System.Web.Mvc;
 
 namespace Auction_Prop_Sellers.Controllers
@@ -27,13 +23,13 @@ namespace Auction_Prop_Sellers.Controllers
 
                 try
                 {
-                    Seller sellerModel = APIMethods.APIGet<Seller>(User.Identity.GetUserId(), "Sellers");
+                    var sellerModel = APIMethods.APIGet<Seller>(User.Identity.GetUserId(), "Sellers");
 
                     return View(sellerModel);
 
 
                 }
-                catch 
+                catch
                 {
                     return View();
                 }
@@ -51,62 +47,63 @@ namespace Auction_Prop_Sellers.Controllers
 
         public async Task<ActionResult> CreateProperty(PropertyView model)
         {
-            
+
             if (ModelState.IsValid && model.SellerSigniture)
             {
-               
-               
+
+
                 try
                 {
-                    var config = new MapperConfiguration(cfg => {
-                    cfg.CreateMap<PropertyView, Property>();
-                     });
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<PropertyView, Property>();
+                    });
 
                     IMapper mapper = config.CreateMapper();
                     Property NewProp = mapper.Map<PropertyView, Property>(model);
                     NewProp.SellerID = User.Identity.GetUserId();
-                    if(NewProp.TitleDeedPath == "")
+                    if (NewProp.TitleDeedPath == "")
                     {
                         NewProp.TitleDeedPath = "N/A";
-                    }   
-                    if(NewProp.BedRooms == null)
+                    }
+                    if (NewProp.BedRooms == null)
                     {
                         NewProp.BedRooms = 0;
-                    }  
-                    if(NewProp.FloorSize == null)
+                    }
+                    if (NewProp.FloorSize == null)
                     {
                         NewProp.FloorSize = 0;
-                    }  
-                    if(NewProp.YardSize == null)
+                    }
+                    if (NewProp.YardSize == null)
                     {
                         NewProp.YardSize = 0;
-                    }   
-                    if(NewProp.Reserve == null)
+                    }
+                    if (NewProp.Reserve == null)
                     {
                         NewProp.Reserve = 0;
                     }
                     if (NewProp.Garages == null)
                     {
                         NewProp.Garages = 0;
-                    }  
-                    if(NewProp.OpeningBid == null)
+                    }
+                    if (NewProp.OpeningBid == null)
                     {
                         NewProp.OpeningBid = 0;
-                    }   
-                    if(NewProp.TaxesAndRate == null)
+                    }
+                    if (NewProp.TaxesAndRate == null)
                     {
                         NewProp.TaxesAndRate = 0;
-                    } 
-                    if(NewProp.levies == null)
+                    }
+                    if (NewProp.levies == null)
                     {
                         NewProp.levies = 0;
-                    } 
-              
+                    }
+
                     NewProp.MandateSingedDate = DateTime.Now;
                     NewProp.MandateExpireDate = DateTime.Now.AddDays(90);
                     NewProp.TaxesAndRates = FileController.PostFile(model.TaxesAndRates, "TaxesAndRates", "TaxesAndRates");
                     NewProp.PlansPath = FileController.PostFile(model.PlansPath, "Plans", "Plans");
-                  //  NewProp.TitleDeedPath = FileController.PostFile(model.TitleDeedPath, "Titledeeds", "Titledeeds");
+                    //  NewProp.TitleDeedPath = FileController.PostFile(model.TitleDeedPath, "Titledeeds", "Titledeeds");
                     NewProp.HOARules = FileController.PostFile(model.HOARules, "HOARules", "HOARules");
 
                     //Call Post Method
@@ -129,7 +126,7 @@ namespace Auction_Prop_Sellers.Controllers
                     };
                     await ser.Send(msgAdmin);*/
 
-                    return RedirectToAction("AddPhoto",new { id = ob.PropertyID});
+                    return RedirectToAction("AddPhoto", new { id = ob.PropertyID });
                 }
                 catch (Exception E)
                 {
@@ -152,7 +149,7 @@ namespace Auction_Prop_Sellers.Controllers
             string adddd = model.Address;
             if (ModelState.IsValid)
             {
-                    Property ob = APIMethods.APIPost<Property>(model, "Properties");
+                Property ob = APIMethods.APIPost<Property>(model, "Properties");
 
                 try
                 {
@@ -176,7 +173,7 @@ namespace Auction_Prop_Sellers.Controllers
         public ActionResult AddPhoto(int id, PropertyPhotoView file)
         {
 
-          
+
             if (ModelState.IsValid)
             {
                 try
@@ -188,11 +185,11 @@ namespace Auction_Prop_Sellers.Controllers
                         model.Description = file.Description;
                         model.Title = file.Title;
                         model.PropertyPhotoPath = FileController.PostFile(file.PropertyPhotoPath, "propertyphotos", "propertyphotos");
-                       
+
                         //Call Post Method
-                       APIMethods.APIPost<PropertyPhoto>(model, "PropertyPhotoes");
-                     return  View();
-                    
+                        APIMethods.APIPost<PropertyPhoto>(model, "PropertyPhotoes");
+                        return View();
+
                     }
                 }
                 catch (Exception E)
@@ -205,8 +202,8 @@ namespace Auction_Prop_Sellers.Controllers
 
 
                 return RedirectToAction("Index");
-                
-            
+
+
             }
             else
             {
@@ -215,21 +212,21 @@ namespace Auction_Prop_Sellers.Controllers
 
 
         }
-        
+
         public ActionResult AddPromoVideo(int id, PromoVideoData file)
         {
 
-          
+
             if (ModelState.IsValid)
             {
                 try
                 {
-                   if (file != null)
+                    if (file != null)
                     {
                         //Call Post Method
-                       APIMethods.APIPost<PropertyPhoto>(file, "PropertyPhotoes");
-                     return RedirectToAction("Index");
-                    
+                        APIMethods.APIPost<PropertyPhoto>(file, "PropertyPhotoes");
+                        return RedirectToAction("Index");
+
                     }
                 }
                 catch (Exception E)
@@ -242,8 +239,8 @@ namespace Auction_Prop_Sellers.Controllers
 
 
                 return RedirectToAction("Index");
-                
-            
+
+
             }
             else
             {
@@ -261,7 +258,7 @@ namespace Auction_Prop_Sellers.Controllers
             {
                 try
                 {
-                   APIMethods.APIPut<Property>(model, id.ToString(), "Properties");
+                    APIMethods.APIPut<Property>(model, id.ToString(), "Properties");
                     return RedirectToAction("Index");
                 }
                 catch (Exception E)
@@ -284,7 +281,7 @@ namespace Auction_Prop_Sellers.Controllers
             {
                 try
                 {
-                    APIMethods.APIDelete<Property>( model.PropertyID.ToString(), "Properties");
+                    APIMethods.APIDelete<Property>(model.PropertyID.ToString(), "Properties");
                     return RedirectToAction("Index");
                 }
                 catch (Exception E)
@@ -301,7 +298,7 @@ namespace Auction_Prop_Sellers.Controllers
         }
 
 
-      
+
 
         public ActionResult Details(int id, Property model)
         {
@@ -322,11 +319,11 @@ namespace Auction_Prop_Sellers.Controllers
 
         public ActionResult _PhotoPartial(PropertyPhoto propertyPhoto)
         {
-           
-            if ( ModelState.IsValid)
+
+            if (ModelState.IsValid)
             {
-               // NewPropView.PropertyPhotos.Add(propertyPhoto);
-                
+                // NewPropView.PropertyPhotos.Add(propertyPhoto);
+
                 return PartialView();
             }
             else
